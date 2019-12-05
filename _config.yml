@@ -1,0 +1,49 @@
+# Build settings
+permalink: /blog/:year/:title/
+markdown: kramdown
+highlighter: pygments
+plugins: [jekyll-paginate]
+
+
+paginate: 3
+paginate_path: "/blog/page/:num/"
+comments: true
+
+source: source
+destination: _site
+sass:
+  sass_dir: _sass
+  style: compressed # expanded
+
+# SEO settings
+title: Austin's Site
+description: "A free Jekyll theme for download"
+keywords: "Data science, blog, statistics, machine learning, deep learning"
+url: https://aus10powell.github.io/
+#baseurl: #"/end2end"
+
+# google_analytics: UA-52446115-1
+repo: https://github.com/aus10powell
+disqus_shortname: "disqus_6raPmhHf71"
+disqus_site_shortname: "austins-site"
+
+# Author settings
+author:
+  name: Austin Powell
+  job: Statistician & ML Engineer
+  bio: "Living in SF East Bay. I’m passioned about statistics, technology and all data science subjects particularly NLP-related projects. You can reach out to me on LinkedIn @aus10powell and Twitter at (@aus10_powers). Please also checkout my Github repositories"
+  thumb: /images/author.jpg
+  email: powellaus10@gmail.com
+  url: https://aus10powell.github.io/
+  github: https://github.com/aus10powell
+  twitter: https://twitter.com/aus10_powers
+  linkedin: https://www.linkedin.com/in/aus10powell/
+
+# navbar pages
+navbar:
+  - slug: about
+    title: About
+  - slug: blog
+    title: Blog
+
+exclude: ["config.rb", "src", "Gemfile", "Gemfile.lock", "package.json","README.md", "Rakefile"]

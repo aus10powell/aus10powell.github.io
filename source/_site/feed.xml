@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description></description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 14 Feb 2019 20:19:09 -0800</pubDate>
+    <lastBuildDate>Thu, 14 Feb 2019 20:19:09 -0800</lastBuildDate>
+    <generator>Jekyll v3.5.1</generator>
+    
+      <item>
+        <title>Text Classifier Part 1: CNN Classifier Using Pytorch</title>
+        <description>&lt;p&gt;&lt;em&gt;Estimated read time: 5 min&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+
+&lt;p&gt;Originally I was motivated to replicate the work of researches from the 2016 paper &lt;a href=&quot;https://www.cs.cmu.edu/~diyiy/docs/naacl16.pdf&quot;&gt;Hierarchical Attention Networks for Document Classification&lt;/a&gt;. However, after reading through the &lt;a href=&quot;https://richliao.github.io/supervised/classification/2016/11/26/textclassifier-convolutional/&quot;&gt;excellent posts by Richard Liao&lt;/a&gt;, I decide to roughly follow his journey in order to get more familiar with Pytorch. As I have learned, Tensorflow, and by extension Keras, for multiple reasons (not necessarily with user use in mind) have many more resources available. You can read a breakdown for choosing Keras over PyTorch &lt;a href=&quot;https://www.reddit.com/r/MachineLearning/comments/6bicfo/d_keras_vs_pytorch/&quot;&gt;Here&lt;/a&gt;. For me, however, the biggest reason would be the use-ability of Pytorch (de-bugging is vastly simpler process). Also, it is written in a more Pythonic manner so your code integrates easier with other tasks. As a side note, I’ve noticed that many if not most scripts for this implementation are quit lacking in code comments which makes the coder look better and of course much easier for someone picking it up to implement. I’ve tried to be more diligent in this.&lt;/p&gt;
+
+&lt;p&gt;This was also an exploration into &lt;a href=&quot;https://torchtext.readthedocs.io/en/latest/&quot;&gt;TorchText&lt;/a&gt; which I also prefer to Keras. It has the usual convenient:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Data loaders&lt;/li&gt;
+  &lt;li&gt;Batch generators&lt;/li&gt;
+  &lt;li&gt;Easy loading of GLove and FastText embeddings&lt;/li&gt;
+  &lt;li&gt;Easy loading of datasets (such as the IMBD ratings dataset)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are base NN frameworks that can be used. A recursive or recurrent neural network or convolutional neural network could all be used for the exact same task.&lt;/p&gt;
+
+&lt;h3 id=&quot;cnn&quot;&gt;CNN&lt;/h3&gt;
+&lt;p&gt;Due to the different convolutions not being dependent on each other is one of the primary reasons for speedup. This frame-work is well-suited for sentence classification (however may not be the best for larger corpora) &lt;a href=&quot;https://arxiv.org/pdf/1702.01923.pdf&quot;&gt;Comparative Study of CNN and RNN for Natural Language Processing&lt;/a&gt;. Although due to faster training and therefore faster iteration, many researchers have found performance losses are negligible.&lt;/p&gt;
+
+&lt;h3 id=&quot;loss-function&quot;&gt;Loss Function:&lt;/h3&gt;
+&lt;p&gt;$l(x,y) == L = $&lt;/p&gt;
+
+&lt;h2 id=&quot;dataset&quot;&gt;Dataset&lt;/h2&gt;
+&lt;p&gt;From the UCI Machine Learning Repository &lt;a href=&quot;https://archive.ics.uci.edu/ml/datasets/Drug+Review+Dataset+%28Druglib.com%29&quot;&gt;Here&lt;/a&gt;. Although the dataset has several attributes, I’ll be focusing on patient reviews on specific drugs along with related conditions.&lt;/p&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Initialize TorchText Data Parameters&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;import spacy
+import torchtext
+nlp = spacy.load('en_core_web_md')
+
+def spacy_tokenizer(text): # create a tokenizer function
+
+    return [tok.text.lower() for tok in nlp.tokenizer(str(text))]
+
+# Define a Field class: this is a class that contains information on how you want the data preprocessed.
+TEXT = torchtext.data.Field(sequential=True,
+                            tokenize=spacy_tokenizer,
+                            batch_first=True,
+                            fix_length=400,
+                            include_lengths=True,
+                            lower=True
+                           )
+LABEL = torchtext.data.Field(sequential=False,
+                             is_target=True,
+                            # use_vocab=False
+                            )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Create word vectors&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;TEXT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build_vocab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vectors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GloVe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'6B'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unk_init&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xavier_uniform_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# fills in uniform for unknown words&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;LABEL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build_vocab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Length of Text Vocabulary: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TEXT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vocab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Vector size of Text Vocabulary: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TEXT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vocab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vectors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Label Length: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LABEL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vocab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;vocabulary&quot;&gt;Vocabulary&lt;/h3&gt;
+
+&lt;h3 id=&quot;vectorizer&quot;&gt;Vectorizer&lt;/h3&gt;
+
+&lt;h3 id=&quot;model&quot;&gt;Model&lt;/h3&gt;
+
+&lt;h3 id=&quot;additional-resourcespaper-references&quot;&gt;Additional Resources/Paper References:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=vYJtZwoO9Rw&amp;amp;t=0s&amp;amp;index=13&amp;amp;list=PLlJy-eBtNFt4CSVWYqscHDdP58M3zFHIG&quot;&gt;Convolutional Neural Networks (for NLP) Stanford lecture&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.aclweb.org/anthology/D13-1176&quot;&gt;Recurrent Continuous Translation Models&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/pdf/1510.03820.pdf&quot;&gt;Neural Networks for Sentence Classification&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 01 Sep 2018 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/natural/language/processing,/ai,/machine/learning/2018/09/01/text-classifier-1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/natural/language/processing,/ai,/machine/learning/2018/09/01/text-classifier-1.html</guid>
+        
+        
+        <category>Natural</category>
+        
+        <category>Language</category>
+        
+        <category>Processing,</category>
+        
+        <category>AI,</category>
+        
+        <category>Machine</category>
+        
+        <category>Learning</category>
+        
+      </item>
+    
+      <item>
+        <title>Automated Health Responses Part 1</title>
+        <description>&lt;p&gt;&lt;em&gt;Code for this project can be viewed at: &lt;a href=&quot;https://github.com/aus10powell/Automated-Health-Responses&quot;&gt;Automated Health Responses&lt;/a&gt;&lt;/em&gt;
+&lt;em&gt;Estimated read time: 10 min&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+
+&lt;p&gt;This is a proof-of-concept for generating appropriate responses to health-related questions. The motivating idea is understanding what it would take to be part of a full-scale interaction between a healthcare professional and someone in need of healthcare. While the medium of interaction (online, email, face-to-face) certainly would make a difference in how you went about any full-scale prototype, it is very important to have some sort of minimal viable product to demonstrate approach.&lt;/p&gt;
+
+&lt;p&gt;This is very much a bootstrapped initiative: what can be safely (i.e. not patient data) shown to any audience about providing appropriate responses. Of course, the AI system people might often imagine is one that interacts with you at least in some way relative and complementary to how a doctor might. Relative, because it should have a doctor’s expertise; complementary because it should never have the final word. Literally. But this a very layered and complex problem. Reducing this to simpler problem might be something like: &lt;em&gt;given statement or query about my health, what is an appropriate response from a clinician?&lt;/em&gt;  This might be one step in a system some day from the likes of Google voice or Alexa after they determine you are talking about your health.&lt;/p&gt;
+
+&lt;h4 id=&quot;general-approaches-to-machine-generated-conversational-responses&quot;&gt;General approaches to machine generated conversational responses&lt;/h4&gt;
+&lt;p&gt;Although it seems like most developed solutions are a little mix-and-match, these categories are generally how most people would bucket at chatbot approach. Researching these was particularly helpful in characterizing my understanding.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;u&gt;Rule-base:&lt;/u&gt; This is along the lines of: given a serious question about heart attack. Tell them to call 911. Not robust. Hard to maintain. Etc…&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Generative:&lt;/u&gt; Also called auto-encounters and basically the way an auto-translate service works. Given a sequence of characters or tokens. Predict the following sequence of tokens or characters. Not the best choice for this project largely because although some amazing advances have been made. It is very much to random especially in a medical context with often sparsely used words.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;u&gt;Selective:&lt;/u&gt; There are many different approaches here. But generally speaking,  so far it the most most robust and time tested. Basically you want to select the best response (or best set of response) using a classified of sorts (more on that later) from a bank of potential responses.&lt;/p&gt;
+
+    &lt;p&gt;This seemed like the appropriate choice. Best of the rule-based and generative approaches. Also gives clinicians the ability to exert control over response by deciding on which of the top response to select. Also, from which bank of response to choose from in the first place. This led to the well-known paper &lt;em&gt;The Ubuntu Dialogue Corpus: A Large Dataset for Research in Unstructured Multi-Turn Dialogue Systems&lt;/em&gt; &lt;a href=&quot;https://arxiv.org/pdf/1506.08909.pdf&quot;&gt;(here)&lt;/a&gt; which introduces Ubuntu data to model appropriate responses to technical questions on a public forum. Coincidentally, the dataset that I had chosen was also based on public forum data, Reddit’s AskDocs Forum &lt;a href=&quot;https://www.reddit.com/r/AskDocs/&quot;&gt;(here)&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;dataset-description&quot;&gt;Dataset Description&lt;/h2&gt;
+&lt;p&gt;It took some exploring, but I found a suitable, health-centric, conversational dataset in Reddit. There is a sub-forum (“subreddit”) called “AskDocs” where certified health professionals reply to questions by other forum members. The health professionals could be anyone from health students, nurses, to residents, to full-scale general practitioners, but had to provide evidence of their status to reddit moderators and can be identified as such. The data is updated and stored in &lt;a href=&quot;https://cloud.google.com/bigquery/public-data/&quot;&gt;Google’s BigQuery&lt;/a&gt;, however if you wish to download the data I used you can do directly at &lt;a href=&quot;https://storage.googleapis.com/health-conversations.appspot.com/2014_2017_askDocs.gz&quot;&gt;this link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;formatting-data-and-cleaning&quot;&gt;Formatting data and cleaning&lt;/h4&gt;
+&lt;p&gt;In order to model forum data the form of a query and response, the authors of the Ubuntu paper had to estimate (using a time window) whether a new post was in direct response to a previous post. With the Reddit data, the same approach certainly could have been applied. However, in Reddit, it is explicit as to whether a new post under a thread (an ongoing conversation concerning a topic started by the original post) is in direct response to the original post or in response to another comment. Also, per the paper’s recommendation, only threads with at least 3 posts were retained in order to provide context. The lower-cased form of all text was used along with standard tokenization using Keras. In total this generated 955,610 samples of unique 282,433 words which was split into train/test/validate 80/10/10 respectively:&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;../../../images/2018-08-26-automatic-health-conversations1/askDocs.png&quot; alt=&quot;askDocs example&quot; style=&quot;width:500px;&quot; border=&quot;5&quot; /&gt;
+&lt;figcaption&gt; Sample thread post start&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;A key way of measuring how dynamic a conversation is for a thread is counting the number of turns in a conversation (or thread). Turns refer to the switching between speakers. This is follows the assumption for human-like chatbots that conversation partners take turns in a conversation (or thread). Given that most of the posts in AskDocs only generate around 4-5 posts it is a safe assumption to say that all posts following that initial post are generally on the same topic. (great Medium post &lt;a href=&quot;https://chatbotsjournal.com/designing-for-conversational-ui-humanizing-chatbots-f199e59b363e&quot;&gt;here&lt;/a&gt; on humanizing your chatbot)&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;../../../images/2018-08-26-automatic-health-conversations1/turns_per_thread.png&quot; alt=&quot;turns per thread&quot; style=&quot;width:700px;&quot; /&gt;
+&lt;figcaption&gt; Distribution of number of turns per AskDocs Forum thread&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;the-model&quot;&gt;The Model&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;To briefly summarize what we’re modeling: For a given query (i.e. question), can we make a binary selection from a list of possible answers saying if the answer is appropriate.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I started with code provided in &lt;a href=&quot;https://basmaboussaha.wordpress.com/2017/10/18/implementation-of-dual-encoder-using-keras/&quot;&gt;this excellent blog: Implementation of dual encoder using Keras&lt;/a&gt;, updating some of the code for my needs. I recommend reading the blog and paper it is based on. Although the model can train embeddings as it goes along, both the 6B token and 840B token Glove embeddings were tested with substantial improvements made with the 840B tokens. Embeddings built on all 2015 reddit comments were also tested but with no decrease in loss.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;../../../images/2018-08-26-automatic-health-conversations1/dual_encoder_model_architecture.png&quot; alt=&quot;turns per thread&quot; style=&quot;width:700px;&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The key structural advantage of this model is information is mapped in pairs.&lt;/p&gt;
+
+&lt;p&gt;which in Keras is defined as a sequential model then embedding layer which is initialized with the GLoVe embeddings. I chose to allow these embeddings to be trained further during training process.&lt;/p&gt;
+
+&lt;h3 id=&quot;results&quot;&gt;Results&lt;/h3&gt;
+&lt;figure&gt;
+ &lt;img src=&quot;../../../images/2018-08-26-automatic-health-conversations1/model_scores1.png&quot; alt=&quot;turns per thread&quot; style=&quot;width:700px;&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;This project was largely attempting to duplicate the original Ubuntu Dual Encoder paper for health data. Comparison of base metrics were quit similar to original paper with minimal effort in tuning model and adjusting parsing of data. One key difference in this implementation of that paper was the omission of comments previous to a given query to give context in selecting response. The results from these data however are promising and suggest a worthwhile effort in creating a more satisfying and health-centric responses.&lt;/p&gt;
+
+&lt;h3 id=&quot;papers&quot;&gt;Papers&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Diagnosing Disease: &lt;a href=&quot;http://matjournals.in/index.php/JoWDWD/article/view/2334/1613&quot;&gt;A Self-Diagnosis Medical Chatbot Using Artificial Intelligence&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Helped to decide on model for retrieval: &lt;a href=&quot;https://arxiv.org/abs/1506.08909&quot;&gt;The Ubuntu Dialogue Corpus: A Large Dataset for Research in Unstructured Multi-Turn Dialogue Systems&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;future-work&quot;&gt;Future Work&lt;/h2&gt;
+
+&lt;h5 id=&quot;dataset-creation&quot;&gt;Dataset creation&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;There are a few changes to how the data was manipulated that might train a model for an appropriate response. For example the model currently is train on a response to every query so there can be multiple responses to the same query. Using something like the number of upvotes, one response could be selected (at least for the initial query).&lt;/li&gt;
+  &lt;li&gt;Conversation history in the thread could be include in the encoder portion of the model. This would potentially help the correct results so that we would be able to select the most relevant response given the history as opposed to a technically correct, but non-sensical result like the one below.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;
+ &lt;img src=&quot;../../../images/2018-08-26-automatic-health-conversations1/answer_selection.png&quot; alt=&quot;turns per thread&quot; style=&quot;width:700px;&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;h5 id=&quot;refinement-of-health-purpose&quot;&gt;Refinement of “Health” purpose&lt;/h5&gt;
+&lt;p&gt;Most of this work was towards creating an initial viable solution in human-like responses to a health-related statement or question. One way of refining the types of responses would be to determine what type of statement/questions started the conversation and score possible answers only within that concept space.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 26 Aug 2018 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/natural/language/processing,/ai,/chatbot,/machine/learning/2018/08/26/automatic-health-conversations1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/natural/language/processing,/ai,/chatbot,/machine/learning/2018/08/26/automatic-health-conversations1.html</guid>
+        
+        
+        <category>Natural</category>
+        
+        <category>Language</category>
+        
+        <category>Processing,</category>
+        
+        <category>AI,</category>
+        
+        <category>Chatbot,</category>
+        
+        <category>Machine</category>
+        
+        <category>Learning</category>
+        
+      </item>
+    
+  </channel>
+</rss>
