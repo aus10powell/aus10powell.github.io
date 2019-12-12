@@ -5,7 +5,7 @@ highlighter: pygments
 plugins: [jekyll-paginate]
 
 
-paginate: 3
+paginate: 4
 paginate_path: "/blog/page/:num/"
 comments: true
 
@@ -30,8 +30,8 @@ disqus_site_shortname: "austins-site"
 # Author settings
 author:
   name: Austin Powell
-  job: Statistician & ML Engineer
-  bio: "Living in SF East Bay. I’m passioned about statistics, technology and all data science subjects particularly NLP-related projects. You can reach out to me on LinkedIn @aus10powell and Twitter at (@aus10_powers). Please also checkout my Github repositories"
+  job: Data Mover (but also Machine Learning Engineer)
+  bio: "Living in SF East Bay. I’m passioned about the perfect pairing of statistics and technology i.e. machine learning. You can reach out to me on LinkedIn @aus10powell and Twitter at (@aus10_powers). Please also checkout my Github repositories"
   thumb: /images/author.jpg
   email: powellaus10@gmail.com
   url: https://aus10powell.github.io/
