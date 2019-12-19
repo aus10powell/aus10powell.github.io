@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Austin's Site</title>
-    <description>A free Jekyll theme for download</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 05 Dec 2019 07:57:05 -0800</pubDate>
-    <lastBuildDate>Thu, 05 Dec 2019 07:57:05 -0800</lastBuildDate>
-    <generator>Jekyll v3.5.1</generator>
+    <description>A personal site and blog</description>
+    <link>https://aus10powell.github.io//</link>
+    <atom:link href="https://aus10powell.github.io//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 19 Dec 2019 07:24:59 -0800</pubDate>
+    <lastBuildDate>Thu, 19 Dec 2019 07:24:59 -0800</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Text Classifier Part 1: CNN Classifier Using Pytorch</title>
@@ -97,8 +97,8 @@ train_iter, valid_iter, test_iter = torchtext.data.BucketIterator.splits(
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 01 Sep 2018 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/blog/2018/text-classifier-1/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/text-classifier-1/</guid>
+        <link>https://aus10powell.github.io//blog/2018/text-classifier-1/</link>
+        <guid isPermaLink="true">https://aus10powell.github.io//blog/2018/text-classifier-1/</guid>
         
         
         <category>Natural</category>
@@ -203,8 +203,8 @@ train_iter, valid_iter, test_iter = torchtext.data.BucketIterator.splits(
 &lt;p&gt;Most of this work was towards creating an initial viable solution in human-like responses to a health-related statement or question. One way of refining the types of responses would be to determine what type of statement/questions started the conversation and score possible answers only within that concept space.&lt;/p&gt;
 </description>
         <pubDate>Sun, 26 Aug 2018 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/blog/2018/automatic-health-conversations1/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2018/automatic-health-conversations1/</guid>
+        <link>https://aus10powell.github.io//blog/2018/automatic-health-conversations1/</link>
+        <guid isPermaLink="true">https://aus10powell.github.io//blog/2018/automatic-health-conversations1/</guid>
         
         
         <category>Natural</category>
