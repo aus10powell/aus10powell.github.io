@@ -20,7 +20,7 @@ title: Austin's Site
 description: "A personal site and blog"
 keywords: "Data science, blog, statistics, development, machine learning, deep learning"
 url: https://aus10powell.github.io/
-#baseurl: #"/end2end"
+# baseurl: "/index.html"
 
 # google_analytics: UA-52446115-1
 repo: https://github.com/aus10powell
