@@ -81,7 +81,8 @@ og_image                 : # Open Graph/Twitter default site image
 social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  links: 
+    - "https://www.linkedin.com/in/aus10powell"
 
 # Analytics
 analytics:
@@ -95,7 +96,7 @@ analytics:
 author:
   name             : "Austin Powell"
   avatar           : "/assets/images/profile_400x400.jpg"
-  bio              : "Data Scientist/Machine Learning Engineer (e.g. Data Janitor)"
+  bio              : "Data Scientist/Machine Learning Engineer/Data Janitor"
   location         : "SF Bay Area"
   email            :
   links:
@@ -116,7 +117,9 @@ author:
       url: "https://github.com/aus10powell"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin-in"
+      url: "https://www.linkedin.com/in/aus10powell/"
 
 # Site Footer
 footer:
