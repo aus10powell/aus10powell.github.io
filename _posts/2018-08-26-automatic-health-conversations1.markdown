@@ -3,7 +3,7 @@ layout: post
 title:  "Automated Health Responses"
 date:   2018-08-26
 comments: true
-image: ../assets/images/automated_health_responses/
+#image: /assets/images/automated_health_responses/
 categories: Natural-Language-Processing AI Chatbotg Machine-Learning
 ---
 # Automated Health Responses 
@@ -77,14 +77,12 @@ which in Keras is defined as a sequential model then embedding layer which is in
 
 
 ### Results
-<figure>
+
 <div align="center">
  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/automated_health_responses/model_scores1.png"
       alt="turns per thread"
       style="float: center "
       style="width:700px;" />
-</figure>
-
 
 
 ### Conclusion
@@ -111,5 +109,7 @@ This project was largely attempting to duplicate the original Ubuntu Dual Encode
       style="width:700px;" />
 </figure>
 
-##### Refinement of "Health" purpose
+
+
+##### Refinement of "Health" purposes
 Most of this work was towards creating an initial viable solution in human-like responses to a health-related statement or question. One way of refining the types of responses would be to determine what type of statement/questions started the conversation and score possible answers only within that concept space.
