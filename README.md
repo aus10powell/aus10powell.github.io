@@ -1,6 +1,2 @@
 # Personal Website
-
-
-
-## Run Locally
-*bundle exec jekyll serve*
+Interested in data science and software engineering. Experience and context for many problems in a healthcare space.

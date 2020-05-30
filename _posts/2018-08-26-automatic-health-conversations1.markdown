@@ -1,5 +1,5 @@
 ---
-toc: true
+
 layout: post
 title:  "Automated Health Responses"
 date:   2018-08-26
@@ -37,13 +37,12 @@ In order to model forum data the form of a query and response, the authors of th
 
 <figure>
 <div align="center">
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/automated_health_responses/askDocs.png"
+ <img src="/assets/images/automated_health_responses/askDocs.png"
      alt="askDocs example"
-     style="float:left;width:42px;"
-     style="width:500px;" border="5"/>
-<figcaption> Sample thread post start</figcaption>
+     style="width:650px;"/>
+<figcaption>Example start of thread</figcaption>
+</div>
 </figure>
-
 
 A key way of measuring how dynamic a conversation is for a thread is counting the number of turns in a conversation (or thread). Turns refer to the switching between speakers. This is follows the assumption for human-like chatbots that conversation partners take turns in a conversation (or thread). Given that most of the posts in AskDocs only generate around 4-5 posts it is a safe assumption to say that all posts following that initial post are generally on the same topic. (great Medium post [here](https://chatbotsjournal.com/designing-for-conversational-ui-humanizing-chatbots-f199e59b363e) on humanizing your chatbot)
 
@@ -54,8 +53,8 @@ A key way of measuring how dynamic a conversation is for a thread is counting th
       style="float: center boarder:5"
       style="width:700px;" />
 <figcaption> Distribution of number of turns per AskDocs Forum thread</figcaption>
+</div>
 </figure>
-
 
 ## The Model
 
@@ -65,25 +64,26 @@ I started with code provided in [this excellent blog: Implementation of dual enc
 
 <figure>
 <div align="center">
- <img src="{{ site.url }}{{ site.baseurl }}/assets/images/automated_health_responses/dual_encoder_model_architecture.png"
-      alt="turns per thread"
-      style="float: center boarder:5"
-      style="width:700px;" />
+ <img src="/assets/images/automated_health_responses/dual_encoder_model_architecture.png"
+     alt="turns per thread"
+     style="float:left;width:42px;"
+     style="width:650px;" border="5"/>
+<figcaption> Architecture</figcaption>
+</div>
 </figure>
 
-The key structural advantage of this model is information is mapped in pairs.
-
-which in Keras is defined as a sequential model then embedding layer which is initialized with the GLoVe embeddings. I chose to allow these embeddings to be trained further during training process.
-
-
+The key structural advantage of this model is information is mapped in pairs. In Keras this is defined as a sequential model then embedding layer which is initialized with the GLoVe embeddings. I chose to allow these embeddings to be trained further during training process.
 
 ### Results
-
+<figure>
 <div align="center">
- <img src="{{ site.url }}{{ site.baseurl }}/assets/images/automated_health_responses/model_scores1.png"
-      alt="turns per thread"
-      style="float: center "
-      style="width:700px;" />
+ <img src="/assets/images/automated_health_responses/model_scores1.png"
+     alt="turns per thread"
+     style="float:left;width:42px;"
+     style="width:650px;" border="5"/>
+<figcaption> turns per thread</figcaption>
+</div>
+</figure>
 
 
 ### Conclusion
@@ -94,23 +94,22 @@ This project was largely attempting to duplicate the original Ubuntu Dual Encode
 * Diagnosing Disease: [A Self-Diagnosis Medical Chatbot Using Artificial Intelligence](http://matjournals.in/index.php/JoWDWD/article/view/2334/1613)
 * Helped to decide on model for retrieval: [The Ubuntu Dialogue Corpus: A Large Dataset for Research in Unstructured Multi-Turn Dialogue Systems](https://arxiv.org/abs/1506.08909)
 
-
-## Future Work
-
-
-
 ##### Dataset creation
 * There are a few changes to how the data was manipulated that might train a model for an appropriate response. For example the model currently is train on a response to every query so there can be multiple responses to the same query. Using something like the number of upvotes, one response could be selected (at least for the initial query).
 * Conversation history in the thread could be include in the encoder portion of the model. This would potentially help the correct results so that we would be able to select the most relevant response given the history as opposed to a technically correct, but non-sensical result like the one below.
+
+
 <figure>
 <div align="center">
- <img src="{{ site.url }}{{ site.baseurl }}/assets/images/automated_health_responses/answer_selection.png"
-      alt="turns per thread"
-      style="float: center boarder:5"
-      style="width:700px;" />
+ <img src="/assets/images/automated_health_responses/answer_selection.png"
+     alt="askDocs example"
+     style="float:left;width:42px;"
+     style="width:500px;" border="5"/>
+<figcaption> Answer Selection</figcaption>
+</div>
 </figure>
 
-![](/assets/images/automated_health_responses/answer_selection.png)
 
-##### Refinement of "Health" purposes
+
+#### Refinement of "Health" purposes
 Most of this work was towards creating an initial viable solution in human-like responses to a health-related statement or question. One way of refining the types of responses would be to determine what type of statement/questions started the conversation and score possible answers only within that concept space.
