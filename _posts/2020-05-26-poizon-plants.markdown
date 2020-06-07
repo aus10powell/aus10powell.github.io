@@ -9,11 +9,21 @@ description: "An attempt to make a vision classifier for poison oak practical."
 ---
 *Classifying poison oak "in the wild"*
 
+## Motivation 
+I have gotten poison oak multiple times. While it is debated whether continued exposure to the oil found on the plant that causes the allergic reaction gets worse over time or better, the fact remains it not fun. Particularly in certain areas of your body.
 
-I have gotten poison oak multiple times. 
+What is confirmed is that while some people do not have an allergic reaction, there will be no rash with continued exposure per [American Osteopathic College of Dermatology](https://www.aocd.org/page/PoisonIvyDermatiti) (among other sources). So basically no one is really safe.
+
+Those of us living in California for more than a few years are likely familiar with or at least have heard of poison oak. But very few people native to California (much less one of the millions of tourists) actually are able to identify it it is not in it's signature glowing, oily red.
+
+### Cold-start problem
+Perhaps the obvious place to start for labeled images of poison oak was Google. The easiest method I've found so far to do this is a Chrome extension [here](https://chrome.google.com/webstore/detail/imageye-image-downloader/agionbommeaifngbhincahgmoflcikhm?hl=en).
+Interestingly enough, there were already a few apps on the iOS store that were simple classification apps like the one I proposed. When I tested these against my gold-standard dataset, they had very similar performance the model that had been trained on Google Images. Go figure.
+
+## Modeling
 
 
-### Important Lessons:
+## Important Lessons:
 * **Think your data is well-labeled? Think again...and again:** 
     * Despite having gone through and labeled, by hand, thousands of images, examining images with top log-loss showed the my human error. I think one reason for this is during the labeling process, I had additional context for "yes this is poison oak" due to having walked by a large bush of poison oak already. When looking only at the photo that was taken with no additional context, which is what the neural net is doing, it was not clear to my human eye.
 * **How do you know when your data is enough?**
@@ -33,3 +43,7 @@ I have gotten poison oak multiple times.
 
 ### References
 * **[Poizon Plant iOS app](https://apps.apple.com/us/app/poizon-plant/id1475980295 "Link to iOS App")**
+
+### Papers I checked out
+* [A Leaf Recognition Algorithm for Plant Classification Using Probabilistic Neural Network](https://ieeexplore.ieee.org/abstract/document/4458016)
+* [Plant Disease Detection Using Deep learning](https://arxiv.org/abs/2003.05379)
