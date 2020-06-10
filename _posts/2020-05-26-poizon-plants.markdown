@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: splash
 title:  "Poizon Plants"
 date:   202-05-26
 comments: true

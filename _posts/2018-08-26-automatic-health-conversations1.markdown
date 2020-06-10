@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: splash
 title:  "Automated Health Responses"
 date:   2018-08-26
 comments: true
