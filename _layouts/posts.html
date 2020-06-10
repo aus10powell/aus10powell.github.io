@@ -1,10 +1,11 @@
 ---
-layout: archive
+layout: post
 ---
 
 {{ content }}
 
-<ul class="taxonomy__index">
+<!-- Uncommet to add year index at top of page -->
+<!-- <ul class="taxonomy__index">
   {% assign postsInYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
   {% for year in postsInYear %}
     <li>
@@ -13,7 +14,7 @@ layout: archive
       </a>
     </li>
   {% endfor %}
-</ul>
+</ul> -->
 
 {% assign postsByYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
 {% for year in postsByYear %}

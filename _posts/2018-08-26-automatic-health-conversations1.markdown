@@ -1,13 +1,12 @@
 ---
-
-layout: post
+layout: single
 title:  "Automated Health Responses"
 date:   2018-08-26
 comments: true
 #image: /assets/images/automated_health_responses/
 categories: Natural-Language-Processing AI Chatbotg Machine-Learning
 ---
-# Automated Health Responses 
+ 
 *This is a proof-of-concept for generating appropriate responses to health-related questions.*
 
 
