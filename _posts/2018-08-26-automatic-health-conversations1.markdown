@@ -59,6 +59,7 @@ A key way of measuring how dynamic a conversation is for a thread is counting th
 
 *To briefly summarize what we're modeling: For a given query (i.e. question), can we make a binary selection from a list of possible answers saying if the answer is appropriate.*
 
+
 I started with code provided in [this excellent blog: Implementation of dual encoder using Keras](https://basmaboussaha.wordpress.com/2017/10/18/implementation-of-dual-encoder-using-keras/), updating some of the code for my needs. I recommend reading the blog and paper it is based on. Although the model can train embeddings as it goes along, both the 6B token and 840B token Glove embeddings were tested with substantial improvements made with the 840B tokens. Embeddings built on all 2015 reddit comments were also tested but with no decrease in loss.
 
 <figure>

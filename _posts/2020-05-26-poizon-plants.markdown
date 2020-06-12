@@ -3,13 +3,14 @@ layout: splash
 title:  "Poizon Plants"
 date:   202-05-26
 comments: true
-#image: ../assets/images/poizon_plants/
+image: /assets/images/poizon_plants/poizon_plants_app.jpg
 categories: Computer Vision AI Machine-Learning Poison-Oak Plants
 description: "An attempt to make a vision classifier for poison oak practical."
 ---
-*Classifying poison oak "in the wild"*
+
 
 ## Motivation 
+![image](/assets/images/poizon_plants/poizon_plants_app.jpg){: style="float: left; margin-right: 1em;"}
 I have gotten poison oak multiple times. While it is debated whether continued exposure to the oil found on the plant that causes the allergic reaction gets worse over time or better, the fact remains it not fun. Particularly in certain areas of your body.
 
 Apparently, while some people do not have an allergic reaction, there will be no rash with continued exposure per [American Osteopathic College of Dermatology](https://www.aocd.org/page/PoisonIvyDermatiti) (among other sources). So basically, no one is really safe.
@@ -41,11 +42,11 @@ Interestingly enough, there were already a few apps on the iOS store that were s
     <figcaption>Strong red color can be indicative of poison oak but also a strong false positive.</figcaption>
     </figure>
 
-* **A great comparison:**
+* **A fair comparison:**
     <figure class="half">
         <a href="/assets/images/poizon_plants/IMG_4273.jpg" ><img src="/assets/images/poizon_plants/IMG_4273.jpg"  ></a>
         <a href="/assets/images/poizon_plants/IMG_4274.jpg"><img src="/assets/images/poizon_plants/IMG_4274.jpg"  ></a>
-        <figcaption>Caption describing these two images.</figcaption>
+        <figcaption>Contextual image information may often be a confounder.</figcaption>
     </figure>
 
 ### References
