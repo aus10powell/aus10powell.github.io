@@ -28,6 +28,13 @@ Interestingly enough, there were already a few apps on the iOS store that were s
 
 ## Modeling
 
+#### Choice of object detection vs classification task
+When thinking about how to make the app practical for hikers vs what was practical for modeling, it seemed like there were 2 choices: focus on the object detection task or a classification task.
+
+Practically speaking, it seems more useful that a person would pull out their phone and sweep the camera over a range of plants. Looking ahead, this would involve a lot of manual labeling of bounding boxes and too much work. The project could always be easily extended to include this scope also. So classification it was.
+
+
+
 #### Analyzing images of highest loss
 
 
@@ -42,11 +49,12 @@ Interestingly enough, there were already a few apps on the iOS store that were s
     <figcaption>Strong red color can be indicative of poison oak but also a strong false positive.</figcaption>
     </figure>
 
+
 * **A fair comparison:**
     <figure class="half">
-        <a href="/assets/images/poizon_plants/IMG_4273.jpg" ><img src="/assets/images/poizon_plants/IMG_4273.jpg"  ></a>
-        <a href="/assets/images/poizon_plants/IMG_4274.jpg"><img src="/assets/images/poizon_plants/IMG_4274.jpg"  ></a>
-        <figcaption>Contextual image information may often be a confounder.</figcaption>
+    <a href="/assets/images/poizon_plants/IMG_4273..jpg"><img src="/assets/images/poizon_plants/IMG_4273.jpg" style="width:100%;height:90%"></a>
+    <a href="/assets/images/poizon_plants/IMG_IMG_4274.jpg"><img src="/assets/images/poizon_plants/IMG_4274.jpg" style="width:100%;height:90%"></a>
+     <figcaption>Contextual image information may often be a confounder.</figcaption>
     </figure>
 
 ### References
