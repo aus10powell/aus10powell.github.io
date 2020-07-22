@@ -8,9 +8,11 @@ categories: Computer Vision AI Machine-Learning Poison-Oak Plants
 description: "An attempt to make a vision classifier for poison oak practical."
 ---
 
+**An app to easily identify poison oak during different seasons**
 
-## Motivation 
+# Poizon Plants
 ![image](/assets/images/poizon_plants/poizon_plants_app.jpg){: style="float: left; margin-right: 1em;"}
+
 I have gotten poison oak multiple times. While it is debated whether continued exposure to the oil found on the plant that causes the allergic reaction gets worse over time or better, the fact remains it not fun. Particularly in certain areas of your body.
 
 Apparently, while some people do not have an allergic reaction, there will be no rash with continued exposure per [American Osteopathic College of Dermatology](https://www.aocd.org/page/PoisonIvyDermatiti) (among other sources). So basically, no one is really safe.
