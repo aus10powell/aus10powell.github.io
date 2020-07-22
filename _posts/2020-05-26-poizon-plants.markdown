@@ -48,7 +48,8 @@ Practically speaking, it seems more useful that a person would pull out their ph
     <a href="/assets/images/poizon_plants/IMG_3408.jpg"><img src="/assets/images/poizon_plants/IMG_3408.jpg" style="width:100%;height:90%"></a>
     <figcaption>Strong red color can be indicative of poison oak but also a strong false positive.</figcaption>
     </figure>
-
+* **Training**
+    * Augmentation is quit helpful for this usecase. Shift and rotation especially. But I came across a moment when my validation accuracy would reach a certain point around 70% where it wouldn't get better; but it wouldn't get worse either. This is due to the rookie mistake of augmenting the validation data as well as the training data.
 
 * **A fair comparison:**
     <figure class="half">
