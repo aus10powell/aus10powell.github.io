@@ -14,40 +14,38 @@ description: "An attempt to make a vision classifier for poison oak practical."
 ![image](/assets/images/poizon_plants/poizon_plants_app.jpg){: style="float: left; margin-right: 1em;"}
 
 ### Intro/Motivation
-I have gotten poison oak multiple times. While it is debated whether continued exposure to the oil found on the plant that causes the allergic reaction gets worse over time or better, the fact remains it not fun. Particularly in certain areas of your body.
+I have gotten poison oak multiple times. While it's debated whether continued exposure to the oil found on the plant that causes the allergic reaction gets worse over time or better, the fact remains it's not fun and particularly unpleasant in certain areas of your body. It should be noted that while some people do not have an allergic reaction, there is no proof that you won't develop a rash with continued exposure per [American Osteopathic College of Dermatology](https://www.aocd.org/page/PoisonIvyDermatiti) (among other sources). So basically, no one is really safe.
 
-Apparently, while some people do not have an allergic reaction, there is no proof that you won't develop a rash with continued exposure per [American Osteopathic College of Dermatology](https://www.aocd.org/page/PoisonIvyDermatiti) (among other sources). So basically, no one is really safe.
-
-If you don't live in California, this might not really matter as much. While Urushiol (the oil on poison oak causing the allergic reaction) can be found on plants all over the world, it seems to really love the North American coast. Those of us living in California for more than a few years are likely familiar with, or at least have heard of, poison oak. But even people native to California (much less one of the millions of tourists) have trouble identifying the plant if is not in it's signature glowing, oily red.
+Of course if you don't live on the West Coast this might not really matter as much. While Urushiol (the oil on poison oak causing the allergic reaction) can be found on plants all over the world, it seems to really love the North American coast. Those of us living in California or Oregon for more than a few years are likely familiar with, or at least have heard of, poison oak. But even people native to California (much less one of the millions of tourists) have trouble identifying the plant if is not in it's signature glowing, oily red.
 
 Given that mobile phones are ubiquitous even when out enjoying nature, a poison oak app seemed like useful project and learning opportunity.
 
-I had no interest in duplicating effort for something that already had a solution, so I did a little research to see if there were any existing solutions for this niche challenge. Interestingly enough, there were already a few apps on the iOS store that were simple classification apps like the one I proposed. When I tested these against my gold-standard dataset, they had very similar performance the model that had been trained on Google Images. Go figure.
+I had no interest in duplicating effort for something that already had a solution, so I did a little research to see if there were any existing solutions for this niche challenge. Interestingly enough, there were already a few apps on the iOS store that were simple classification apps like the one I proposed. 
 
 ### Cold-start problem
 ![image](/assets/images/poizon_plants/classic_red_poison_oak.jpg "Classic Red Poison Oak Bush"){: style="float: right; margin-right: 1em;"}
 
 Perhaps the obvious place to start for labeled images of poison oak was Google. The easiest method I've found so far to do this is a Chrome extension [here](https://chrome.google.com/webstore/detail/imageye-image-downloader/agionbommeaifngbhincahgmoflcikhm?hl=en).
 
+As far as the semantics of the search ("poison oak", "poison oak bush", "poison oak autumn", etc.), I focused on making searches that got images of the plant under different seasons. Unsurprisingly, this is the first place where Google revealed it's bias since the major season captured for poison oak seemed to be when it was at its most obvious and red. For the "not poison" images, I tried to cover a broad flora that might exist geographically with poison oak and especially on plants whose leaves I thought would confuse the average hiker. This initial dataset netted me **about 3k images** in total after cleaning out the expected garbage images. Time to baseline.
 
-As far as the semantics of the search ("poison oak", "poison oak bush", "poison oak autumn", etc.), I focused on making searches that got images of the plant under different seasons. This is the first place where Google revealed it's bias since the major season captured for poison oak seemed to be when it was at its most obvious and red. For the "not poison" images, I tried to cover a broad flora that might exist geographically with poison oak and especially on plants whose leaves I thought would confuse the average hiker. **This initial dataset netted me about 3k images** in total after cleaning out the expected garbage images. Time to baseline.
+Just to get any idea of what kind of signal existed in this dataset, I trained a Resnet50 on a 80/20 random split of the data. After a little tweaking, I got above 98% accuracy (on validation set). This was too good to be true and a red flag that I had a lot of bias going on. My take is that Google is providing data generated by a similar model that I trained. Probably the only reason I wasn't getting 100% accuracy was due to some minor data cleaning/algorithm differences. Go figure.
 
-Just to get any idea of what kind of signal existed in this dataset, I trained a Resnet50 on a 80/20 random split of the data. After a little tweaking, I got above 98% accuracy (on validation set). This was too good to be true and a red flag that I had a lot of bias going on. My take is that Google is providing data generated by a similar model that I trained.
-
-The only solution was to gather my own data. The benefit of acquiring data this way is that I would be:
-* 1) labeling on the go
-* 2) refining the concept-space of what constituted a reasonable recognition of an image containing poison oak since this could include multiple plants.
-* 3) have a reason to go on more backpacking trips
+Of course the only solution to poor data is get more data that is better. The benefit of acquiring data this way is that I would be:
+* 1) Labeling on the go and would have more intution what my model was and wasn't understanding well
+* 2) Refining the concept-space of what constituted a reasonable recognition of an image containing poison oak since this could include multiple plants.
+* 3) Have a reason to get outdoors more often
 
 #### Labeling Process
 
 #### Choice of Cut-off Probability
 This is a choice which I've seen discussed very rarely for a binary classification problem (at least in workshops/tutorials/books) but can have great practical implications for the end-user. It generally assumed that the cut-off for a binary classifier is 50/50 for deciding whether to bin the output of the softmax as a 1 or 0. I chose to model the app as a degree of certainty that a given image was poison oak based on feedback from different people I had test the app out. In this case, binning the probabilities into categories such as "possibly poison oak", "definitley poison oak", etc. provided better intuition to the user that a 60% vs a 80% probability.
-    <figure class="half">
-    <a href="/assets/images/poizon_plants/IMG_2268.jpg"><img src="/assets/images/poizon_plants/probability_cutoff_not_poison.jpg" style="width:100%;height:90%"></a>
-    <a href="/assets/images/poizon_plants/IMG_3408.jpg"><img src="/assets/images/poizon_plants/probability_cutoff_is_poison.jpg" style="width:100%;height:90%"></a>
-    <figcaption>Probability Cut-off.</figcaption>
-    </figure>
+
+<figure class="half">
+<a href="/assets/images/poizon_plants/IMG_2268.jpg"><img src="/assets/images/poizon_plants/probability_cutoff_not_poison.jpg" style="width:100%;height:90%"></a>
+<a href="/assets/images/poizon_plants/IMG_3408.jpg"><img src="/assets/images/poizon_plants/probability_cutoff_is_poison.jpg" style="width:100%;height:90%"></a>
+<figcaption>Probability Cut-off.</figcaption>
+</figure>
 
 ## Modeling
 
