@@ -6,39 +6,50 @@ comments: true
 image: /assets/images/poizon_plants/poizon_plants_app.jpg
 categories: Computer Vision AI Machine-Learning Poison-Oak Plants
 description: "An attempt to make a vision classifier for poison oak practical."
+show_date: true
+words_per_minute: 200
 ---
 
 **An app to easily identify poison oak**
 
-# Poizon Plants [Blog in development]
+# Poizon Plants 
 ![image](/assets/images/poizon_plants/poizon_plants_app.jpg){: style="float: left; margin-right: 1em;"}
 
 ### Intro/Motivation
-I have gotten poison oak multiple times. While it's debated whether continued exposure to the oil found on the plant that causes the allergic reaction gets worse over time or better, the fact remains it's not fun and particularly unpleasant in certain areas of your body. It should be noted that while some people do not have an allergic reaction, there is no proof that you won't develop a rash with continued exposure per [American Osteopathic College of Dermatology](https://www.aocd.org/page/PoisonIvyDermatiti) (among other sources). So basically, no one is really safe.
+I have gotten poison oak multiple times. While there seems to be debates whether continued exposure to the oil found on the plant that causes the allergic reaction gets worse over time or better, the fact remains it's not fun and particularly unpleasant in certain areas of your body. It should be noted that while some people do not have an allergic reaction, there is no proof that you won't develop a rash with continued exposure per [American Osteopathic College of Dermatology](https://www.aocd.org/page/PoisonIvyDermatiti) (among other sources). Basically, no one is really safe.
 
-Of course if you don't live on the West Coast this might not really matter as much. While Urushiol (the oil on poison oak causing the allergic reaction) can be found on plants all over the world, it seems to really love the North American coast. Those of us living in California or Oregon for more than a few years are likely familiar with, or at least have heard of, poison oak. But even people native to California (much less one of the millions of tourists) have trouble identifying the plant if is not in it's signature glowing, oily red.
+Of course, if you don't live on the West Coast this might not really matter as much. While [Urushiol](https://en.wikipedia.org/wiki/Urushiol) (the oil on poison oak causing the allergic reaction) can be found in plants all over the world, it seems to really love the North American Wester coast. Those of us living in California or Oregon for more than a few years are likely familiar with, or at least have heard of, poison oak. But even people native to California (much less one of the millions of tourists) have trouble identifying the plant if is not in it's signature glowing, oily red. Enter AI assistance.
 
-Given that mobile phones are ubiquitous even when out enjoying nature, a poison oak app seemed like useful project and learning opportunity.
+Given that mobile phones are ubiquitous even when out enjoying nature, creating a poison oak app seemed like useful project and learning opportunity.
 
-I had no interest in duplicating effort for something that already had a solution, so I did a little research to see if there were any existing solutions for this niche challenge. Interestingly enough, there were already a few apps on the iOS store that were simple classification apps like the one I proposed. 
+Side note: I had no interest in duplicating effort for something that already had a solution, so I did a little research to see if there were any existing solutions for this niche personal challenge. Interestingly enough, there were already a few apps on the iOS store that were simple classification apps like the one I proposed. 
 
 ### Cold-start problem
 ![image](/assets/images/poizon_plants/classic_red_poison_oak.jpg "Classic Red Poison Oak Bush"){: style="float: right; margin-right: 1em;"}
 
-Perhaps the obvious place to start for labeled images of poison oak was Google. The easiest method I've found so far to do this is a Chrome extension [here](https://chrome.google.com/webstore/detail/imageye-image-downloader/agionbommeaifngbhincahgmoflcikhm?hl=en).
+As with any supervised learning challenge, it is critical to get a good source of labeled data. Perhaps the obvious place to start for poison oak was Google Images. In order to download large quanitites of images, I utilized a Chrome extension [here](https://chrome.google.com/webstore/detail/imageye-image-downloader/agionbommeaifngbhincahgmoflcikhm?hl=en).
 
-As far as the semantics of the search ("poison oak", "poison oak bush", "poison oak autumn", etc.), I focused on making searches that got images of the plant under different seasons. Unsurprisingly, this is the first place where the data revealed it's bias since the major season captured for poison oak seemed to be when it was at its most obvious: red or orangish-red. But this is for poison during the later half of the year and not even necessarily when it's at its oiliest. 
+As far as the semantics of the search ("poison oak", "poison oak bush", "poison oak autumn", etc.), I focused on making searches that got images of the plant under different seasons. The idea here being to capture as much heterogeneity of poison oak as possible for users of the app. Unsurprisingly, this is the first place where the data revealed its bias since the major season captured for poison oak seemed to be when it was at its most obvious: red or orangish-red starting end of summer. But this is for poison oak during the later half of the year and not even necessarily when it's at its oiliest. 
 
-For the "not poison" images, I tried to cover a broad flora that might exist geographically with poison oak and especially on plants whose leaves I thought would confuse the average hiker. This initial dataset netted me **about 3k images** in total after cleaning out the expected garbage images. Time to baseline.
+For the "not poison" images, I tried to cover a broad flora that might exist geographically with poison oak and especially on plants whose leaves I thought would confuse the average hiker. This initial dataset netted me **about 3k images** in total after cleaning out the expected garbage images (cartoons images, stock photo images with watermarks, etc.). Since transfer learning is available, this was a great start and stage to baseline model performance.
 
-Just to get any idea of what kind of signal existed in this dataset, I trained a Resnet50 on a 80/20 random split of the data. After a little tweaking, I got above 98% accuracy (on validation set). This was of course too good to be true and a red flag that I had a lot of bias going on. My take is that Google is providing data generated by a model quit similar to the one I trained. Probably the only reason I wasn't getting 100% accuracy was due to some minor data cleaning/algorithm differences.
+Just to get any idea of what kind of signal existed in this dataset, I trained a Resnet50 on a 80/20 random split of the data. After a little tweaking, I got above 98% accuracy (on validation set). This was of course too good to be true and a red flag that I had a lot of bias going on. My guess is that Google Images provided data generated by a model quit similar to the one I trained. Probably the main reason I wasn't getting 100% accuracy was due to some minor data cleaning/algorithm differences.
 
-Of course the only solution to poor data is get more data. And hopefully that captures more variety for the use-case your modeling for. The benefit of acquiring data this way is that I would be:
+Of course, the only solution to poor data is get more data. And hopefully that captures more variety for the use-case your modeling for. The benefit of acquiring data this way is that I would be:
 * 1) Labeling on the go and would have more intution what my model was and wasn't understanding well
 * 2) Refining the concept-space of what constituted a reasonable recognition of an image containing poison oak since this could include multiple plants.
 * 3) Have a reason to get outdoors more often
 
 #### Labeling Process
+
+There is a growing demand for quality labeling services. Perhaps the most well known is [Mechancial Turk](https://www.mturk.com) which provides relatively inexpensive labeling service. The challenge here is finding a domain experts which in my case relied on (most likely) utilizing, possibly, non-Californians to decide if a plant was poison oak or not. For an in-house approach services such as [LabelBox](https://labelbox.com) and [Spacy Prodigy](https://spacy.io/universe/project/prodigy/) provide a great improvement on the efficiency of human labeling. While I've had great experiences with Prodigy for NLP projects, since LabelBox provides a limited free access, I utilized their product. Regardless, it's a tedious process:
+
+
+<p align="center">
+  <img src="/assets/images/poizon_plants/tedious_work_office_spacy.png " />
+</p>
+
+
 
 #### Choice of Cut-off Probability
 This is a choice which I've seen discussed very rarely for a binary classification problem (at least in workshops/tutorials/books). It can have great practical implications for the end-user. Generally you assume the cut-off for a binary classifier at 50/50 for deciding whether to bin the output of the softmax as a 1 or 0. I chose to model the app as a degree of certainty that a given image was poison oak based on feedback from different people I had test the app out. In this case, binning the probabilities into categories such as "possibly poison oak", "definitley poison oak", etc. provided better intuition to the user that a 60% vs a 80% probability.
@@ -58,6 +69,13 @@ While initial baselining of model was quit easy with Apple's CoreML, it quickly 
 
 ### Training
 * **Model Tracking:** Utilization of Weights & Biases ([wandb.com](https://www.wandb.com/)) was very useful when iterating over different models. It even has an image viewer so that you can peek at how you model is predicting example images while it is training.[Wandb Hyper-parameter Sweeps](https://www.wandb.com/articles/introduction-hyperparameter-sweeps) was also very helpful in reducing manual rerunning of hyperparameters.
+
+<figure class="half">
+<a href="/assets/images/poizon_plants/wb_terminal.png"><img src="/assets/images/poizon_plants/wb_terminal.png" style="width:100%;height:90%"></a>
+<a href="/assets/images/poizon_plants/wb_dashboard.png"><img src="/assets/images/poizon_plants/wb_dashboard.png" style="width:100%;height:90%"></a>
+    <figcaption>Contextual image information may often be a confounder.</figcaption>
+</figure>
+
 * **Choice of architecture:**:
 Due to wanting to have a very controlled way of dealing with outliers, i.e. more distant pictures of a bush of poison oak it was necessary to use both dropout and L2 regularization ([Here is a good blog post on this topic](http://www.chioka.in/differences-between-l1-and-l2-as-loss-function-and-regularization/)). L2 was a reasonable choice for regularization since I wanted to smooth more for those outliers (as opposed to L1 which does not penalize as strongly). The reason for this is in the figure below:
     * We don't particularly care this image has a probability of 92% vs 99%
@@ -159,7 +177,7 @@ Augmentation is quit helpful for this usecase. Shift and rotation especially. Bu
 
 
 ### References
-* **[Poizon Plant iOS app](https://apps.apple.com/us/app/poizon-plant/id1475980295 "Link to iOS App")**
+* **[Poizon Plant iOS app](https://apps.apple.com/us/app/poizon-plant/id1475980295 "Link to iOS App")** (Note: the app being available to download is contingent upon free ads covering the registration cost of iOS apps. If the link is broken, it's likely because there wasn't enough ad revenue)
 
 ### Papers I checked out
 * [A Leaf Recognition Algorithm for Plant Classification Using Probabilistic Neural Network](https://ieeexplore.ieee.org/abstract/document/4458016)
