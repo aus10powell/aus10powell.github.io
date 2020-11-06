@@ -12,8 +12,15 @@ words_per_minute: 200
 
 **An app to easily identify poison oak**
 
+
+<a href="https://poison-app.herokuapp.com" rel="Streamlit Poison Oak App">![Foo](/assets/images/poizon_plants/try_it.png)</a>
+
+[Streamlit Poison Oak App](https://poison-app.herokuapp.com)
+
+
 # Poizon Plants 
 ![image](/assets/images/poizon_plants/poizon_plants_app.jpg){: style="float: left; margin-right: 1em;"}
+
 
 ### Intro/Motivation
 I have gotten poison oak multiple times. While exposure to the oil found on the plant will not cause an allergic reaction for everyone, the fact remains it's not fun. Also, it should be noted, that while some people definitely do not have an allergic reaction, there is no proof that you won't develop an allergic reaction over time with continued exposure per [American Osteopathic College of Dermatology](https://www.aocd.org/page/PoisonIvyDermatiti) (among other sources). Basically, no one is really safe.
