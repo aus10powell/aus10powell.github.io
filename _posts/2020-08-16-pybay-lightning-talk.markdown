@@ -1,5 +1,5 @@
 ---
-layout: splash
+layout: single
 title:  "PyBay 2020 Lightning Talk on Predicting NoShows"
 date:   2020-08-16
 comments: true
