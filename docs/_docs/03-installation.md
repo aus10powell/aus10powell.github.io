@@ -1,4 +1,4 @@
----
+ sudo chown -R $(whoami):wheel /usr/local---
 title: "Installation"
 permalink: /docs/installation/
 excerpt: "Instructions for installing the theme for new and existing Jekyll based sites."
