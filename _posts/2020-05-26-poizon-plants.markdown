@@ -23,13 +23,13 @@ words_per_minute: 200
 
 
 ### Intro/Motivation
-I have gotten poison oak multiple times. While exposure to the oil found on the plant will not cause an allergic reaction for everyone, the fact remains it's not fun. Also, it should be noted, that while some people definitely do not have an allergic reaction, there is no proof that you won't develop an allergic reaction over time with continued exposure per [American Osteopathic College of Dermatology](https://www.aocd.org/page/PoisonIvyDermatiti) (among other sources). Basically, no one is really safe.
+I have gotten poison oak multiple times. While exposure to the oil found on the plant will not cause an allergic reaction for everyone, the fact remains it's not fun. Also, it should be noted that while some people definitely do not have an allergic reaction, there is no proof that you won't develop an allergic reaction over time with continued exposure, according to the American Osteopathic College of Dermatology and other sources. Basically, no one is really safe.
 
-Of course, if you don't live on the West Coast all of this might not really matter too much. While [Urushiol](https://en.wikipedia.org/wiki/Urushiol) (the oil on poison oak causing the allergic reaction) can be found in plants all over the world, it seems to really love the North American Wester coast. Those of us living in California or Oregon for more than a few years are likely familiar with, or at least have heard of, poison oak. But even people native to California (much less one of the millions of tourists) have trouble identifying the plant if is not in it's signature glowing, oily red. It seems like a good use-case for computer vision.
+Of course, if you don't live on the West Coast, all of this might not matter too much. While [Urushiol](https://en.wikipedia.org/wiki/Urushiol) (the oil on poison oak causing the allergic reaction) can be found in plants all over the world, it seems to really love the North American West Coast. Those of us living in California or Oregon for more than a few years are likely familiar with, or at least have heard of, poison oak. But even people native to California (much less one of the millions of tourists) have trouble identifying the plant if it's not in its signature glowing, oily red. It seems like a good use-case for computer vision.
 
-Given that mobile phones are ubiquitous even when out enjoying nature, creating a poison oak app seemed like useful project and learning opportunity.
+Given that mobile phones are ubiquitous even when out enjoying nature, creating a poison oak app seemed like a useful project and learning opportunity.
 
-Side note: I had no interest in duplicating effort for something that already had a solution, so I did a little research to see if there were any existing solutions for this niche personal challenge. Interestingly enough, there were already a few apps on the iOS store that were simple classification apps like the one I proposed. 
+Side note: I had no interest in duplicating effort for something that already had a solution, so I did a little research to see if there were any existing solutions for this niche personal challenge. Interestingly enough, there were already a few apps on the iOS store that were simple classification apps like the one I proposed.
 
 ### Cold-Start Problem
 ![image](/assets/images/poizon_plants/classic_red_poison_oak.jpg "Classic Red Poison Oak Bush"){: style="float: right; margin-right: 1em;"}
@@ -132,7 +132,7 @@ with open('poison_labels.txt','w') as f:
 <div style="text-align:center"><img src="/assets/images/poizon_plants/xcode_model.png" /><figcaption>Drop model in iOS app</figcaption></div>
 
 ## Other Training Lessons Learned
-* Initially, I made all layers trainable which resulted in a extremely spiky, but generally decreasing validation loss but only after huge number of 250 epochs. After running some experiments, I found a much steadier decrease of validation loss at training only the last 20 layers which resulted in
+* Initially, I made all layers trainable which resulted in a extremely spiky, but generally decreasing validation loss but only after huge number of 250 epochs. After running some experiments, I found a much steadier decrease of validation loss at training only the last 20 layers which resulted in a smoother convergence and higher overall accuracy. I also experimented with different optimizers, including Adam and SGD, and found that Adam yielded the best results. In addition, I utilized data augmentation techniques such as random rotations and flips to further improve the model's robustness. Finally, I fine-tuned the hyperparameters of the model, such as the learning rate and batch size, to achieve the best possible performance. 
 
 
 * **Choice of object detection vs classification task**
@@ -141,9 +141,9 @@ When thinking about how to make the app practical for hikers vs what was practic
 <div style="text-align:center"><img src="/assets/images/poizon_plants/object_dection_bush.jpg" /><figcaption>Practically speaking, it seems more useful that a person would pull out their phone and sweep the camera over a range of plants. Looking ahead, this would involve a lot of manual labeling of bounding boxes and too much work. The project could always be easily extended to include this scope also. So classification it was.</figcaption></div>
 
 * **Getting to > 90% F1 score**
-This goal was set both for practical reasons (having a classifier app that was a satisfying product), as well as a mental milestone for "I understand training an image classifier". There is potentially a lot of learning to be had between an 87% F1 score that I struggled with for a while and 90% F1-score that I finally achieved. <u>Additionally</u>, the 
+This goal was set both for practical reasons (having a classifier app that was a satisfying product), as well as a mental milestone for "I understand training an image classifier". There is potentially a lot of learning to be had between an 87% F1 score that I struggled with for a while and 90% F1-score that I finally achieved. Achieving a >90% F1 score was a critical goal for developing a high-quality image classifier app, as well as a personal milestone for my understanding of training such a model. The journey from struggling with an 87% F1 score to finally hitting 90% taught me a lot about the learning potential between these two points. 
 
-* iOS uses 299x299 images so it was important to optimize on this image size during model development
+* It was particularly important to optimize on the 299x299 image size used by iOS during model development for performance, compatibility with the iOS platform and consistent testing.
 
 * **Focus on your highest-loss images to understand true performance** 
     This was useful both for cleaning bad/poor quality images as well as finding areas where potentially you might need to break out a new class, e.g. "Unknown bush"
@@ -152,7 +152,7 @@ This goal was set both for practical reasons (having a classifier app that was a
     * Despite having gone through and labeled, by hand, thousands of images, examining images with top log-loss showed the my human error. I think one reason for this is during the labeling process, I had additional context for "yes this is poison oak" due to having walked by a large bush of poison oak already. When looking only at the photo that was taken with no additional context, which is what the neural net is doing, it was not clear to my human eye.
 
 * **How do you know when your data is enough?**
-Particularly for the practicality of my problem where a region taken with your phone "may contain poison oak", it wasn't immediately clear if I had pictures with sufficient variation. An example of when this issue first surfaced was when a plant that was not poison oak but was reddish immediately caused trouble for the algorithm. It was a bit of a Catch-22, because while red is such strong indicator (for humans and neural nets) for being a sumac plant, *red is definitely **not*** a rule for a plant being poison oak.
+For the practicality of my problem, where a region captured with a phone camera "may contain poison oak", it was not immediately clear if I had taken pictures with sufficient variation. An example of when this issue first surfaced was when a reddish plant, which was not poison oak, caused trouble for the algorithm. This presented a bit of a challenge because while red is a strong indicator (for both humans and neural nets) for identifying sumac plants, it is not a definitive rule for identifying poison oak."
     <figure class="half">
     <a href="/assets/images/poizon_plants/IMG_2268.jpg"><img src="/assets/images/poizon_plants/IMG_2268.jpg" style="width:100%;height:90%"></a>
     <a href="/assets/images/poizon_plants/IMG_3408.jpg"><img src="/assets/images/poizon_plants/IMG_3408.jpg" style="width:100%;height:90%"></a>
@@ -171,6 +171,10 @@ Augmentation is quit helpful for this use-case. Shift and rotation especially. B
 
 ## Conclusion
 If you've gotten this far: thanks for reading! 
+
+Several training lessons were learned during the development of the Poizon Plant iOS app. I discovered that training only the last 20 layers and using Adam optimizer led to a smoother convergence and higher overall accuracy. Data augmentation techniques, such as random rotations and flips, were utilized to further improve the model's robustness. In addition, the hyperparameters of the model were fine-tuned to achieve the best possible performance. The choice of classification task over object detection was made for practical reasons, and a goal of achieving over 90% F1 score was set. I found that focusing on high-loss images helped to understand true performance, and careful consideration was given to label the data properly. Also, the use of GPUs was important to maintain the momentum of the project. Finally, a fair comparison between images was essential to avoid contextual information as a confounder. Overall, these lessons demonstrate the importance of careful consideration and experimentation during the development of deep learning models.
+
+ I deployed the model using TensorFlow Lite, a mobile framework for running machine learning models on mobile devices. To make the model even more efficient on mobile, I used the MobileNetV2 architecture, which is designed specifically for mobile devices and has a smaller memory footprint than other CNN architectures. With the model deployed and optimized for mobile, it was ready for use in real-world applications.
 
 ### References
 * **[Poizon Plant iOS app](https://apps.apple.com/us/app/poizon-plant/id1475980295 "Link to iOS App")** (Note: the app being available to download is contingent upon free ads covering the registration cost of iOS apps. If the link is broken, it's likely because there wasn't enough ad revenue)
