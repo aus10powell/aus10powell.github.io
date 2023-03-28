@@ -97,7 +97,7 @@ The key structural advantage of this model is information is mapped in pairs. In
 
 
 ### Conclusion
-This project was largely attempting to duplicate the original Ubuntu Dual Encoder paper for health data. Comparison of base metrics were quit similar to original paper with minimal effort in tuning model and adjusting parsing of data. One key difference in this implementation of that paper was the omission of comments previous to a given query to give context in selecting response. The results from these data however are promising and suggest a worthwhile effort in creating a more satisfying and health-centric responses.
+This project was largely attempting to duplicate the original Ubuntu Dual Encoder paper for health data. Comparison of base metrics were quit similar to original paper with minimal effort in tuning model and adjusting parsing of data. One key difference in this implementation of that paper was the omission of comments previous to a given query to give context in selecting response. The results from these data however are promising and suggest a worthwhile effort in creating a more satisfying and health-centric responses. If successful, the application of this technology could potentially revolutionize the healthcare industry by providing accessible and accurate responses to health-related queries in real-time. However, the approach is highly dependent on the quality of the dataset used, and further research is needed to test the generalizability of the model on other datasets.
 
 ### Papers
 
