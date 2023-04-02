@@ -6,11 +6,6 @@ comments: true
 #image: /assets/images/automated_health_responses/
 categories: Natural-Language-Processing AI Chatbotg Machine-Learning
 ---
- 
-*This is a proof-of-concept for generating appropriate responses to health-related questions.*
-
-
-*Code for this project can be viewed at: [Automated Health Responses](https://github.com/aus10powell/Automated-Health-Responses)*
 
 ## Intro
 
@@ -123,3 +118,5 @@ The objective of this project was to adapt the Ubuntu Dual Encoder paper for hea
 
 #### Refinement of "Health" purposes
 Most of this work was towards creating an initial viable solution in human-like responses to a health-related statement or question. One way of refining the types of responses would be to determine what type of statement/questions started the conversation and score possible answers only within that concept space.
+
+*Code for this project can be viewed at: [Automated Health Responses](https://github.com/aus10powell/Automated-Health-Responses)*
