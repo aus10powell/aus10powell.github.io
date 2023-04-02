@@ -4,6 +4,6 @@ title: About Me
 permalink: /about/
 ---
 
-I started my data journey with Physics and Mathematics later continuing on in Statistics. My new education journey is to become a better software engineer as I have come to appreciate and love a well-engineered data solution as much as the insights themselves.
+I began my data journey studying Physics and Mathematics before moving on to Statistics. While I have always had a passion for data and analytics, I now recognize the importance of software engineering in creating well-engineered data solutions. 
 
-I enjoy trail running and back-packing.
+Outside of work, I enjoy trail running and back-packing.
