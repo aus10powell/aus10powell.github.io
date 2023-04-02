@@ -14,23 +14,23 @@ categories: Natural-Language-Processing AI Chatbotg Machine-Learning
 
 ## Intro
 
-The goal of this project is to demonstrate a proof-of-concept for generating appropriate responses to health-related questions. The idea is to understand what it would take to create a full-scale interaction between a healthcare professional and someone in need of healthcare. While the medium of interaction, whether online, email, or face-to-face, would certainly affect the approach for any full-scale prototype, having a minimal viable product to showcase the approach is crucial.
+The goal of this project is to showcase a proof-of-concept for generating appropriate responses to health-related questions. While the medium of interaction, such as online, email, or face-to-face, would impact the approach for any full-scale prototype, having a minimal viable product to showcase the approach is essential.
 
-This is a bootstrapped initiative, focusing on what can be safely shared with the audience without exposing any patient data. The envisioned AI system would interact with the user in a way that is relative and complementary to a doctor's expertise, never having the final say. However, this is a highly complex and layered problem, and reducing it to a simpler problem is a crucial step. For instance, given a statement or query about someone's health, what would be an appropriate response from a clinician?
+As a bootstrapped initiative, the focus is on sharing safe content with the audience without exposing any patient data. The envisioned AI system would interact with the user in a way that complements a doctor's expertise, but never replacing the final say. However, this is a highly complex problem, and reducing it to a simpler problem is a crucial step. For example, given a statement or query about someone's health, what would be an appropriate response from a clinician?
 
-This problem is only one step in the direction of a comprehensive system that can be integrated with the likes of Google voice or Alexa, once they determine that the user is talking about their health. The aim of this project is to lay the groundwork for such a system, exploring the possibilities of generating appropriate responses to health-related queries.
+This problem is only one step towards creating a comprehensive system that can integrate with platforms such as Google voice or Alexa, once they determine that the user is discussing their health. The aim of this project is to lay the foundation for such a system, exploring the possibilities of generating suitable responses to health-related inquiries. A minimum viable product will serve as a proof-of-concept and demonstrate the approach, with the potential to revolutionize the healthcare industry by providing accessible and accurate responses to health-related queries in real-time.
 
 #### General approaches to machine generated conversational responses
 Although it seems like most developed solutions are a little mix-and-match, these categories are generally how most people would bucket at chatbot approach. Researching these was particularly helpful in characterizing my understanding.
 
 * <u>Rule-base:</u> This is along the lines of: given a serious question about heart attack. Tell them to call 911. Not robust. Hard to maintain. Etc...
 
-* <u>Generative:</u> Also called auto-encounters and basically the way an auto-translate service works. Given a sequence of characters or tokens. Predict the following sequence of tokens or characters. Not the best choice for this project largely because although some amazing advances have been made. It is very much to random especially in a medical context with often sparsely used words.
-* <u>Selective:</u> There are many different approaches here. But generally speaking,  so far it the most most robust and time tested. Basically you want to select the best response (or best set of response) using a classified of sorts (more on that later) from a bank of potential responses.
+* <u>Generative:</u> Another approach that has been explored in natural language processing is autoencoding, also known as autoencoders. This technique involves predicting the next sequence of characters or tokens given a sequence of input tokens. However, autoencoding may not be the best choice for this project due to its tendency towards randomness, especially in a medical context where the vocabulary can be complex and specialized. While significant advances have been made in this area, sparsely used words in the medical domain can still pose a challenge for autoencoding-based models.
+* <u>Selective:</u> There are many different approaches that can be used for selecting the best response from a bank of potential responses, but one of the most robust and time-tested approaches is using a classifier. Essentially, a classifier is used to determine the best response(s) based on certain criteria, such as relevance or accuracy. This approach has been widely used in various fields, including natural language processing and information retrieval.
 
-While the choice of a rule-based and generative approach may have seemed appropriate initially, it is important to note that this type of model can be limited in its ability to capture the nuances of natural language and human conversation. In particular, a rule-based approach may struggle to handle the complex and varied language used in clinical settings, which can include medical jargon, colloquialisms, and other forms of domain-specific language.
+While a rule-based and generative approach may have appeared suitable at first, it is worth noting that these models can be limited in their capacity to capture the nuances of natural language and human conversation. Specifically, a rule-based approach may struggle with the complex and diverse language used in clinical settings, which can include medical jargon, colloquialisms, and other domain-specific language.
 
-Additionally, while giving clinicians control over the response selection process may seem beneficial, it can also introduce bias into the system and limit the diversity of responses generated. This is especially important in the context of healthcare, where a diverse range of perspectives and approaches may be necessary to provide effective care to patients.
+Furthermore, while offering clinicians control over the response selection process may appear advantageous, it can also introduce bias into the system and restrict the variety of responses generated. This is especially critical in the healthcare field, where a wide range of perspectives and approaches may be required to provide effective care to patients. As a result, a more adaptable and data-driven approach that can learn from a diverse range of inputs may be more appropriate for generating responses to health-related queries.
 
 This led to the well-known paper *The Ubuntu Dialogue Corpus: A Large Dataset for Research in Unstructured Multi-Turn Dialogue Systems* [(here)](https://arxiv.org/pdf/1506.08909.pdf) which introduces Ubuntu data to model appropriate responses to technical questions on a public forum. Coincidentally, the dataset that I had chosen was also based on public forum data, Reddit's AskDocs Forum [(here)](https://www.reddit.com/r/AskDocs/).
 
@@ -69,8 +69,7 @@ A key way of measuring how dynamic a conversation is for a thread is counting th
 
 *To briefly summarize what we're modeling: For a given query (i.e. question), can we make a binary selection from a list of possible answers saying if the answer is appropriate.*
 
-
-I started with code provided in [this excellent blog: Implementation of dual encoder using Keras](https://basmaboussaha.wordpress.com/2017/10/18/implementation-of-dual-encoder-using-keras/), updating some of the code for my needs. I recommend reading the blog and paper it is based on. Although the model can train embeddings as it goes along, both the 6B token and 840B token Glove embeddings were tested with substantial improvements made with the 840B tokens. Embeddings built on all 2015 reddit comments were also tested but with no decrease in loss.
+I utilized code from a blog post ([Implementation of dual encoder using Keras](https://basmaboussaha.wordpress.com/2017/10/18/implementation-of-dual-encoder-using-keras/)) on the implementation of dual encoders using Keras, making some updates to suit my specific needs. I highly recommend reading the blog post and the paper it's based on for a more comprehensive understanding of the model. In testing, both the 6B token and 840B token Glove embeddings were utilized, with substantial improvements seen when using the 840B tokens. Additionally, embeddings trained on all 2015 Reddit comments were tested but showed no significant decrease in loss.
 
 <figure>
 <div align="center">
@@ -82,7 +81,7 @@ I started with code provided in [this excellent blog: Implementation of dual enc
 </div>
 </figure>
 
-The key structural advantage of this model is information is mapped in pairs. In Keras this is defined as a sequential model then embedding layer which is initialized with the GLoVe embeddings. I chose to allow these embeddings to be trained further during training process.
+The main structural advantage of this model is that information is mapped in pairs. This is achieved in Keras by defining a sequential model with an embedding layer initialized with GLoVe embeddings. To enhance the performance of the model, I allowed these embeddings to be fine-tuned during the training process. By doing so, the model can learn to represent the data more accurately and improve its ability to make predictions.
 
 ### Results
 <figure>
@@ -97,7 +96,7 @@ The key structural advantage of this model is information is mapped in pairs. In
 
 
 ### Conclusion
-This project was largely attempting to duplicate the original Ubuntu Dual Encoder paper for health data. Comparison of base metrics were quit similar to original paper with minimal effort in tuning model and adjusting parsing of data. One key difference in this implementation of that paper was the omission of comments previous to a given query to give context in selecting response. The results from these data however are promising and suggest a worthwhile effort in creating a more satisfying and health-centric responses. If successful, the application of this technology could potentially revolutionize the healthcare industry by providing accessible and accurate responses to health-related queries in real-time. However, the approach is highly dependent on the quality of the dataset used, and further research is needed to test the generalizability of the model on other datasets.
+The objective of this project was to adapt the Ubuntu Dual Encoder paper for health data. Comparing base metrics to the original paper showed similar results, with minimal model tuning and data parsing adjustments. However, unlike the original paper, comments prior to a given query were omitted to provide context in selecting responses. Despite this difference, results from the health data are promising and indicate potential for creating more satisfying and health-centric responses. If successful, this technology could help the healthcare industry by providing accessible and accurate real-time responses to health-related queries. It's important to note that the quality of the dataset used plays a significant role in the effectiveness of the approach, and further research is necessary to test its generalizability on other datasets.
 
 ### Papers
 
