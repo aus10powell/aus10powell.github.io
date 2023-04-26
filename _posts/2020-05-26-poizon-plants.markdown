@@ -5,12 +5,12 @@ date:   2020-05-26
 comments: true
 image: /assets/images/poizon_plants/poizon_plants_app.jpg
 categories: Computer Vision AI Machine-Learning Poison-Oak Plants
-description: "An attempt to make a vision classifier for poison oak practical."
+description: "A vision classifier to make identifying poison oak practical."
 show_date: true
 words_per_minute: 200
 ---
 
-**An app to easily identify poison oak**
+**A vision classifier to make identifying poison oak practical.**
 
 
 <a href="https://poison-app.herokuapp.com" rel="Streamlit Poison Oak App">![Foo](/assets/images/poizon_plants/try_it.png)</a>
