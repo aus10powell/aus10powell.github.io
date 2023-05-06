@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Medium Post on Word Embedding Comparisons for Disease Name Entity Recognition"
+title:  "Word Embedding Comparisons for Disease Name Entity Recognition"
 date:   2018-10-31
 comments: true
 # image: /assets/images/poizon_plants/poizon_plants_app.jpg

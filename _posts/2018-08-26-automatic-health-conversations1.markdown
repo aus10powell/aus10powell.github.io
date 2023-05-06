@@ -5,7 +5,10 @@ date:   2018-08-26
 comments: true
 #image: /assets/images/automated_health_responses/
 categories: Natural-Language-Processing AI Chatbotg Machine-Learning
+description: "A Deep Learning Chatbot Simulation of Clinician Conversations"
 ---
+
+**A Deep Learning Chatbot Simulation of Clinician Conversations**
 
 ## Intro
 
