@@ -1,10 +1,10 @@
 ---
 layout: single
 title:  "Twitter Account Sentiment and Text Generation"
-date:   2020-08-16
+date:   2022-11-16
 comments: true
 # image: /assets/images/poizon_plants/poizon_plants_app.jpg
-categories: NLP, API
+categories: NLP API
 description: "A text generation and sentiment analysis of 6 Twitter Accounts"
 keywords: text generation, sentiment analysis, Twitter, NLP, Transformers, HuggingFace, RESTful API
 show_date: true
@@ -13,6 +13,8 @@ words_per_minute: 300
 
 **A text generation and sentiment analysis of 6 Twitter Accounts**
 
+
+## Twitter App (warning: may be blank and take a minute to update while free servers spin up)
 <iframe
 	src="https://aus10powell-test-space.hf.space"
 	frameborder="0"
@@ -48,5 +50,9 @@ words_per_minute: 300
     * Successfully tested a hosted app as a RESTful API endpoint for all the trained GPT2 models. Main positive take-away from this is that the file requirements 
     * Learned that HuggingFace Spaces doesn't allow function call to pass through URLs with their free space...or at least it is difficult to. Using a POST request is better.
   * TODO:
-    * Test whether the app can be hit with a RESTful call from another hosted site...on hugginface I suppose
     * Investigate as to whether there is a app structure that can be flexible in deployment to either Azure or Huggingface spaces
+
+* 05/08/23
+  * TODO:
+    * Test whether the app can be hit with a RESTful call from another hosted site...on hugginface I suppose
+  * COMPLETED
