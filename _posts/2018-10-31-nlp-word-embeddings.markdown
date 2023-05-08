@@ -6,6 +6,7 @@ comments: true
 # image: /assets/images/poizon_plants/poizon_plants_app.jpg
 categories: General
 description: "An overview of out-of-box benefits evaluated on open-source health dataset"
+keywords: Tensorflow, NLP, Healthcare
 ---
 
 Named Entity Recognition (NER) is a crucial task in natural language processing, particularly in the field of biomedical research. With the rise of ELMo embeddings, I was curious to see how they stacked up against other popular word embedding techniques for a DNER task. Accurate identification and extraction of disease entities from medical texts is necessary for several applications, such as clinical decision support systems, drug discovery, and epidemiological studies. It can help researchers and healthcare professionals quickly identify relevant information from a vast amount of medical literature and electronic health records, leading to better patient outcomes and more efficient medical research. In this quick comparison, I explore the performance of different word embedding techniques for the DNER task, with a focus on the much-touted ELMo embeddings.

@@ -6,6 +6,7 @@ comments: true
 image: /assets/images/poizon_plants/poizon_plants_app.jpg
 categories: Computer Vision AI Machine-Learning Poison-Oak Plants
 description: "A computer vision classifier to make identifying poison oak practical."
+keywords: Swift, Computer Vision, Tensorflow, Google Collab, GPU, Deep Learning, Plants, Google Cloud
 show_date: true
 words_per_minute: 200
 ---

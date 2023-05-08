@@ -6,6 +6,9 @@ comments: true
 # image: /assets/images/poizon_plants/poizon_plants_app.jpg
 categories: NLP, API
 description: "A text generation and sentiment analysis of 6 Twitter Accounts"
+keywords: text generation, sentiment analysis, Twitter, NLP, Transformers, HuggingFace, RESTful API
+show_date: true
+words_per_minute: 200
 ---
 
 **A text generation and sentiment analysis of 6 Twitter Accounts**
