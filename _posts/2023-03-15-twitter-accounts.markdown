@@ -16,7 +16,7 @@ words_per_minute: 300
 
 ## Twitter App (warning: may be blank and take a minute to update while free servers spin up)
 <iframe
-	src="https://aus10powell-TwitterAccounts.hf.space"
+	src="https://aus10powell-twitteraccounts.hf.space"
 	frameborder="0"
 	width="850"
 	height="650"
