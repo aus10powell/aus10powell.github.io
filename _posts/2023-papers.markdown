@@ -16,3 +16,4 @@ words_per_minute: 300
 * [Self-supervised learning for infant cry analysis](https://arxiv.org/abs/2305.01578")
 * [CryCeleb: A Speaker Verification Dataset Based on Infant Cry Sounds](https://arxiv.org/pdf/2305.00969.pdf")
 * [Visit OpenAI's website](https://openai.com "OpenAI - Artificial Intelligence Research")
+* [RLHF: Reinforcement Learning from Human Feedback](https://huyenchip.com/2023/05/02/rlhf.html)

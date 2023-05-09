@@ -16,7 +16,7 @@ words_per_minute: 300
 
 ## Twitter App (warning: may be blank and take a minute to update while free servers spin up)
 <iframe
-	src="https://aus10powell-test-space.hf.space"
+	src="https://aus10powell-TwitterAccounts.hf.space"
 	frameborder="0"
 	width="850"
 	height="650"
@@ -53,6 +53,8 @@ words_per_minute: 300
     * Investigate as to whether there is a app structure that can be flexible in deployment to either Azure or Huggingface spaces
 
 * 05/08/23
-  * TODO:
-    * Test whether the app can be hit with a RESTful call from another hosted site...on hugginface I suppose
-  * COMPLETED
+  * COMPLETED:
+    * Test whether the app can be hit with a RESTful call from another hosted site...on hugginface I suppose. It seems the spaces on Huggingface on distributed and need to run on Docker if departing from the strict format they have for static.
+* 05/09/23
+  * COMPLETED:
+    * NOTE: It became too much to try and manage Docker as well as dealing with app when working with Azure Web Services, however the switch to Huggingface for the relative great utilization of their space makes Docker make more sense.
