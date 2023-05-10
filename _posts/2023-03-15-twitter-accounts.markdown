@@ -14,7 +14,7 @@ words_per_minute: 300
 **A text generation and sentiment analysis of 6 Twitter Accounts**
 
 
-## Twitter App (warning: may be blank and take a minute to update while free servers spin up)
+*Twitter App (warning: may be blank and take a minute to update while free servers spin up)*
 <iframe
 	src="https://aus10powell-twitteraccounts.hf.space"
 	frameborder="0"
@@ -57,4 +57,16 @@ words_per_minute: 300
     * Test whether the app can be hit with a RESTful call from another hosted site...on hugginface I suppose. It seems the spaces on Huggingface on distributed and need to run on Docker if departing from the strict format they have for static.
 * 05/09/23
   * COMPLETED:
-    * NOTE: It became too much to try and manage Docker as well as dealing with app when working with Azure Web Services, however the switch to Huggingface for the relative great utilization of their space makes Docker make more sense.
+    * NOTE: It became too much to try and manage Docker as well as dealing with app when working with Azure Web Services, however the switch to Huggingface for the relative great utilization of their space makes Docker make more sense. For the generall use-case of trying to update and showcase personal projects that are not going to be leaking money, Docker does seem to be the way to go. You don't need to build a ton of images locally either. Just perhaps when you're trouble-shooting a Docker specific issue.
+* 05/10/23
+  * TODO:
+    * Technical:
+      * Having Huggingface spaces pull from the github page...or at least be automated.
+    * Code within page:
+      * Resolve visual issues with displaying notebook html within the page
+      * Decide what should actually be displayed in the notebook
+        * Sentiment analysis on the four accounts
+    * Extra features:
+      * Sentiment: Display a sentiment score on the generated response
+      * Display a summary of the generated response. NOTE: this would fit in well with the tweet analysis over time.
+      * 
