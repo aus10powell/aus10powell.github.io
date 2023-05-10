@@ -29,6 +29,7 @@ words_per_minute: 300
   * Buit response in index.html to generate one response from those 2 accounts
   * Investigated (potentially) hosting the site on huggingface spaces
   * Investigated (potentiallu) hosting models on huggingface to pull into site
+  * NOTE: Account alikarimi_ak8 was particularily tricky as most/all tweets are written in Persian for which there is few translation apis freely available. I wound up using a huggingface library and dealing with some interesting emoji issues.
 * 04/27/23:
   * TODO:
     * Train the rest of account models
