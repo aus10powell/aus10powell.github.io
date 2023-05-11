@@ -18,7 +18,7 @@ words_per_minute: 300
 <iframe
 	src="https://aus10powell-twitteraccounts.hf.space"
 	frameborder="0"
-	width="850"
+	width="1050"
 	height="650"
 ></iframe>
 

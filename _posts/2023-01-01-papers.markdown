@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Papers Read In 2023"
+title:  "2023 Papers"
 date:   2023-01-01
 comments: true
 # image: /assets/images/poizon_plants/poizon_plants_app.jpg
@@ -22,4 +22,5 @@ words_per_minute: 300
 
 ### Large-Language Models
 * [Visit OpenAI's website](https://openai.com "OpenAI - Artificial Intelligence Research")
+* [Parameter-Efficient Transfer Learnign for NLP](http://proceedings.mlr.press/v97/houlsby19a/houlsby19a.pdf)
 * [RLHF: Reinforcement Learning from Human Feedback](https://huyenchip.com/2023/05/02/rlhf.html)
