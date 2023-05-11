@@ -3,13 +3,16 @@ layout: single
 title:  "Twitter Account Sentiment and Text Generation"
 date:   2023-11-16
 comments: true
+# image: /assets/images/poizon_plants/poizon_plants_app.jpg
 categories: NLP API
 description: "A text generation and sentiment analysis of 6 Twitter Accounts"
 keywords: text generation, sentiment analysis, Twitter, NLP, Transformers, HuggingFace, RESTful API
 show_date: true
+words_per_minute: 300
 ---
 
 **A text generation and sentiment analysis of 6 Twitter Accounts**
+
 
 *Twitter App (warning: may be blank and take a minute to update while free servers spin up)*
 <iframe
