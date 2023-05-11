@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Twitter Account Sentiment and Text Generation"
-date:   2022-11-16
+date:   2023-11-16
 comments: true
 # image: /assets/images/poizon_plants/poizon_plants_app.jpg
 categories: NLP API
