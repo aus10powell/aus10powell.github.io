@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Twitter Account Sentiment and Text Generation"
-date:   2023-11-16
+date:   2023-02-16
 comments: true
 categories: NLP API
 description: "A text generation and sentiment analysis of 6 Twitter Accounts"
@@ -11,16 +11,32 @@ show_date: true
 
 **A text generation and sentiment analysis of 6 Twitter Accounts**
 
+## Goal:
+* Generate a Tweet in the style of one from the following Twitter Accounts ("alikarimi_ak8", "elonmusk","BarackObama","taylorlorenz","cathiedwood","ylecun"). NOTE: alikarimi_ak8 tweets often in Persian however generated tweets are in English.
+* Provide Sentiment Analysis for the 6 accounts NOTE: Based on saved historical data not live data due to the uncertain nature of scraping tweets with Elon Musk acquisition. 
+* TBD: Provide summary of each account's tweets
+* TBD: Provide RestAPI (uncertain if possible with currently deployment) for:
+  * Account statuses
+  * Tweets within date-range
+  * Sentiment of tweets for account within date-range
+
+## Twitter Accounts 
 *Twitter App (warning: may be blank and take a minute to update while free servers spin up)*
-<iframe
-	src="https://aus10powell-twitteraccounts.hf.space"
-	frameborder="0"
-	width="1050"
-	height="650"
-></iframe>
+<div style="text-center;">
+    <iframe src="https://aus10powell-twitteraccounts.hf.space"
+            frameborder="100"
+            width="900"
+            height="750">
+    </iframe>
+</div>
 
+### Deployment
+* FastAPI
+* Docker
+* Huggingface Spaces (Free, larger-than-standard free compute and memory. Enough to save models on space without using API)
+* Gunicorn is used to spawn the FastAPI on four child worker processes using the Asynchronous Uvicorn Worker Class. Each Uvicorn worker class runs the FastAPI app on a randomly chosen process id. The Gunicorn runs on a process id that can be configured to run on a specified port and handles the request delegation. All four instances of the FastAPI will use the same database created in the Azure Database for PostgreSQL Server. The connection to the database is established and disconnected in the startup and shutdown events of the FastAPI, respectively. The App Service deployment configuration automatically pulls and deploys any changes made to the GitHub repository it is configured with.
 
-# Notes:
+<!-- # Notes:
 * 04/26/2023:
   * Trained 2 accounts models
   * Buit response in index.html to generate one response from those 2 accounts
@@ -67,4 +83,8 @@ show_date: true
     * Extra features:
       * Sentiment: Display a sentiment score on the generated response
       * Display a summary of the generated response. NOTE: this would fit in well with the tweet analysis over time.
-      * 
+      *  
+* 05/12/23
+  * COMPLETED:
+    * Somewhat justified display on Markdown page
+      -->
