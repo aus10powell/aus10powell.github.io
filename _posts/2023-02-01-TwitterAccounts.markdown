@@ -21,7 +21,7 @@ show_date: true
 ## Twitter Accounts 
 *Twitter App (warning: may be blank and take a minute to update while free servers spin up)*
 <div style="text-center;">
-    <iframe src="https://huggingface.co/spaces/aus10powell/test"
+    <iframe src="https://aus10powell-twitteraccounts.hf.space"
             frameborder="100"
             width="1000"
             height="1550">
