@@ -15,8 +15,6 @@ show_date: true
 * Generate a Tweet in the style of one from the following Twitter Accounts ("alikarimi_ak8", "elonmusk","BarackObama","taylorlorenz","cathiedwood","ylecun"). NOTE: alikarimi_ak8 tweets often in Persian however generated tweets are in English.
 * Provide Sentiment Analysis for the 6 accounts NOTE: Based on saved historical data not live data due to the uncertain nature of scraping tweets with Elon Musk acquisition. 
 * TBD: Provide summary of each account's tweets
-* TBD: Provide RestAPI (uncertain if possible with currently deployment) for:
-  * Account statuses
   * Tweets within date-range
   * Sentiment of tweets for account within date-range
 
@@ -25,16 +23,20 @@ show_date: true
 <div style="text-center;">
     <iframe src="https://aus10powell-twitteraccounts.hf.space"
             frameborder="100"
-            width="900"
-            height="750">
+            width="1000"
+            height="1550">
     </iframe>
 </div>
 
 ### Deployment
+**Tech used:**
 * FastAPI
 * Docker
 * Huggingface Spaces (Free, larger-than-standard free compute and memory. Enough to save models on space without using API)
 * Gunicorn is used to spawn the FastAPI on four child worker processes using the Asynchronous Uvicorn Worker Class. Each Uvicorn worker class runs the FastAPI app on a randomly chosen process id. The Gunicorn runs on a process id that can be configured to run on a specified port and handles the request delegation. All four instances of the FastAPI will use the same database created in the Azure Database for PostgreSQL Server. The connection to the database is established and disconnected in the startup and shutdown events of the FastAPI, respectively. The App Service deployment configuration automatically pulls and deploys any changes made to the GitHub repository it is configured with.
+* Sentiment Model Used: [twitter-roberta-base-sentiment](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment)
+* Generative Model Used: [OpenAI GPT2](https://huggingface.co/transformers/v4.4.2/model_doc/gpt2.html)
+
 
 <!-- # Notes:
 * 04/26/2023:
@@ -87,4 +89,7 @@ show_date: true
 * 05/12/23
   * COMPLETED:
     * Somewhat justified display on Markdown page
+    * Adjusted color-schemes and display of sentiments
+    * Started again on summarization of tweets:
+      * Reduce a long list of tweets down enough to run a deep learning summarizer on it
       -->
