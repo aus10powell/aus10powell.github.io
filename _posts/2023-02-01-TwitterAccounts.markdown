@@ -92,4 +92,14 @@ show_date: true
     * Adjusted color-schemes and display of sentiments
     * Started again on summarization of tweets:
       * Reduce a long list of tweets down enough to run a deep learning summarizer on it
+
+* 05/14/23:
+  * COMPLETED:
+    * Potentially tracked down one issue with the hugging face regarding why the response was not being generated.
+
+* 05/15/23:
+  * Completed index.html for returning tweets
+  * added tweepy integration for returning specific tweets along with javascript callbacks.
+  * TODO:
+    * Reformate generate a reply...it doesn't make sense to be at the top
       -->
