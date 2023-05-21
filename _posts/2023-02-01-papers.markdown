@@ -26,6 +26,10 @@ words_per_minute: 300
     * BART is a denoising autoencoder, which means that it is trained on a dataset of corrupted text. The corruptions can be simple, such as replacing words with random words, or more complex, such as removing words or sentences. BART is trained to reconstruct the original text from the corrupted text.
     * This training procedure helps BART to learn to represent the meaning of text, even when the text is corrupted. This makes BART well-suited for natural language generation, translation, and comprehension tasks.
 
+## ML
+* [DeepHit: A Deep Learning Approach to Survival Analysis with Competing Risks
+](http://medianetlab.ee.ucla.edu/papers/AAAI_2018_DeepHit) Time-to-event analysis is widely used in economics, finance, engineering, medicine and many other areas. Previous models rely on strong parametric assumptions that are often violated. DeepHit uses a deep neural network to learn the distribution of survival times directly. Comparisons with previous models on the basis of real and synthetic datasets demonstrate that DeepHit achieves statistically significant performance improvements.
+
 ### Large-Language Models
 * [Parameter-Efficient Transfer Learning for NLP](http://proceedings.mlr.press/v97/houlsby19a/houlsby19a.pdf)
 * [RLHF: Reinforcement Learning from Human Feedback (A blog by Chip Huyen)](https://huyenchip.com/2023/05/02/rlhf.html)
