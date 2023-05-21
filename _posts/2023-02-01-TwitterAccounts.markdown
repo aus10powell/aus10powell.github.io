@@ -29,15 +29,19 @@ show_date: true
 </div>
 
 ### Deployment
-**Tech used:**
-* FastAPI
-* Docker (To simply build base potentially on larger deployment)
-* Huggingface Spaces (Free, larger-than-standard free compute and memory. Enough to save models on space without using API)
-* Github Actions (to sync with Huggingface Spaces)
-* Gunicorn is used to spawn the FastAPI on four child worker processes using the Asynchronous Uvicorn Worker Class. Each Uvicorn worker class runs the FastAPI app on a randomly chosen process id. The Gunicorn runs on a process id that can be configured to run on a specified port and handles the request delegation. All four instances of the FastAPI will use the same database created in the Azure Database for PostgreSQL Server. The connection to the database is established and disconnected in the startup and shutdown events of the FastAPI, respectively. The App Service deployment configuration automatically pulls and deploys any changes made to the GitHub repository it is configured with.
-* Persion to English: 
-* Sentiment Model Used: [twitter-roberta-base-sentiment](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment)
-* Generative Model Used: [OpenAI GPT2](https://huggingface.co/transformers/v4.4.2/model_doc/gpt2.html)
+**Tech Stack**
+
+* **Web Stack:**
+  * FastAPI
+  * Docker (To simply build base potentially on larger deployment)
+  * Gunicorn is used to spawn the FastAPI on four child worker processes using the Asynchronous Uvicorn Worker Class. Each Uvicorn worker class runs the FastAPI app on a randomly chosen process id. The Gunicorn runs on a process id that can be configured to run on a specified port and handles the request delegation. All four instances of the FastAPI will use the same database created in the Azure Database for PostgreSQL Server. The connection to the database is established and disconnected in the startup and shutdown events of the FastAPI, respectively. The App Service deployment configuration automatically pulls and deploys any changes made to the GitHub repository it is configured with.
+  * Huggingface Spaces (Free, larger-than-standard free compute and memory. Enough to save models on space without using API)
+* **ML/DevOps:**
+  * Github Actions (to sync with Huggingface Spaces)
+* **Models:**
+  * Persion to English: For tweets from [mt5-base-parsinlu-opus-translation_fa_en](https://huggingface.co/persiannlp/mt5-base-parsinlu-opus-translation_fa_en)
+  * Sentiment Model Used: [twitter-roberta-base-sentiment](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment)
+  * Generative Model Used: [OpenAI GPT2](https://huggingface.co/transformers/v4.4.2/model_doc/gpt2.html). Fine-tunning performed on Apple Silicon (M2).
 
 
 <!-- # Notes:
