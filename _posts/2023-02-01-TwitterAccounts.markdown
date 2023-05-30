@@ -108,4 +108,8 @@ show_date: true
   * added tweepy integration for returning specific tweets along with javascript callbacks.
   * TODO:
     * Reformate generate a reply...it doesn't make sense to be at the top
+
+* 05/20/22
+  * Completed refactoring of some old summarization and examples.ipynb code
+  * Verified that additional information and metrics can be pulled for the tweets
       -->

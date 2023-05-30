@@ -14,9 +14,15 @@ words_per_minute: 200
 **A computer vision classifier to make identifying poison oak practical.**
 
 
-<a href="https://poison-app.herokuapp.com" rel="Streamlit Poison Oak App">![Foo](/assets/images/poizon_plants/try_it.png)</a>
+<div style="display: flex; justify-content: center;">
+  <iframe
+    src="https://aus10powell-poizon-app.hf.space"
+    width="700"
+    height="550"
+    display="block"
+  ></iframe>
+</div>
 
-[Streamlit Poison Oak App](https://poison-app.herokuapp.com)
 
 
 # Poizon Plants 
