@@ -25,7 +25,8 @@ words_per_minute: 300
 * [BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension](https://arxiv.org/abs/1910.13461)
     * BART is a denoising autoencoder, which means that it is trained on a dataset of corrupted text. The corruptions can be simple, such as replacing words with random words, or more complex, such as removing words or sentences. BART is trained to reconstruct the original text from the corrupted text.
     * This training procedure helps BART to learn to represent the meaning of text, even when the text is corrupted. This makes BART well-suited for natural language generation, translation, and comprehension tasks.
-    * [Backpack Language Models](https://arxiv.org/abs/2305.16765)
+* [Backpack Language Models](https://arxiv.org/abs/2305.16765)
+    * Backpacks is a neural architecture that combines strong modeling performance with interpretability and control. It learns multiple sense vectors for each word, representing different aspects of the word, and allows for intervention and modification of these vectors to change the model's behavior. It outperforms larger models in lexical similarity evaluations and enables controllable text generation and debiasing through sense vector manipulation.
 
 ## ML
 * [DeepHit: A Deep Learning Approach to Survival Analysis with Competing Risks
