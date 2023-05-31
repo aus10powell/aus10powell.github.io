@@ -16,7 +16,7 @@ description: "A Deep Learning Chatbot Simulation of Clinician Conversations"
  <img src="/assets/images/automated_health_responses/AU2GZe5okwrnJyiUfHS7--1--m98u7.jpg"
      alt="askDocs example"
      style="width:350px;"/>
-<figcaption>Conversations Clinical Conversations</figcaption>
+<figcaption>Clinical Conversations</figcaption>
 </div>
 
 
