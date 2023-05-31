@@ -10,6 +10,18 @@ description: "A Deep Learning Chatbot Simulation of Clinician Conversations"
 
 **A Deep Learning Chatbot Simulation of Clinician Conversations**
 
+
+
+<div align="center">
+ <img src="/assets/images/automated_health_responses/AU2GZe5okwrnJyiUfHS7--1--m98u7.jpg"
+     alt="askDocs example"
+     style="width:350px;"/>
+<figcaption>Conversations Clinical Conversations</figcaption>
+</div>
+
+
+
+
 ## Intro
 
 The goal of this project is to showcase a proof-of-concept for generating appropriate responses to health-related questions. While the medium of interaction, such as online, email, or face-to-face, would impact the approach for any full-scale prototype, having a minimal viable product to showcase the approach is essential.
