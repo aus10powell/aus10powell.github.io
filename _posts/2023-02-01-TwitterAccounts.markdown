@@ -41,7 +41,7 @@ show_date: true
 * **Models:**
   * Persion to English: For tweets from [mt5-base-parsinlu-opus-translation_fa_en](https://huggingface.co/persiannlp/mt5-base-parsinlu-opus-translation_fa_en)
   * Sentiment Model Used: [twitter-roberta-base-sentiment](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment)
-  * Generative Model Used: [OpenAI GPT2](https://huggingface.co/transformers/v4.4.2/model_doc/gpt2.html). Fine-tunning performed on Apple Silicon (M2).
+  * Generative Model Used: [OpenAI GPT2](https://huggingface.co/transformers/v4.4.2/model_doc/gpt2.html). 
 
 
 <!-- # Notes:

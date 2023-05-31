@@ -19,7 +19,7 @@ words_per_minute: 300
     * The self-supervised approach was able to achieve comparable performance to a supervised learning approach that was trained on a small amount of labeled data.
     * Self-supervised learning could be a valuable tool for developing new and improved infant cry analysis systems.
 * [CryCeleb: A Speaker Verification Dataset Based on Infant Cry Sounds](https://arxiv.org/abs/2305.00969")
-    * The CryCeleb dataset is a large and diverse dataset of infant cry sounds.
+    * The CryCeleb dataset is a large and diverse dataset of infant cry sounds. This challenge has narrowed in on the task of distinguishing baby cries from each other.
 
 ## NLP
 * [BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension](https://arxiv.org/abs/1910.13461)
@@ -31,6 +31,11 @@ words_per_minute: 300
 ## ML
 * [DeepHit: A Deep Learning Approach to Survival Analysis with Competing Risks
 ](http://medianetlab.ee.ucla.edu/papers/AAAI_2018_DeepHit) Time-to-event analysis is widely used in economics, finance, engineering, medicine and many other areas. Previous models rely on strong parametric assumptions that are often violated. DeepHit uses a deep neural network to learn the distribution of survival times directly. Comparisons with previous models on the basis of real and synthetic datasets demonstrate that DeepHit achieves statistically significant performance improvements.
+
+## ML Ops
+* [Continuous Adaptation for Machine (Learning)](https://blog.tensorflow.org/2021/12/continuous-adaptation-for-machine.html)
+* [Model training as a CI/CD system: Part I](https://cloud.google.com/blog/topics/developers-practitioners/model-training-cicd-system-part-i)
+* [Model training as a CI/CD system: Part II](https://cloud.google.com/blog/topics/developers-practitioners/model-training-cicd-system-part-ii)
 
 ### Large-Language Models
 * [Parameter-Efficient Transfer Learning for NLP](http://proceedings.mlr.press/v97/houlsby19a/houlsby19a.pdf)
