@@ -109,7 +109,12 @@ show_date: true
   * TODO:
     * Reformate generate a reply...it doesn't make sense to be at the top
 
-* 05/20/22
+* 05/20/23
   * Completed refactoring of some old summarization and examples.ipynb code
   * Verified that additional information and metrics can be pulled for the tweets
+
+* 06/01/23
+  * COMPLETED:
+    * Implemented sentiment score on table returned
+    * Implemented Persian translation column to return if account was Persian text
       -->

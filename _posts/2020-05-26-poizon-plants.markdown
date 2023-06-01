@@ -11,7 +11,7 @@ show_date: true
 words_per_minute: 200
 ---
 
-**A computer vision classifier to make identifying poison oak practical.**
+**A hobby project using a computer vision classifier to make identifying poison oak practical.**
 
 
 <div style="display: flex; justify-content: center;">
