@@ -25,7 +25,7 @@ Public Demo of dashboard
 <div style="display: flex; justify-content: center;">
   <iframe
     src="https://aus10powell-mit-fishery-app.hf.space"
-    width="900"
+    width="1500"
     height="1050"
     display="block"
   ></iframe>
