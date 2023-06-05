@@ -16,7 +16,8 @@ show_date: true
 * Provide Sentiment Analysis for the 6 accounts NOTE: Based on saved historical data not live data due to the uncertain nature of scraping tweets with Elon Musk acquisition. 
 * Provide a metric for the accounts health
 * Provide a metric for the account audience health
-* Anomalous tweets within the last few months
+* Anomalous tweets within the last few months:
+
 
 ## Twitter Accounts 
 *Twitter App (warning: may be blank and take a minute to update while free servers spin up)*
@@ -122,7 +123,15 @@ show_date: true
   * COMPLETED:
     * Initial distributions for evaluating a good "account health" metric. 
     * 
-retweet_count	like_count	reply_count	view_count	positive	negative	neutral
-0	9	302	31	66496	0.6894	0.0454	0.2651
-1	485	2121	80	570663	0.4709	0.0834	0.4458
+* 06/03/23
+  * COMPLETED:
+    * moved spacy embeddings load to app start
+    * Fixed the issue of reply not being generated
+
+* 06/05/23
+  * Account Health Metric:
+    * "positives" * "likes":
+      * Normalized to compare different "health" for different accunts
+      * Reasonable metric for how engaged audience is with tweets that are positive messaging. May speak more to th
+  * Audience Health Metric:
       -->
