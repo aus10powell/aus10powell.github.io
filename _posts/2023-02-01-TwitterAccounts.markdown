@@ -14,7 +14,14 @@ show_date: true
 ## Goal:
 * Generate a Tweet in the style of one from the following Twitter Accounts ("alikarimi_ak8", "elonmusk","BarackObama","taylorlorenz","cathiedwood","ylecun"). NOTE: alikarimi_ak8 tweets often in Persian however generated tweets are in English.
 * Provide Sentiment Analysis for the 6 accounts NOTE: Based on saved historical data not live data due to the uncertain nature of scraping tweets with Elon Musk acquisition. 
-* Provide a metric for the accounts health
+* "Account Health" Metric: 
+<div align="center">
+ <img src="/assets/images/twitter_accounts/obamahealthmetric.png"
+     alt="askDocs example"
+     style="width:350px;"/>
+<figcaption>Clinical Conversations</figcaption>
+</div>
+
 * Provide a metric for the account audience health
 * Anomalous tweets within the last few months:
 
@@ -129,9 +136,15 @@ show_date: true
     * Fixed the issue of reply not being generated
 
 * 06/05/23
-  * Account Health Metric:
-    * "positives" * "likes":
-      * Normalized to compare different "health" for different accunts
-      * Reasonable metric for how engaged audience is with tweets that are positive messaging. May speak more to th
-  * Audience Health Metric:
+  * COMPLETED:
+    * Dive deeper into thinking/justification for metrics
+      * Conveneniece (don't have to look at audience tweets)
+      * Normalized for different accounts to enable direct comparison
+  * METRICS:
+    * Account Health Metric:
+      * "positives" * "likes" / account_subs:
+        * Normalized to compare different "health" for different accunts
+        * Reasonable metric for how engaged audience is with tweets that are positive messaging. May speak more to th
+        * The logged distribution is surprisingly normal for the different accounts
+    * Audience Health Metric:
       -->

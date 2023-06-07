@@ -27,6 +27,8 @@ words_per_minute: 300
     * This training procedure helps BART to learn to represent the meaning of text, even when the text is corrupted. This makes BART well-suited for natural language generation, translation, and comprehension tasks.
 * [Backpack Language Models](https://arxiv.org/abs/2305.16765)
     * Backpacks is a neural architecture that combines strong modeling performance with interpretability and control. It learns multiple sense vectors for each word, representing different aspects of the word, and allows for intervention and modification of these vectors to change the model's behavior. It outperforms larger models in lexical similarity evaluations and enables controllable text generation and debiasing through sense vector manipulation.
+* 05/25/23
+    * [State of GPT (a Youtube update by Microsoft)](https://www.youtube.com/watch?v=bZQun8Y4L2A&t=518s&ab_channel=MicrosoftDeveloper)
 
 ## ML
 * [DeepHit: A Deep Learning Approach to Survival Analysis with Competing Risks
@@ -40,3 +42,4 @@ words_per_minute: 300
 ### Large-Language Models
 * [Parameter-Efficient Transfer Learning for NLP](http://proceedings.mlr.press/v97/houlsby19a/houlsby19a.pdf)
 * [RLHF: Reinforcement Learning from Human Feedback (A blog by Chip Huyen)](https://huyenchip.com/2023/05/02/rlhf.html)
+* [StackLLaMA: A hands-on guide to train LLaMA with RLHF](https://huggingface.co/blog/stackllama)
