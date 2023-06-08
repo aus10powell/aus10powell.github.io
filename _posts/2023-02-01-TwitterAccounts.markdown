@@ -19,7 +19,7 @@ show_date: true
  <img src="/assets/images/twitter_accounts/obamahealthmetric.png"
      alt="askDocs example"
      style="width:350px;"/>
-<figcaption>Clinical Conversations</figcaption>
+<figcaption>Distribution of Obama Twitter Account metric</figcaption>
 </div>
 
 * Provide a metric for the account audience health

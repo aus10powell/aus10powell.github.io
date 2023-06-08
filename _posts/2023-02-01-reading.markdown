@@ -38,7 +38,12 @@ words_per_minute: 300
 * [Continuous Adaptation for Machine (Learning)](https://blog.tensorflow.org/2021/12/continuous-adaptation-for-machine.html)
 * [Model training as a CI/CD system: Part I](https://cloud.google.com/blog/topics/developers-practitioners/model-training-cicd-system-part-i)
 * [Model training as a CI/CD system: Part II](https://cloud.google.com/blog/topics/developers-practitioners/model-training-cicd-system-part-ii)
-
+    * The process of building a CI/CD system specifically for model training.
+    * Key components such as data management, environment setup, model training pipeline, and version control.
+    * Emphasizes the benefits of automation, highlights cloud infrastructure support, and suggests specific tools for implementing a model training CI/CD system.
+* [Application deployment and testing strategies (Google Cloud)](https://cloud.google.com/solutions/application-deployment-and-testing-strategies)
+    * Best Practices: 1) Backward compatibility 2) Continuous integration/continuous deployment (CI/CD) 3) Automation 4) Operating environments and configuration management. 5) Rollback strategy in case things go wrong 6) Post-deployment monitoring
+     
 ### Large-Language Models
 * [Parameter-Efficient Transfer Learning for NLP](http://proceedings.mlr.press/v97/houlsby19a/houlsby19a.pdf)
 * [RLHF: Reinforcement Learning from Human Feedback (A blog by Chip Huyen)](https://huyenchip.com/2023/05/02/rlhf.html)
