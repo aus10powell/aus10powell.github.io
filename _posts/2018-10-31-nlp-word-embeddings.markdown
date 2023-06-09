@@ -9,6 +9,7 @@ description: "An overview of out-of-box benefits evaluated on open-source health
 keywords: Tensorflow, NLP, Healthcare
 ---
 
+## Intro and Overview
 Named Entity Recognition (NER) is a crucial task in natural language processing, particularly in the field of biomedical research. With the rise of ELMo embeddings, I was curious to see how they stacked up against other popular word embedding techniques for a DNER task. Accurate identification and extraction of disease entities from medical texts is necessary for several applications, such as clinical decision support systems, drug discovery, and epidemiological studies. It can help researchers and healthcare professionals quickly identify relevant information from a vast amount of medical literature and electronic health records, leading to better patient outcomes and more efficient medical research. In this quick comparison, I explore the performance of different word embedding techniques for the DNER task, with a focus on the much-touted ELMo embeddings.
 
 The motivation for comparing word embeddings for Named Entity Recognition (NER) with diseases and adverse conditions stems from the recent popularity of ELMo embeddings in health-related natural language processing tasks. ELMo embeddings have shown promising results in capturing context-specific information and could potentially enhance the performance of NER models in the biomedical domain. Therefore, I aimed to investigate the suitability of ELMo embeddings alongside other popular techniques, such as word2vec, GloVe, and fastText, for DNER tasks.
@@ -27,4 +28,42 @@ The finding that the choice of embedding method had minimal impact on the models
 
 It's clear that the choice of word embedding technique can have a significant impact on the performance of natural language processing models, especially for tasks such as DNER.
 
-You can read in more detail here: [Word Embedding Comparison For Disease Named Entity Recognition](https://medium.com/analytics-vidhya/word-embedding-comparison-for-disease-named-entity-recognition-a99850653e1c)
+## Results
+All scores reported are the F1-Micro on BIO format for the Disease and Adverse Effect Entities. Essentially both entities are scored if they are recognized as a whole. E.g. if heart failure atrial fibrillation chf [Disease] is but not if heart failure atrial fibrillation.
+F1-Micro is the harmonic mean of a micro-averaged precision and recall (see below). It is a reasonable (more on that below) choice as a metric as it accounts for the class imbalance of Adverse and Disease entities and we don’t have a particular metric needed to optimize for:
+Micro-Precision: (TP1+TP2)/(TP1+TP2+FP1+FP2)
+Micro-Recall: (TP1+TP2)/(TP1+TP2+FN1+FN2)
+Results:
+
+| Embeddings                             | F1-Micro Score |
+|----------------------------------------|----------------|
+| ELMo Embeddings (5.5b,200d)            | 0.779 ± 0.02   |
+| EHR/Biomedical Text Embeddings          | 0.493 ± 0.05   |
+| (approx 3b words, w2v cbow, 200d)       |                |
+| GloVe (42b,300d)                       | 0.811 ± 0.04   |
+| GloVe (6b,50d)                         | 0.750±0.04     |
+| GloVe (6b,100d)                        | 0.780 ± 0.01   |
+| GloVe (6b, 200d)                       | 0.804± 0.04    |
+| GloVe (6b, 300d)                       | 0.816 ± 0.03   |
+| FastText (16bn, 300d)                  | 0.791 ± 0.05   |
+
+
+## Conclusion
+The results (if they show anything) seem to suggest that the comparison may not be entirely fair. However, what stood out the most was the surprisingly poor performance of the EHR embeddings. This observation underscores the need for a much larger corpus, especially considering that these embeddings were trained using the cbow word2vec method, which may not be the optimal choice for capturing rare disease words. In contrast, the GloVe embeddings excel at weighing rare words through their co-occurrence frequency, as highlighted by their comparative performance.
+
+It is worth noting that the AllenNLP website, which hosts the ELMo embeddings, acknowledges the omission of a comparison with GloVe, as they deemed them not directly comparable.
+
+While F1 score is a 'safe place' for data scientists, it should be carefully considered for NER tasks. Boundary errors, as it turns out, are one of the major sources of error in biological applications. Optimizing solely for F1 may cause us to overlook the left flank, where tagging 'flank' as a location still represents a partial but significant success. Labeling errors remain a significant concern.
+
+Another factor to consider is the potential sparsity of entities in the corpus used for training. Many openly available biomedical text datasets are based on research articles or abstracts, which are densely packed with biomedical concepts. Additionally, the tone of these datasets is more academic and may not capture the indications for certain diseases that are of importance.
+
+On a related note, as I was writing this post, I stumbled upon Facebook's Meta-embeddings, which provide a mechanism to determine the most effective embeddings for a specific prediction task. This ensemble-type approach allows for an intriguing exploration of specialized word variations between embeddings. The authors argue that the modeler should not personally choose the embeddings, but rather rely on the objective rigor of DME (Dynamic Meta-Embeddings).
+
+It is important to keep in mind that many of these general-purpose, broad-label embeddings do not clearly define their data cleansing and tokenization methods or specify their particular optimization objectives.
+
+For further reading, I found this resource helpful and relevant in exploring the best and latest in word embeddings. Additionally, if you wish to delve deeper into the trends of last year, you may find this article informative: http://ruder.io/word-embeddings-2017/.
+
+#### Links to embeddings
+* Elmo Embeddings: https://allennlp.org/elmo
+* GloVe Embeddings (Common Crawl (42B tokens, 1.9M vocab, uncased, 300d vectors): https://nlp.stanford.edu/projects/glove/
+* Disease and Adverse Effects NER dataset that I used: https://www.scai.fraunhofer.de/en/business-research-areas/bioinformatics/downloads/corpus-for-disease-names-and-adverse-effects.html
