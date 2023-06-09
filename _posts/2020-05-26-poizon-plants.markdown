@@ -11,15 +11,24 @@ show_date: true
 words_per_minute: 200
 ---
 
-**A hobby project using a computer vision classifier to make identifying poison oak practical.**
+**A practical iOS app identifying poison oak.**
 
 
-<div style="display: flex; justify-content: center;">
+<style>
+    .iframe-container {
+        float: right;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+</style>
+<div class="iframe-container">
   <iframe
     src="https://aus10powell-poizon-app.hf.space"
-    width="700"
-    height="550"
+    width="800"
+    height="1500"
     display="block"
+     scrolling="yes"
+      frameBorder="0"
   ></iframe>
 </div>
 
@@ -168,7 +177,6 @@ For the practicality of my problem, where a region captured with a phone camera 
     </figure>
 * **Training**
 Augmentation is quit helpful for this use-case. Shift and rotation especially. But I came across a moment when my validation accuracy would reach a certain point around 70% where it wouldn't get better; but it wouldn't get worse either. This is due to the rookie mistake of augmenting the validation data as well as the training data.
-    * **GPUs** With several thousand images, the realization I came to was that: While you *can* train a lot of images on a laptop CPU, it's going to kill the momentum of a project.
 
 * **A fair comparison:**
     <figure class="half">

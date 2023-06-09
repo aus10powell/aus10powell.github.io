@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: splash
 title:  "MIT Fishery Monitoring With Computer Vision"
 date:   2022-02-16
 comments: true
@@ -11,6 +11,19 @@ show_date: true
 
 **A grant-funded computer vision-based system to count fish under various conditions entering Massachusetts Fisheries.**
 
+Public Demo of dashboard
+<div style="display: flex; justify-content: center;">
+  <iframe
+    src="https://aus10powell-mit-fishery-app.hf.space"
+    width="1100"
+    height="1050"
+    display="block"
+     scrolling="yes"
+      frameBorder="0"
+       float="right"
+  ></iframe>
+</div>
+
 ## MIT Fishery 
 I am currently working on an ongoing project to detect and count fish in Massachusetts Fisheries. This project is funded by a grant from the federal government. I started working on this project in 2022, and I am working individually with a research professor and MIT PhD students. I am responsible for improving the algorithm, deploying the infrastructure, and maintaining the infrastructure.
 
@@ -21,15 +34,7 @@ Many groups, including NOAA Fisheries, state agencies, as well as regional fishe
 
 
 
-Public Demo of dashboard
-<div style="display: flex; justify-content: center;">
-  <iframe
-    src="https://aus10powell-mit-fishery-app.hf.space"
-    width="1500"
-    height="1050"
-    display="block"
-  ></iframe>
-</div>
+
 
 <!-- # Notes:
 
