@@ -30,6 +30,10 @@ words_per_minute: 300
 * 05/25/23
     * [State of GPT (a Youtube update by Microsoft)](https://www.youtube.com/watch?v=bZQun8Y4L2A&t=518s&ab_channel=MicrosoftDeveloper)
 
+## Vision
+* [YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors](https://arxiv.org/abs/2207.02696)
+* [ByteTrack: Multi-Object Tracking by Associating Every Detection Box](https://arxiv.org/abs/2110.06864)
+
 ## ML (General)
 * [DeepHit: A Deep Learning Approach to Survival Analysis with Competing Risks
 ](http://medianetlab.ee.ucla.edu/papers/AAAI_2018_DeepHit) Time-to-event analysis is widely used in economics, finance, engineering, medicine and many other areas. Previous models rely on strong parametric assumptions that are often violated. DeepHit uses a deep neural network to learn the distribution of survival times directly. Comparisons with previous models on the basis of real and synthetic datasets demonstrate that DeepHit achieves statistically significant performance improvements.
