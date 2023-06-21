@@ -11,6 +11,10 @@ show_date: true
 
 **A grant-funded computer vision-based system to count fish under various conditions entering Massachusetts Fisheries.**
 
+
+[![Click to view video](/assets/images/mitfishery/annotated_counter.png)](https://youtu.be/3UxDNxzXF5U)
+
+
 Public Demo of dashboard
 <div style="display: flex; justify-content: center;">
   <iframe
