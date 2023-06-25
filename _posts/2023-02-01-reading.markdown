@@ -34,6 +34,7 @@ words_per_minute: 300
 * [YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors](https://arxiv.org/abs/2207.02696)
 * [ByteTrack: Multi-Object Tracking by Associating Every Detection Box](https://arxiv.org/abs/2110.06864) To reduce missing detections and keep the persistence of trajectories, authors keep detection boxes and associate across every of them.
 * [Object Detection for Dummies Part 3: R-CNN Family](https://lilianweng.github.io/posts/2017-12-31-object-recognition-part-3/) Good discussion on loss of object recognition.
+* [A good overview of object Detection and Image Segmentation](https://www.oreilly.com/library/view/practical-machine-learning/9781098102357/ch04.html)
 
 ## ML (General)
 * [DeepHit: A Deep Learning Approach to Survival Analysis with Competing Risks
