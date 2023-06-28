@@ -37,7 +37,9 @@ Fisheries populations have a large impact on the U.S. economy. Each year the U.S
 Many groups, including NOAA Fisheries, state agencies, as well as regional fisheries councils and local municipalities, deploy camera and video equipment to monitor fisheries populations. Large amounts of video and photographic data are gathered at timed intervals. However, not all photos contain aquatic life. Currently, employees at these agencies among others are responsible for manually annotating the gathered videos and photos; this means they identify and count the relevant aquatic specimens in the data. Not only is this an inefficient use of time and resources, but also it can lead to inaccurate results due to human error. NOAA Fisheries Management can make a significant improvement in time and resource use through automation of the annotation process.
 
 
-
+### Data Augmentation
+Due to the extreme varition in camera quality and image quality the following types of image augmentation have become extremely usefuly in the quality of model:
+[![Click to view video](/assets/images/mitfishery/example_augmentation.png)]
 
 
 <!-- # Notes:
