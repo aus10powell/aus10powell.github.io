@@ -52,6 +52,7 @@ words_per_minute: 300
 * [Application deployment and testing strategies (Google Cloud)](https://cloud.google.com/solutions/application-deployment-and-testing-strategies)
     * Best Practices: 1) Backward compatibility 2) Continuous integration/continuous deployment (CI/CD) 3) Automation 4) Operating environments and configuration management. 5) Rollback strategy in case things go wrong 6) Post-deployment monitoring
 * [Leveraging TensorFlow-TensorRT integration for Low latency Inference](https://blog.tensorflow.org/2021/01/leveraging-tensorflow-tensorrt-integration.html):TensorRT integration in TensorFlow allows developers to optimize and accelerate their deep learning models for deployment on GPUs. By leveraging TensorRT's optimizations, TensorFlow users can achieve faster inference times and reduced memory footprint. This integration provides a seamless workflow, enabling efficient deployment of TensorFlow models with improved performance for real-time applications.
+*[Bayesian hyperparameter tuning: Nuts & bolts](https://wandb.ai/site/articles/bayesian-hyperparameter-optimization-a-primer)
      
 ### Large-Language Models
 * [Parameter-Efficient Transfer Learning for NLP](http://proceedings.mlr.press/v97/houlsby19a/houlsby19a.pdf)
