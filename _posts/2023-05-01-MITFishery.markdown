@@ -58,6 +58,11 @@ I gained enough confidence to narrow down my parameter search space. With the he
 
 #### Data Augmentation
 Due to the extreme varition in camera quality and image quality the following types of image augmentation have become extremely usefuly in the quality of model:
+
+##### Example Image Augmentation
 [![Click to view video](/assets/images/mitfishery/example_augmentation.png)]
+
+##### Example of Challenging Atmospheric Conditions for ID-ing of Fish for Purposes of Tracking
+[![Click to view video](/assets/images/mitfishery/murky_water_2018.png)]
 
 
