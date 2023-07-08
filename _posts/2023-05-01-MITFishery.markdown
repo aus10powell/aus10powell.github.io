@@ -37,11 +37,27 @@ Fisheries populations have a large impact on the U.S. economy. Each year the U.S
 Many groups, including NOAA Fisheries, state agencies, as well as regional fisheries councils and local municipalities, deploy camera and video equipment to monitor fisheries populations. Large amounts of video and photographic data are gathered at timed intervals. However, not all photos contain aquatic life. Currently, employees at these agencies among others are responsible for manually annotating the gathered videos and photos; this means they identify and count the relevant aquatic specimens in the data. Not only is this an inefficient use of time and resources, but also it can lead to inaccurate results due to human error. NOAA Fisheries Management can make a significant improvement in time and resource use through automation of the annotation process.
 
 
-### Data Augmentation
+Throughout the project, I have made significant progress in addressing these challenges and have achieved promising results. Here's an overview of the key aspects and advancements made:
+
+### Object Detection Algorithm:
+The initial challenge involved designing an accurate object detection algorithm specifically tailored for fish tracking. It required careful consideration of model architecture, hyperparameters, and dataset selection. Through iterative experimentation and fine-tuning, I have made substantial improvements in detecting fish instances reliably and effectively.
+
+### Tracking and Counting:
+To track and count fish objects effectively, I needed to establish their identity from frame to frame. This approach proved successful in accurately tracking the same fish over time, ensuring continuity in object identification.
+
+The ["botsort" algorithm](https://arxiv.org/abs/2206.14651) leverages motion patterns to estimate object displacement, matches appearances to maintain consistency across frames, and predicts future positions based on historical trajectory data. This comprehensive approach has significantly improved tracking accuracy and facilitated reliable fish counting.
+
+### Dataset Selection and Training:
+"garbage in, garbage out." So, I spent a good amount of time curating a diverse dataset with annotated fish images and videos. Lighting conditions, backgrounds, and different fish species – I covered it all. By training the model on this top-notch dataset, I witnessed significant improvements in detection performance.
+
+### Holdout Set for Validation:
+To make sure our counting game is on point, I set aside a holdout set of videos with ground truth fish counts. It's like having a benchmark to compare against. I tested the algorithm's count predictions against the ground truth, giving us valuable insights into its accuracy and effectiveness. No fishy business here!
+
+#### Bayesian Optimization with wandb.sweeps:
+I gained enough confidence to narrow down my parameter search space. With the help of wandb.sweeps' Bayesian optimization capabilities, I let the algorithm do its magic overnight. It efficiently explored the parameter space and brought me some impressive results. It's like having a super-smart assistant working while I catch some zzz's.
+
+#### Data Augmentation
 Due to the extreme varition in camera quality and image quality the following types of image augmentation have become extremely usefuly in the quality of model:
 [![Click to view video](/assets/images/mitfishery/example_augmentation.png)]
 
 
-<!-- # Notes:
-
-      -->
