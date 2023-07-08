@@ -29,7 +29,7 @@ Public Demo of dashboard
 </div>
 
 ## MIT Fishery 
-I am currently working on an ongoing project to detect and count fish in Massachusetts Fisheries. This project is funded by a grant from the federal government. I started working on this project in 2022, and I am working individually with a research professor and MIT PhD students. I am responsible for improving the algorithm, deploying the infrastructure, and maintaining the infrastructure.
+I am currently working on an ongoing project to detect and count fish in Massachusetts Fisheries. This project is funded by a grant from the federal government. I started working on this project in 2022, and I am working individually with a research professor and MIT PhD students. I am responsible taking the initial research project and making it operational: 1) Making model performant enough to count fish  2) Working with research grant funding to set up appropriate infrastructure and 3) deploying the infrastructure.
 
 ## Overview
 Fisheries populations have a large impact on the U.S. economy. Each year the U.S. fishing industry contributes 90 billion dollars and 1.5 million jobs to the U.S. economy. Each species may serve as a predator or prey for another. In this regard, fisheries populations are interconnected and dependent. While humans may depend on these populations as a source of sustenance (food, goods, etc.), humans can also negatively impact population growth. Barriers to migration, pollution, overfishing, and other forms of human-interference may impact spawning patterns of fisheries species. In 2014, 17% of U.S. fisheries were classified as overfished. Therefore, it is necessary to monitor these fisheries populations to determine when policy must be changed in efforts to maintain healthy oceans.
