@@ -28,7 +28,7 @@ Public Demo of dashboard
   ></iframe>
 </div>
 
-## MIT Fishery 
+## MIT Fishery
 I am currently working on an ongoing project to detect and count fish in Massachusetts Fisheries. This project is funded by a grant from the federal government. I started working on this project in 2022, and I am working individually with a research professor and MIT PhD students. I am responsible taking the initial research project and making it operational: 1) Making model performant enough to count fish  2) Working with research grant funding to set up appropriate infrastructure and 3) deploying the infrastructure.
 
 ## Overview
@@ -65,4 +65,5 @@ Due to the extreme varition in camera quality and image quality the following ty
 ##### Example of Challenging Atmospheric Conditions for ID-ing of Fish for Purposes of Tracking
 [![Click to view video](/assets/images/mitfishery/murky_water_2018.png)]
 
-
+#### Example of the need for more data when counting AND tracking
+[![Click to view video](/assets/images/mitfishery/two_fish_2018.png)]
