@@ -47,6 +47,35 @@ To track and count fish objects effectively, I needed to establish their identit
 
 The ["botsort" algorithm](https://arxiv.org/abs/2206.14651) leverages motion patterns to estimate object displacement, matches appearances to maintain consistency across frames, and predicts future positions based on historical trajectory data. This comprehensive approach has significantly improved tracking accuracy and facilitated reliable fish counting.
 
+#### Different challenges that may cause an object to not be tracked all the way accross the screen:
+
+1) **Illumination Challenge:** In object tracking, illumination challenges arise when the lighting conditions change dramatically across frames or in different parts of the video. This variation in brightness, shadows, and highlights can affect the appearance of the object, making it difficult for the tracker to maintain accurate identification.
+
+![Illumination ><](/assets/images/mitfishery/illumination.jpg)
+
+2) **Occlusion Challenge:** Occlusion occurs when an object being tracked is partially or completely obscured by other objects, elements, or even itself. Occlusions can disrupt the object's visibility, leading to potential misidentifications or temporary loss of tracking. This is of particulary problem for this situation since we want to pick up the fish as soon as possible to establish a unique tracking id.
+
+![Occlusion ><](/assets/images/mitfishery/occlusion.jpg)
+
+3) **Deformation Challenge:** Deformation challenges refer to situations where the object of interest undergoes significant shape changes over time. This could occur due to the object's inherent flexibility or interactions with other objects. Tracking such deformable objects requires handling non-rigid transformations effectively.
+
+![Out of Plane ><](/assets/images/mitfishery/deformation.gif)
+
+4) **Noise Corruption/Blurring Challenge:** Noise in the image data can be caused by various factors, such as sensor limitations, compression artifacts, or environmental conditions. Noise corruption poses a challenge to object tracking by introducing unwanted fluctuations and reducing the clarity of the object's features.
+
+![Occlusion ><](/assets/images/mitfishery/noise_corruption_blurring.jpg)
+
+5) **Out of Plane Rotation Challenge:** Out of plane rotation occurs when the object is viewed from different angles, leading to changes in its appearance and perspective across frames. Accurately tracking objects with out of plane rotations requires handling geometric transformations.
+
+![Out of Plane ><](/assets/images/mitfishery/out_of_plane.gif)
+
+6) **Motion Blurring Challenge:** Motion blur is caused by the relative motion between the camera and the object during exposure, resulting in smearing of the object's appearance. Tracking objects affected by motion blur requires robustness to handle the loss of fine details and sharpness in the image.
+
+![Motion Blurring ><](/assets/images/mitfishery/motion_blurring.jpg)
+
+#### Trouble-shooting tracking:
+* Choose a video that is a best-case-scenario of what you'd want to track (e.g. minimal noise corruption, occlusion deformation, etc.)
+
 ### Dataset Selection and Training:
 "garbage in, garbage out." So, I spent a good amount of time curating a diverse dataset with annotated fish images and videos. Lighting conditions, backgrounds, and different fish species – I covered it all. By training the model on this top-notch dataset, I witnessed significant improvements in detection performance.
 
