@@ -39,16 +39,16 @@ Many groups, including NOAA Fisheries, state agencies, as well as regional fishe
 
 Throughout the project, I have made significant progress in addressing these challenges and have achieved promising results. Here's an overview of the key aspects and advancements made:
 
-### Object Detection Algorithm:
+## Object Detection Algorithm:
 The initial challenge involved designing an accurate object detection algorithm specifically tailored for fish tracking. It required careful consideration of model architecture, hyperparameters, and dataset selection. Through iterative experimentation and fine-tuning. 
 
-* Original YOLO paper: !(You Only Look Once: Unified, Real-Time Object Detection)[https://arxiv.org/abs/1506.02640]
+* Original YOLO paper: (You Only Look Once: Unified, Real-Time Object Detection)[https://arxiv.org/abs/1506.02640]
 
 ### Performance
 
-The primary metric used to assess performance is map50-95 (mean average precision at IoU (Intersection over Union) thresholds of 0.5 to 0.95) which I baselined the project with at 0.31 and now at 0.72 has become sufficent for tracking in videos to receive a .28 MAPE (Mean Absolute Percentage Error).
+The primary metric used to assess performance is map50-95 (mean average precision at IoU (Intersection over Union) thresholds of 0.5 to 0.95) which I baselined the project with at 0.31 and now at 0.72 has become sufficent for tracking in videos to receive a 0.28 MAPE (Mean Absolute Percentage Error). 
 
-#### Different challenges that may cause an object to not be tracked all the way across the screen:
+### Different challenges that may cause an object to not be tracked all the way across the screen:
 
 1) **Illumination Challenge:** In object tracking, illumination challenges arise when the lighting conditions change dramatically across frames or in different parts of the video. This variation in brightness, shadows, and highlights can affect the appearance of the object, making it difficult for the tracker to maintain accurate identification.
 
