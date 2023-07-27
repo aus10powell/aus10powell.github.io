@@ -40,14 +40,15 @@ Many groups, including NOAA Fisheries, state agencies, as well as regional fishe
 Throughout the project, I have made significant progress in addressing these challenges and have achieved promising results. Here's an overview of the key aspects and advancements made:
 
 ### Object Detection Algorithm:
-The initial challenge involved designing an accurate object detection algorithm specifically tailored for fish tracking. It required careful consideration of model architecture, hyperparameters, and dataset selection. Through iterative experimentation and fine-tuning, I have made substantial improvements in detecting fish instances reliably and effectively.
+The initial challenge involved designing an accurate object detection algorithm specifically tailored for fish tracking. It required careful consideration of model architecture, hyperparameters, and dataset selection. Through iterative experimentation and fine-tuning. 
 
-### Tracking and Counting:
-To track and count fish objects effectively, I needed to establish their identity from frame to frame. This approach proved successful in accurately tracking the same fish over time, ensuring continuity in object identification.
+* Original YOLO paper: !(You Only Look Once: Unified, Real-Time Object Detection)[https://arxiv.org/abs/1506.02640]
 
-The ["botsort" algorithm](https://arxiv.org/abs/2206.14651) leverages motion patterns to estimate object displacement, matches appearances to maintain consistency across frames, and predicts future positions based on historical trajectory data. This comprehensive approach has significantly improved tracking accuracy and facilitated reliable fish counting.
+### Performance
 
-#### Different challenges that may cause an object to not be tracked all the way accross the screen:
+The primary metric used to assess performance is map50-95 (mean average precision at IoU (Intersection over Union) thresholds of 0.5 to 0.95) which I baselined the project with at 0.31 and now at 0.72 has become sufficent for tracking in videos to receive a .28 MAPE (Mean Absolute Percentage Error).
+
+#### Different challenges that may cause an object to not be tracked all the way across the screen:
 
 1) **Illumination Challenge:** In object tracking, illumination challenges arise when the lighting conditions change dramatically across frames or in different parts of the video. This variation in brightness, shadows, and highlights can affect the appearance of the object, making it difficult for the tracker to maintain accurate identification.
 
@@ -73,11 +74,8 @@ The ["botsort" algorithm](https://arxiv.org/abs/2206.14651) leverages motion pat
 
 ![Motion Blurring ><](/assets/images/mitfishery/motion_blurring.jpg)
 
-#### Trouble-shooting tracking:
-* Choose a video that is a best-case-scenario of what you'd want to track (e.g. minimal noise corruption, occlusion deformation, etc.)
-
 ### Dataset Selection and Training:
-"garbage in, garbage out." So, I spent a good amount of time curating a diverse dataset with annotated fish images and videos. Lighting conditions, backgrounds, and different fish species – I covered it all. By training the model on this top-notch dataset, I witnessed significant improvements in detection performance.
+"garbage in, garbage out." So, I spent a good amount of time curating a diverse dataset with annotated fish images and videos. Lighting conditions, backgrounds, and different fish species etc. By training the model on a curated dataset, I witnessed significant improvements in detection performance. 
 
 ### Holdout Set for Validation:
 To make sure our counting game is on point, I set aside a holdout set of videos with ground truth fish counts. It's like having a benchmark to compare against. I tested the algorithm's count predictions against the ground truth, giving us valuable insights into its accuracy and effectiveness. No fishy business here!
@@ -96,3 +94,13 @@ Due to the extreme varition in camera quality and image quality the following ty
 
 #### Example of the need for more data when counting AND tracking
 [![Click to view video](/assets/images/mitfishery/two_fish_2018.png)]
+
+
+### Tracking and Counting:
+To track and count fish objects effectively, I needed to establish their identity from frame to frame. This approach proved successful in accurately tracking the same fish over time, ensuring continuity in object identification.
+
+The ["botsort" algorithm](https://arxiv.org/abs/2206.14651) leverages motion patterns to estimate object displacement, matches appearances to maintain consistency across frames, and predicts future positions based on historical trajectory data. This comprehensive approach has significantly improved tracking accuracy and facilitated reliable fish counting.
+
+#### Trouble-shooting tracking:
+* Choose a video that is a best-case-scenario of what you'd want to track (e.g. minimal noise corruption, occlusion deformation, etc.)
+
