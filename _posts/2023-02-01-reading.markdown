@@ -29,6 +29,7 @@ words_per_minute: 300
     * Backpacks is a neural architecture that combines strong modeling performance with interpretability and control. It learns multiple sense vectors for each word, representing different aspects of the word, and allows for intervention and modification of these vectors to change the model's behavior. It outperforms larger models in lexical similarity evaluations and enables controllable text generation and debiasing through sense vector manipulation.
 * 05/25/23
     * [State of GPT (a Youtube update by Microsoft)](https://www.youtube.com/watch?v=bZQun8Y4L2A&t=518s&ab_channel=MicrosoftDeveloper)
+    * [Discovering Language Model Behaviors with Model-Written Evaluations](https://arxiv.org/abs/2212.09251)
 
 ## Vision
 * [YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors](https://arxiv.org/abs/2207.02696)

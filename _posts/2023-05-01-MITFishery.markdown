@@ -104,3 +104,9 @@ The ["botsort" algorithm](https://arxiv.org/abs/2206.14651) leverages motion pat
 #### Trouble-shooting tracking:
 * Choose a video that is a best-case-scenario of what you'd want to track (e.g. minimal noise corruption, occlusion deformation, etc.)
 
+#### Annotation and General Approach Notes for Object Counting in Video
+* When splitting images between train/val/test by complete journey of object across screen. I.e. slit all of the images of a fish traveling across screen into train then a seperate fish traveling across screen into val.
+* Set the confidence of your YOLO inference at the confidence that maximizes your F1 score. E.g. Max 98% @ Confidence = 0.32. Although maximizing for recall is good, the F1 score is more directly correlated with tracking a fish across the screen.
+* Try and hit ~1000 instances of an object class that is to be tracked
+
+
