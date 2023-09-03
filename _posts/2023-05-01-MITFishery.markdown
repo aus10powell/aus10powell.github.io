@@ -11,11 +11,16 @@ show_date: true
 
 **A grant-funded computer vision-based system to count fish under various conditions entering Massachusetts Fisheries.**
 
+# MIT Fishery
+I am currently working on an ongoing project to detect and count fish in Massachusetts Fisheries. This project is funded by a grant from the federal government. I started working on this project in 2022, and I am working individually with a research professor and MIT PhD students. I am responsible taking the initial research project and making it operational: 1) Making model performant enough to count fish  2) Working with research grant funding to set up appropriate infrastructure and 3) deploying the infrastructure.
+
 
 [![Click to view video](/assets/images/mitfishery/annotated_counter.png)](https://youtu.be/3UxDNxzXF5U)
 
+* Table of Contents
+{:toc}
 
-Public Demo of dashboard
+## Public Demo of dashboard
 <div style="display: flex; justify-content: center;">
   <iframe
     src="https://aus10powell-mit-fishery-app.hf.space"
@@ -28,8 +33,6 @@ Public Demo of dashboard
   ></iframe>
 </div>
 
-## MIT Fishery
-I am currently working on an ongoing project to detect and count fish in Massachusetts Fisheries. This project is funded by a grant from the federal government. I started working on this project in 2022, and I am working individually with a research professor and MIT PhD students. I am responsible taking the initial research project and making it operational: 1) Making model performant enough to count fish  2) Working with research grant funding to set up appropriate infrastructure and 3) deploying the infrastructure.
 
 ## Overview
 Fisheries populations have a large impact on the U.S. economy. Each year the U.S. fishing industry contributes 90 billion dollars and 1.5 million jobs to the U.S. economy. Each species may serve as a predator or prey for another. In this regard, fisheries populations are interconnected and dependent. While humans may depend on these populations as a source of sustenance (food, goods, etc.), humans can also negatively impact population growth. Barriers to migration, pollution, overfishing, and other forms of human-interference may impact spawning patterns of fisheries species. In 2014, 17% of U.S. fisheries were classified as overfished. Therefore, it is necessary to monitor these fisheries populations to determine when policy must be changed in efforts to maintain healthy oceans.
@@ -87,13 +90,13 @@ I gained enough confidence to narrow down my parameter search space. With the he
 Due to the extreme varition in camera quality and image quality the following types of image augmentation have become extremely usefuly in the quality of model:
 
 ##### Example Image Augmentation
-[![Click to view video](/assets/images/mitfishery/example_augmentation.png)]
+![Click to view video](/assets/images/mitfishery/example_augmentation.png)
 
 ##### Example of Challenging Atmospheric Conditions for ID-ing of Fish for Purposes of Tracking
-[![Click to view video](/assets/images/mitfishery/murky_water_2018.png)]
+![Click to view video](/assets/images/mitfishery/murky_water_2018.png)
 
 #### Example of the need for more data when counting AND tracking
-[![Click to view video](/assets/images/mitfishery/two_fish_2018.png)]
+![Click to view video](/assets/images/mitfishery/two_fish_2018.png)
 
 
 ### Tracking and Counting:
