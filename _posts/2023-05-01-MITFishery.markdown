@@ -39,19 +39,31 @@ Fisheries populations have a large impact on the U.S. economy. Each year the U.S
 
 Many groups, including NOAA Fisheries, state agencies, as well as regional fisheries councils and local municipalities, deploy camera and video equipment to monitor fisheries populations. Large amounts of video and photographic data are gathered at timed intervals. However, not all photos contain aquatic life. Currently, employees at these agencies among others are responsible for manually annotating the gathered videos and photos; this means they identify and count the relevant aquatic specimens in the data. Not only is this an inefficient use of time and resources, but also it can lead to inaccurate results due to human error. NOAA Fisheries Management can make a significant improvement in time and resource use through automation of the annotation process.
 
-
 Throughout the project, I have made significant progress in addressing these challenges and have achieved promising results. Here's an overview of the key aspects and advancements made:
 
-## Object Detection Algorithm:
+## Object Detection:
 The initial challenge involved designing an accurate object detection algorithm specifically tailored for fish tracking. It required careful consideration of model architecture, hyperparameters, and dataset selection. Through iterative experimentation and fine-tuning. 
 
 * Original YOLO paper: (You Only Look Once: Unified, Real-Time Object Detection)[https://arxiv.org/abs/1506.02640]
 
 ### Performance
 
-The primary metric used to assess performance is map50-95 (mean average precision at IoU (Intersection over Union) thresholds of 0.5 to 0.95) which I baselined the project with at 0.31 and now at 0.72 has become sufficent for tracking in videos to receive a 0.28 MAPE (Mean Absolute Percentage Error). 
+The primary metric used to assess performance in training the object detection is map50-95 (mean average precision at IoU (Intersection over Union) thresholds of 0.5 to 0.95) which I baselined the project with at 0.31 and now at 0.72 has become sufficent for tracking in videos to receive a 0.28 MAPE (Mean Absolute Percentage Error). This doesn't reflect the full picture of how well the algorithm performs in tracking an object from one point to another. There is more discussion on this later.
 
-### Different challenges that may cause an object to not be tracked all the way across the screen:
+
+### Data Preparation
+**Data Quality Challenges** Due to the extreme varition in camera quality and image quality the following types of image augmentation have become extremely usefuly in the quality of model:
+
+##### Example Image Augmentation
+![Click to view video](/assets/images/mitfishery/example_augmentation.png)
+
+##### Example of Challenging Atmospheric Conditions for ID-ing of Fish for Purposes of Tracking
+![Click to view video](/assets/images/mitfishery/murky_water_2018.png)
+
+#### Example of the need for more data when counting AND tracking
+![Click to view video](/assets/images/mitfishery/two_fish_2018.png)
+
+#### Breakdown of different challenges with data quality:
 
 1) **Illumination Challenge:** In object tracking, illumination challenges arise when the lighting conditions change dramatically across frames or in different parts of the video. This variation in brightness, shadows, and highlights can affect the appearance of the object, making it difficult for the tracker to maintain accurate identification.
 
@@ -77,26 +89,19 @@ The primary metric used to assess performance is map50-95 (mean average precisio
 
 ![Motion Blurring ><](/assets/images/mitfishery/motion_blurring.jpg)
 
-### Dataset Selection and Training:
+#### Annotation and General Approach Notes for Object Counting in Video
+* When splitting images between train/val/test by complete journey of object across screen. I.e. split all of the images of a fish traveling across screen into train then a seperate fish traveling across screen into val.
+* Set the confidence of your YOLO inference at the confidence that maximizes your F1 score. E.g. Max 98% @ Confidence = 0.32. Although maximizing for recall is good, the F1 score is more directly correlated with tracking a fish across the screen.
+* Try and hit ~1000 instances of an object class that is to be tracked
+
+#### Dataset Selection and Training:
 "garbage in, garbage out." So, I spent a good amount of time curating a diverse dataset with annotated fish images and videos. Lighting conditions, backgrounds, and different fish species etc. By training the model on a curated dataset, I witnessed significant improvements in detection performance. 
 
-### Holdout Set for Validation:
+##### Holdout Set for Validation:
 To make sure our counting game is on point, I set aside a holdout set of videos with ground truth fish counts. It's like having a benchmark to compare against. I tested the algorithm's count predictions against the ground truth, giving us valuable insights into its accuracy and effectiveness. No fishy business here!
 
 #### Bayesian Optimization with wandb.sweeps:
 I gained enough confidence to narrow down my parameter search space. With the help of wandb.sweeps' Bayesian optimization capabilities, I let the algorithm do its magic overnight. It efficiently explored the parameter space and brought me some impressive results. It's like having a super-smart assistant working while I catch some zzz's.
-
-#### Data Augmentation
-Due to the extreme varition in camera quality and image quality the following types of image augmentation have become extremely usefuly in the quality of model:
-
-##### Example Image Augmentation
-![Click to view video](/assets/images/mitfishery/example_augmentation.png)
-
-##### Example of Challenging Atmospheric Conditions for ID-ing of Fish for Purposes of Tracking
-![Click to view video](/assets/images/mitfishery/murky_water_2018.png)
-
-#### Example of the need for more data when counting AND tracking
-![Click to view video](/assets/images/mitfishery/two_fish_2018.png)
 
 
 ### Tracking and Counting:
@@ -104,12 +109,20 @@ To track and count fish objects effectively, I needed to establish their identit
 
 The ["botsort" algorithm](https://arxiv.org/abs/2206.14651) leverages motion patterns to estimate object displacement, matches appearances to maintain consistency across frames, and predicts future positions based on historical trajectory data. This comprehensive approach has significantly improved tracking accuracy and facilitated reliable fish counting.
 
+#### Tracking Metrics
+While the binary metrics would definitely apply here since we're dealing with a true-positive (counted correctly), True-negative (correctly did not count). The odds of incorrectly classifying an object and subsequently tracking accross the screen is very low. To the point that it may be a strong metric to consider metrics that ignore the True Negative and even the False positive situation. 
+
+Some of the metrics that would make sense here are:
+* **MAPE (Mean Average Precision Level)** 
+
+$$\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{\text{True Counts}_i - \text{Predicted Counts}_i}{\text{True Counts}_i} \right| \times 100\$$
+
+This is a good overall metric that generally captures how well, for a series of video segments, your algorithm counts the objects. For my use-case, because the video is initially starts recording for movement (can be triggered by seaweed as well as fish), each video capturing the fish is ~30sec. For MAPE, this means that if only 1 fish was in the video and it was not counted which will be penalized more heavily than a video with 2 fish where only 1 was counted. This can be important since a lot of fish will swim in parallel which can add to the difficulty in detection.
+
+* **Global Error**
+
 #### Trouble-shooting tracking:
 * Choose a video that is a best-case-scenario of what you'd want to track (e.g. minimal noise corruption, occlusion deformation, etc.)
 
-#### Annotation and General Approach Notes for Object Counting in Video
-* When splitting images between train/val/test by complete journey of object across screen. I.e. slit all of the images of a fish traveling across screen into train then a seperate fish traveling across screen into val.
-* Set the confidence of your YOLO inference at the confidence that maximizes your F1 score. E.g. Max 98% @ Confidence = 0.32. Although maximizing for recall is good, the F1 score is more directly correlated with tracking a fish across the screen.
-* Try and hit ~1000 instances of an object class that is to be tracked
 
 
