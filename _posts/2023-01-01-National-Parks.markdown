@@ -4,10 +4,12 @@ title:  "National Parks"
 date:   2023-01-01
 comments: true
 categories: Hobbies
-description: "Information About National Parks"
+description: "US Parks"
 keywords: hobbies, nature
 show_date: true
 ---
+
+# National and State Parks
 
 ## Menu
 - [California State Parks](#californiastateparks)
