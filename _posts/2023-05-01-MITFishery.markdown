@@ -109,9 +109,7 @@ To track and count fish objects effectively, there is obviously a need to detect
 
 #### Detecting
 
-* **MAPE (Mean Average Precision Level)** 
-
-$$\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{\text{True Counts}_i - \text{Predicted Counts}_i}{\text{True Counts}_i} \right| \times 100\$$
+$$\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{\text{True Counts}_i - \text{Predicted Counts}_i}{\text{True Counts}_i} \right| \times 100$$
 
 This is a good overall metric that generally captures how well, for a series of video segments, your algorithm counts the objects. For my use-case, because the video is initially starts recording for movement (can be triggered by seaweed as well as fish), each video capturing the fish is ~30sec. For MAPE, this means that if only 1 fish was in the video and it was not counted which will be penalized more heavily than a video with 2 fish where only 1 was counted. This can be important since a lot of fish will swim in parallel which can add to the difficulty in detection.
 
@@ -121,6 +119,5 @@ The ["botsort" algorithm](https://arxiv.org/abs/2206.14651) leverages motion pat
 
 It was selected because it had the best MOTA (Multiple Object Tracking Accuracy) that considers identity switches, false positives, and false negatives.
 
-**MOTA**
 $$\text{MOTA} = 1 - \frac{\sum(\text{false positives} + \text{false negatives} + \text{identity switches})}{\sum(\text{total number of ground truth objects})}$$
 
