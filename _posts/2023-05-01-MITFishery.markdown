@@ -104,25 +104,26 @@ To make sure our counting game is on point, I set aside a holdout set of videos 
 I gained enough confidence to narrow down my parameter search space. With the help of wandb.sweeps' Bayesian optimization capabilities, I let the algorithm do its magic overnight. It efficiently explored the parameter space and brought me some impressive results. It's like having a super-smart assistant working while I catch some zzz's.
 
 
-### Tracking and Counting:
-To track and count fish objects effectively, I needed to establish their identity from frame to frame. This approach proved successful in accurately tracking the same fish over time, ensuring continuity in object identification.
+### Metrics: Detecting and Tracking
+To track and count fish objects effectively, there is obviously a need to detect/classify the fish which affects the performance tracking the fish from frame to frame. 
 
-The ["botsort" algorithm](https://arxiv.org/abs/2206.14651) leverages motion patterns to estimate object displacement, matches appearances to maintain consistency across frames, and predicts future positions based on historical trajectory data. This comprehensive approach has significantly improved tracking accuracy and facilitated reliable fish counting.
+#### Detecting
 
-#### Tracking Metrics
-While the binary metrics would definitely apply here since we're dealing with a true-positive (counted correctly), True-negative (correctly did not count). The odds of incorrectly classifying an object and subsequently tracking accross the screen is very low. To the point that it may be a strong metric to consider metrics that ignore the True Negative and even the False positive situation. 
-
-Some of the metrics that would make sense here are:
 * **MAPE (Mean Average Precision Level)** 
 
 $$\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{\text{True Counts}_i - \text{Predicted Counts}_i}{\text{True Counts}_i} \right| \times 100\$$
 
 This is a good overall metric that generally captures how well, for a series of video segments, your algorithm counts the objects. For my use-case, because the video is initially starts recording for movement (can be triggered by seaweed as well as fish), each video capturing the fish is ~30sec. For MAPE, this means that if only 1 fish was in the video and it was not counted which will be penalized more heavily than a video with 2 fish where only 1 was counted. This can be important since a lot of fish will swim in parallel which can add to the difficulty in detection.
 
-* **Global Error**
+#### Tracking
 
-#### Trouble-shooting tracking:
-* Choose a video that is a best-case-scenario of what you'd want to track (e.g. minimal noise corruption, occlusion deformation, etc.)
+The ["botsort" algorithm](https://arxiv.org/abs/2206.14651) leverages motion patterns to estimate object displacement, matches appearances to maintain consistency across frames, and predicts future positions based on historical trajectory data. This comprehensive approach has significantly improved tracking accuracy and facilitated reliable fish counting.
+
+It was selected because it had the best MOTA (Multiple Object Tracking Accuracy) that considers identity switches, false positives, and false negatives.
+
+$$
+\text{MOTA} = 1 - \frac{{\sum(\text{false positives} + \text{false negatives} + \text{identity switches})}}{{\sum(\text{total number of ground truth objects})}}
+$$
 
 
 
