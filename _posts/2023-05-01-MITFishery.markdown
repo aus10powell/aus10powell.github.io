@@ -101,7 +101,7 @@ The primary metric used to assess performance in training the object detection i
 To make sure our counting game is on point, I set aside a holdout set of videos with ground truth fish counts. It's like having a benchmark to compare against. I tested the algorithm's count predictions against the ground truth, giving us valuable insights into its accuracy and effectiveness. No fishy business here!
 
 #### Bayesian Optimization with wandb.sweeps:
-I gained enough confidence to narrow down my parameter search space. With the help of wandb.sweeps' Bayesian optimization capabilities, I let the algorithm do its magic overnight. It efficiently explored the parameter space and brought me some impressive results. It's like having a super-smart assistant working while I catch some zzz's.
+I gained enough confidence to narrow down my parameter search space. With the help of [Wandb.Sweeps'](https://docs.wandb.ai/guides/sweeps) Bayesian optimization capabilities, I let the algorithm do its magic overnight. It efficiently explored the parameter space and brought me some impressive results. It's like having a super-smart assistant working while I catch some zzz's.
 
 
 ### Metrics: Detecting and Tracking
