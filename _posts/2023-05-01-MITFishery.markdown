@@ -119,5 +119,5 @@ The ["botsort" algorithm](https://arxiv.org/abs/2206.14651) leverages motion pat
 
 It was selected because it had the best MOTA (Multiple Object Tracking Accuracy) that considers identity switches, false positives, and false negatives.
 
-$$\text{MOTA} = 1 - \frac{\sum(\text{false positives} + \text{false negatives} + \text{identity switches})}{\sum(\text{total number of ground truth objects})}$$
+$$\text{MOTA} = 1 - \frac{\frac{1}{n} \sum_{i=1}^{n}(\text{False Positives}_i + \text{False Negatives}_i + \text{Identity Switches}_i)}{\frac{1}{n} \sum_{i=1}^{n}(\text{Total Number of Ground Truth Objects}_i)}$$
 
