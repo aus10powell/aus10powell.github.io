@@ -43,8 +43,9 @@ words_per_minute: 300
 * [DeepHit: A Deep Learning Approach to Survival Analysis with Competing Risks
 ](http://medianetlab.ee.ucla.edu/papers/AAAI_2018_DeepHit) Time-to-event analysis is widely used in economics, finance, engineering, medicine and many other areas. Previous models rely on strong parametric assumptions that are often violated. DeepHit uses a deep neural network to learn the distribution of survival times directly. Comparisons with previous models on the basis of real and synthetic datasets demonstrate that DeepHit achieves statistically significant performance improvements.
 
-### Recommendation
+### Recommendation and Search
 * [Counterfactual Evaluation for Recommendation Systems](https://eugeneyan.com/writing/counterfactual-evaluation/): the challenge of evaluating recommendation systems and suggests that they should be treated as interventional problems rather than observational ones. It explains that traditional offline evaluation methods may not capture the true impact of recommendations on user behavior. The article introduces counterfactual evaluation as an alternative approach, particularly focusing on Inverse Propensity Scoring (IPS) and its variants like Clipped IPS (CIPS) and Self-Normalized IPS (SNIPS), highlighting their advantages and limitations.
+* [Improving Deep Learning For Airbnb Search](https://arxiv.org/pdf/2002.05515.pdf): Airbnb's transition to deep learning for search ranking significantly impacted its roadmap, leading to a shift in strategy. While the initial optimism about incorporating machine learning ideas from literature surveys faded due to application-specific challenges, the focus shifted towards a process-driven approach, emphasizing the importance of iterative strategies over individual techniques for enhancing deep learning models in industrial settings.
 
 ## ML Ops
 * [Continuous Adaptation for Machine (Learning)](https://blog.tensorflow.org/2021/12/continuous-adaptation-for-machine.html)
