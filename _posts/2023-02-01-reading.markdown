@@ -13,6 +13,9 @@ words_per_minute: 300
 
 **2023 Reading List**
 
+* Table of Contents
+{:toc}
+
 ## Audio
 * [Self-supervised learning for infant cry analysis](https://arxiv.org/abs/2305.01578")
     * Self-supervised learning can be used to learn useful representations of infant cries from unlabeled data.
