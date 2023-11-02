@@ -63,6 +63,9 @@ words_per_minute: 300
 * [Parameter-Efficient Transfer Learning for NLP](http://proceedings.mlr.press/v97/houlsby19a/houlsby19a.pdf)
 * [RLHF: Reinforcement Learning from Human Feedback (A blog by Chip Huyen)](https://huyenchip.com/2023/05/02/rlhf.html)
 * [StackLLaMA: A hands-on guide to train LLaMA with RLHF](https://huggingface.co/blog/stackllama)
+* ReAct:
+    * [ReAct: Synergizing Reasoning and Acting in Language Models (web write-up)](https://react-lm.github.io/)
+    * [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
 
 ## Statistical
 * [Bayesian stock assessment: a review and example application using the logistic model](https://watermark.silverchair.com/55-6-1031.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAA1swggNXBgkqhkiG9w0BBwagggNIMIIDRAIBADCCAz0GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMLx9G1vXE640UVIehAgEQgIIDDuVcAcoVq_sfbFu8CGHwHlYnMN-tbQb0neED632xB-3FiQ0-kQhsE5g0NRFg8gwNFssmYzIEeO6_4MGcdwX-mJrjT7_lnDBmJ7eETkYOW97K0674mc4BoQ4cIKgknvRaj3fMPPjGe_GDkr2vp8kOrSKxN8sAvBbxqOaDLVky_fyIhdVpX5pxHkbVxl30U4iY3wUNwGl2tuBv0atdLbNbocwpTpWCiiIlm1JjSDpDkdOyvoc9qYYg7pCh_gV45jMbNAHUktEJ_0OTcqnJYcvVWsqwjnkljnplWseVUhe6IgHGzN6juC5KuuB5Jciql8WZ7QQ5V7ju0Dn5YaUqk2G9y7EjxrEwcElx7ye48ZI2PmgEoLwMOiHMfV9iaNRsA9tErunzo2O0aH5ZT3MvCQZzcthfhTcx7j-vsRFxNj2Xnvkymp36xSKmF-7xjIzq2N2QuibF9bzFeOlzW3aIXtDhjZE99EG2EQmqcggTpUFyiXftzh0hBwFHLkygWx2oUMyI0sSYt-02MYrR8G2f_FSLEtUzKTKJ-Efuth9nm-4hLOvciBQkY_SnTvHqlAXy4wENtdXalYb5GDHN_07a92wpTm6pTL4BlgZwCj4MnLMwfnfUUSrJR4L20cKNSClQqE7hy_msylSEw_zYveyN-Pp9Sh7U1RQpqy_12Bp_UIqP5IsXTjAhX3Kg2UvuMNcmIZGUvYBludcopl1LWIafj_30RBY3BjCmVFGitP-hqa_veAmPx8rq7uTmlDN8IEeWz7TqsJEOlC6Y7sehB5zeKJORfNyjtXfzO-ImwLlk6kQm6aoUSHlHHRKNns-j76Ezhx6MCZ-Yr03gBRO1bz4dImQK7Euvf3dSVOT87QLsRTNyH5pEFe94TS90348PTXluxGy4FAqndt_rxc2epL2at7bHwGD_h3jcQzlXcVyekFzdFyFL5dh8qKRD4IPK7D203hD8U4UK-XoOUalY269vFMYuaNES3oosBQ4sugYMU7yH_IpMuoIZVG6kEhDyJ7sEBKm--AD9ggUqkLkT2_TC3ll6)
