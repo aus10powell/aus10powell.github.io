@@ -63,7 +63,7 @@ words_per_minute: 300
 * [Parameter-Efficient Transfer Learning for NLP](http://proceedings.mlr.press/v97/houlsby19a/houlsby19a.pdf)
 * [RLHF: Reinforcement Learning from Human Feedback (A blog by Chip Huyen)](https://huyenchip.com/2023/05/02/rlhf.html)
 * [StackLLaMA: A hands-on guide to train LLaMA with RLHF](https://huggingface.co/blog/stackllama)
-* ReAct:
+* ReAct: a novel approach that leverages Large Language Models (LLMs) to generate both reasoning traces and task-specific actions concurrently. By using reasoning and acting, ReAct demonstrates enhanced synergy between the two, enabling the model to induce, track, and update action plans based on reasoning traces and interact effectively with external sources. The results show ReAct's effectiveness over existing methods in various language and decision-making tasks, addressing issues like hallucination and error propagation while improving human interpretability and trustworthiness.
     * [ReAct: Synergizing Reasoning and Acting in Language Models (web write-up)](https://react-lm.github.io/)
     * [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
 
