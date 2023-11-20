@@ -33,6 +33,7 @@ words_per_minute: 300
 * 05/25/23
     * [State of GPT (a Youtube update by Microsoft)](https://www.youtube.com/watch?v=bZQun8Y4L2A&t=518s&ab_channel=MicrosoftDeveloper)
     * [Discovering Language Model Behaviors with Model-Written Evaluations](https://arxiv.org/abs/2212.09251)
+* [LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/)
 
 ### Large-Language Models
 * [Parameter-Efficient Transfer Learning for NLP](http://proceedings.mlr.press/v97/houlsby19a/houlsby19a.pdf): using adapter modules as an efficient alternative to fine-tuning large pre-trained models in the context of numerous downstream tasks. Adapter modules introduce minimal trainable parameters per task, enabling the incorporation of new tasks without retraining the entire model. Demonstrating their effectiveness, the authors apply adapter modules to 26 text classification tasks, including the GLUE benchmark, achieving near state-of-the-art performance with only a slight increase in parameters. This approach contrasts with traditional fine-tuning, which requires training all parameters for each task, showcasing the efficiency and flexibility of adapter modules in handling diverse tasks.
