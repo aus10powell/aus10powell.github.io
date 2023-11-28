@@ -35,11 +35,13 @@ words_per_minute: 200
 
 
 # Poizon Plants 
-![image](/assets/images/poizon_plants/poizon_plants_app.jpg){: style="float: left; margin-right: 1em;"}
-
 ## Table of Contents
 * Table of Contents
 {:toc}
+
+![image](/assets/images/poizon_plants/poizon_plants_app.jpg){: style="float: left; margin-right: 1em;"}
+
+
 
 ### Intro/Motivation
 I have gotten poison oak multiple times. While exposure to the oil found on the plant will not cause an allergic reaction for everyone, the fact remains it's not fun. Also, it should be noted that while some people definitely do not have an allergic reaction, there is no proof that you won't develop an allergic reaction over time with continued exposure, according to the American Osteopathic College of Dermatology and other sources. Basically, no one is really safe.
@@ -49,6 +51,7 @@ Of course, if you don't live on the West Coast, all of this might not matter too
 Given that mobile phones are ubiquitous even when out enjoying nature, creating a poison oak app seemed like a useful project and learning opportunity.
 
 Side note: I had no interest in duplicating effort for something that already had a solution, so I did a little research to see if there were any existing solutions for this niche personal challenge. Interestingly enough, there were already a few apps on the iOS store that were simple classification apps like the one I proposed.
+
 
 ### Cold-Start Problem
 ![image](/assets/images/poizon_plants/classic_red_poison_oak.jpg "Classic Red Poison Oak Bush"){: style="float: right; margin-right: 1em;"}
@@ -65,6 +68,9 @@ Of course, the only solution to poor data is get more data. And hopefully that c
 * 1) Labeling on the go and would have more intuition what my model was and wasn't understanding well.
 * 2) Refining the concept-space of what constituted a reasonable recognition of an image containing poison oak since this could include multiple plants.
 * 3) Have a reason to go on more hikes.
+
+#### Object Detections Vs Classification
+The question arises as to why we refrain from treating this issue strictly as an object detection problem. In an ideal scenario, you would draw a bounding box encapsulating the identified leaf or plant. However, anchoring the project in a practical use-case: an individual equipped with a cell-phone who wants to maintain their distance from the plant in question. As they incrementally approaches, their certainty concerning the classification converges. 
 
 #### Labeling Process
 
