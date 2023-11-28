@@ -12,7 +12,10 @@ words_per_minute: 200
 ---
 
 **A practical iOS app identifying poison oak.**
-
+# Poizon Plants 
+## Table of Contents
+* Table of Contents
+{:toc}
 
 <style>
     .iframe-container {
@@ -34,10 +37,7 @@ words_per_minute: 200
 
 
 
-# Poizon Plants 
-## Table of Contents
-* Table of Contents
-{:toc}
+
 
 ![image](/assets/images/poizon_plants/poizon_plants_app.jpg){: style="float: left; margin-right: 1em;"}
 
