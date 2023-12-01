@@ -42,6 +42,17 @@ words_per_minute: 300
 * [StackLLaMA: A hands-on guide to train LLaMA with RLHF](https://huggingface.co/blog/stackllama): About the development of the StackLLaMA model, a reinforcement learning from human feedback (RLHF) fine-tuned LLaMA model for Stack Exchange question and answering. The model is trained using a combination of supervised fine-tuning, reward modeling, and reinforcement learning techniques. Challenges faced during training, such as balancing rewards and managing KL divergence, are highlighted, and the post emphasizes the ongoing efforts to improve RLHF methods. The StackLLaMA model demonstrates the application of RL techniques in natural language processing tasks, showcasing its potential for enhancing question-answering systems.
 * [ReAct: Synergizing Reasoning and Acting in Language Models (web write-up)](https://react-lm.github.io/): a novel approach that leverages Large Language Models (LLMs) to generate both reasoning traces and task-specific actions concurrently. By using reasoning and acting, ReAct demonstrates enhanced synergy between the two, enabling the model to induce, track, and update action plans based on reasoning traces and interact effectively with external sources. The results show ReAct's effectiveness over existing methods in various language and decision-making tasks, addressing issues like hallucination and error propagation while improving human interpretability and trustworthiness.
 * [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
+* [Building RAG-based LLM Applications for Production](https://www.anyscale.com/blog/a-comprehensive-guide-for-building-rag-based-llm-applications-part-1): Summary of      Retrieval Augmented Generation (RAG):
+
+    Retrieval Augmented Generation (RAG) addresses the limitation of Large Language Models (LLMs) not being trained on specific user data. It involves incorporating user data into the LLMs' existing knowledge. In the RAG process, user data is loaded and prepared for queries, creating an index. User queries filter the data down to the most relevant context, and this context, along with the query, is sent to the LLM, which generates a response.
+
+    Key stages within RAG include:
+
+    * Loading: Retrieving user data from various sources and bringing it into the processing pipeline, supported by connectors like those provided by LlamaHub.
+    * Indexing: Creating a data structure, often involving vector embeddings and metadata strategies, to facilitate efficient querying and retrieval of contextually relevant data.
+    * Storing: Saving the indexed data and associated metadata to avoid the need for re-indexing in the future.
+    * Querying: Utilizing LLMs and LlamaIndex data structures for various query strategies, such as sub-queries, multi-step queries, and hybrid approaches.
+    * Evaluation: Assessing the effectiveness of the pipeline through objective measures, comparing strategies and evaluating the accuracy, fidelity, and speed of query responses.
 
 ## Vision
 * [YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors](https://arxiv.org/abs/2207.02696)
