@@ -7,6 +7,7 @@ categories: NLP API
 description: "A text generation and sentiment analysis of 6 Twitter Accounts"
 keywords: text generation, sentiment analysis, Twitter, NLP, Transformers, HuggingFace, RESTful API
 show_date: true
+classes: wide
 ---
 
 **A text generation and sentiment analysis of 6 Twitter Accounts**
