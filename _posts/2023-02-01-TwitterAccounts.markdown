@@ -12,8 +12,24 @@ classes: wide
 
 **A text generation and sentiment analysis of 6 Twitter Accounts**
 
+# TwitterAPI
+The TwitterAPI project aims to perform text generation and sentiment analysis on six different Twitter accounts. The project utilizes NLP techniques, Transformers, and the HuggingFace library to generate tweets in the style of the selected accounts and analyze the sentiment of their tweets. Additionally, the project provides a metric for the health of the account audience and identifies anomalous tweets within the last few months. The project is deployed using FastAPI, Docker, and Gunicorn, with models hosted on HuggingFace Spaces. The code and models are stored in a GitHub repository and synced using GitHub Actions. 
+
+<div align="center">
+ <img src="/assets/images/twitter_accounts/TwitterAPIScreenshot1.png"
+     alt="askDocs example"
+     style="width:350px;"/>
+<figcaption>Screenshot of App</figcaption>
+</div>
+
+
+
+## Table of Contents
+* Table of Contents
+{:toc}
+
 ## Goal:
-* Generate a Tweet in the style of one from the following Twitter Accounts ("alikarimi_ak8", "elonmusk","BarackObama","taylorlorenz","cathiedwood","ylecun"). NOTE: alikarimi_ak8 tweets often in Persian however generated tweets are in English.
+* Generate a Tweet in the style of one from the following Twitter Accounts ("alikarimi_ak8", "elonmusk","BarackObama","taylorlorenz","cathiedwood","ylecun"). NOTE: alikarimi_ak8 tweets often in Persian however generated tweets are in English. 
 * Provide Sentiment Analysis for the 6 accounts NOTE: Based on saved historical data not live data due to the uncertain nature of scraping tweets with Elon Musk acquisition. 
 * "Account Health" Metric: 
 <div align="center">
@@ -45,6 +61,7 @@ classes: wide
   * Docker (To simply build base potentially on larger deployment)
   * Gunicorn is used to spawn the FastAPI on four child worker processes using the Asynchronous Uvicorn Worker Class. Each Uvicorn worker class runs the FastAPI app on a randomly chosen process id. The Gunicorn runs on a process id that can be configured to run on a specified port and handles the request delegation. All four instances of the FastAPI will use the same database created in the Azure Database for PostgreSQL Server. The connection to the database is established and disconnected in the startup and shutdown events of the FastAPI, respectively. The App Service deployment configuration automatically pulls and deploys any changes made to the GitHub repository it is configured with.
   * Huggingface Spaces (Free, larger-than-standard free compute and memory. Enough to save models on space without using API)
+  * *Docker* container deployment on *HuggingFace Spaces*
 * **ML/DevOps:**
   * Github Actions (to sync with Huggingface Spaces)
 * **Models:**
