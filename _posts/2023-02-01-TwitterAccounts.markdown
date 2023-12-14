@@ -18,7 +18,7 @@ The TwitterAPI project aims to perform text generation and sentiment analysis on
 <div align="center">
  <img src="/assets/images/twitter_accounts/TwitterAPIScreenshot1.png"
      alt="askDocs example"
-     style="width:350px;"/>
+     style="width:450px;"/>
 <figcaption>Screenshot of App</figcaption>
 </div>
 
