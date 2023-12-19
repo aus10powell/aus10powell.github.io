@@ -44,7 +44,7 @@ The TwitterAPI project aims to perform text generation and sentiment analysis on
 
 
 ## Twitter Accounts 
-*Twitter App (warning: may be blank and take a minute to update while free servers spin up)*
+*Twitter App (warning: may be blank and take a minute to update while free servers spin up) and if scraping library is being block there may be internal error*
 <div style="text-center;">
     <iframe src="https://aus10powell-twitteraccounts.hf.space"
             frameborder="100"
