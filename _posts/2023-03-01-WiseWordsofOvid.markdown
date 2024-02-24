@@ -26,7 +26,7 @@ E.g.:
 * Found a vast improvement in text extraction from Ovid works using 300 dimension vs 200 dimension embeddings. This is consistent with many of the recommendation for creating RAGs.
 
 ## Quotes
-$$\begin{equation*}
+\begin{equation*}
 P(\text{repeated in 2 weeks}) = 1 - \left( \frac{N - 1}{N} \right)^{\frac{14}{m}}
 \end{equation*}
 
@@ -50,7 +50,7 @@ days = 21
 
 \begin{equation*}
 P(\text{repeated in 3 weeks}) \approx  0.0980
-\end{equation*}$$
+\end{equation*}
 
 
 ### Prompts
