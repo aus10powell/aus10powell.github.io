@@ -26,21 +26,15 @@ E.g.:
 * Found a vast improvement in text extraction from Ovid works using 300 dimension vs 200 dimension embeddings. This is consistent with many of the recommendation for creating RAGs.
 
 ## Quotes
-\begin{equation*}
-P(\text{repeated in 2 weeks}) = 1 - \left( \frac{N - 1}{N} \right)^{\frac{14}{m}}
-\end{equation*}
+$$\begin{equation*}P(\text{repeated in 2 weeks}) = 1 - \left( \frac{N - 1}{N} \right)^{\frac{14}{m}}\end{equation*}$$
 
  Substituting in the values:
 
- \begin{equation*}
-P(\text{repeated in 2 weeks}) = 1 - \left( \frac{99}{100} \right)^{14}
-\end{equation*}
+ $$\begin{equation*} P(\text{repeated in 2 weeks}) = 1 - \left( \frac{99}{100} \right)^{14}\end{equation*}$$
 
  Calculating this gives:
 
- \begin{equation*}
-P(\text{repeated in 2 weeks}) \approx 0.135
-\end{equation*}
+ $$\begin{equation*} P(\text{repeated in 2 weeks}) \approx 0.135\end{equation*}$$
 
 Personally, I'd like it to be under 10% for a longer period of time (increases probability)
 
@@ -48,15 +42,12 @@ Tweaking the numbers a bit
 N = 200
 days = 21
 
-\begin{equation*}
-P(\text{repeated in 3 weeks}) \approx  0.0980
-\end{equation*}
+$$\begin{equation*}P(\text{repeated in 3 weeks}) \approx  0.0980\end{equation*}$$
 
 
 ### Prompts
 ## Fine-Tuning Prompts
 * It feels a bit like trying a new recipe while baking when you're missing measuring cups. You have instructions, general template for what to do and instinct that too much of one thing is not good but at the end of the day it's going to be trial and error. Maybe you made the recipe the best it could be, but you wouldn't know but you're following in inperfect recipe. Maybe you measured things exactly but it's still not what you want.
-* Some example prompts that
 
 ### RAG Triad of Metrics
 * **Context Relevance:** Ensuring the retrieved context is pertinent to the user query, utilizing LLMs for context relevance scoring.
