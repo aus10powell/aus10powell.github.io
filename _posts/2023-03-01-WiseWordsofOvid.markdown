@@ -26,6 +26,8 @@ E.g.:
 * Found a vast improvement in text extraction from Ovid works using 300 dimension vs 200 dimension embeddings. This is consistent with many of the recommendation for creating RAGs.
 
 ### Tweet Probability of Repeated Occurrence over Time
+Baseline for tweets retrieved needs to seed initial content.
+
 $$\begin{equation*}P(\text{repeated in 2 weeks}) = 1 - \left( \frac{N - 1}{N} \right)^{\frac{14}{m}}\end{equation*}$$
 
  Substituting in the values:
