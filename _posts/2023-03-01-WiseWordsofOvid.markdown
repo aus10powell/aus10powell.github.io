@@ -5,7 +5,7 @@ date:   2023-12-01
 comments: true
 categories: NLP LLM
 description: "A bot generating memorable quotes and replies based on works of Ovid"
-keywords: text generation, sentiment analysis, Twitter, NLP, Transformers, HuggingFace, RESTful API
+keywords: text generation, sentiment analysis, Twitter,X , NLP, LLM, Transformers, HuggingFace, RESTful API
 show_date: true
 classes: wide
 ---
@@ -22,7 +22,8 @@ E.g.:
 * Table of Contents
 {:toc}
 
-## Data
+## Generating/Extracting Quotes:
+### Scraping from Ovid Documents:
 * Found a vast improvement in text extraction from Ovid works using 300 dimension vs 200 dimension embeddings. This is consistent with many of the recommendation for creating RAGs.
 
 ### Tweet Probability of Repeated Occurrence over Time
@@ -61,3 +62,17 @@ $$\begin{equation*}P(\text{repeated in 3 weeks}) \approx  0.0980\end{equation*}$
 <figcaption>Different architectures of Dual-Encoders (https://aclanthology.org/2022.emnlp-main.640.pdf)</figcaption>
 </div> -->
 
+
+
+### Different challenges investigated:
+
+#### Problem Definition
+Generally, to reply to a different X tweets with a quote that strikes a neutral tone. Depending on  humerous/ironc/sarcastic tone if comment is overtly negative
+
+##### Tasks Involved in Problem Definition
+
+* Quote retreival from corpus (Ovid works)
+* Quote generation using different LLMs
+    * The expected challenge of hallucinations arises here particurly when the LLM was not allowed to choose which person it was quoting
+* Conditional responses:
+    * Political: For political determined the type of response (LLM can generate the actual text), sentiment can be used but also clustering may be useful [Clustering Sentence Embeddings to Identify Intents in Short Text](https://towardsdatascience.com/clustering-sentence-embeddings-to-identify-intents-in-short-text-48d22d3bf02e)
