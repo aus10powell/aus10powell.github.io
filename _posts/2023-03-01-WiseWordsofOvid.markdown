@@ -79,3 +79,19 @@ $$\begin{equation*}P(\text{repeated in 3 weeks}) \approx  0.0980\end{equation*}$
     *Prompt:* Respond to every input with a quote from your peers and the first and last name of who said it.
     *Input:* all of this has happened before, all of this will happen again (Sam Altman)
     *Output:* The only way to deal with the void is to continue to try to fill it. - John Smith
+
+## Infrastructure:
+
+- Digital Ocean Droplets utilized for hosting, ensuring efficient and scalable deployment.
+- Github Actions employed for Continuous Integration/Continuous Deployment (CI/CD) and workflow automation, streamlining the development pipeline.
+- X API for deployment
+
+### Machine Learning Stack:
+
+- Leveraging Huggingface's library for Twitter Sentiment.
+- Incorporating OpenAI GPT-3.5 Turbo for queries
+- Langchain integrated to handle specific language-related tasks involving GPT.
+
+### Model Training:
+- Training/experimentation with natural language models on diverse datasets to enhance performance.
+- Fine-tuning GPT-3.5 Turbo on domain-specific tasks, optimizing for accuracy and relevance.
