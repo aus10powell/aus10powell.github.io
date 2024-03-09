@@ -75,10 +75,10 @@ upping bank of tweets (N = 200 tweets) @ days = 21:
 $$\begin{equation*}P(\text{repeated in 3 weeks}) \approx  0.0980\end{equation*}$$
 
 ##### Interesting Quote Hallucination:
-* Responding with confidence to fit instruction.
-    *Prompt:* Respond to every input with a quote from your peers and the first and last name of who said it.
-    *Input:* all of this has happened before, all of this will happen again (Sam Altman)
-    *Output:* The only way to deal with the void is to continue to try to fill it. - John Smith
+* Responding with confidence to fit instruction with fictitious author
+    * *Prompt:* Respond to every input with a quote from your peers and the first and last name of who said it.
+    * *Input:* "all of this has happened before, all of this will happen again" (Sam Altman)
+    * *Output:* The only way to deal with the void is to continue to try to fill it. - John Smith
 
 ## Infrastructure:
 
