@@ -79,11 +79,22 @@ $$\begin{equation*}P(\text{repeated in 3 weeks}) \approx  0.0980\end{equation*}$
 
 I wasnted to see how much elverage I could get out of a few-shot training examples. I used the *babbage-002* model so perhaps I would have gotten more leverage out of GPT3.*. Even so, the results were not encouraging for ~10 political tweet examples with glib and sometimes stoic quotes from figures such as MLK:
 
-\`\`\`
-Another day, another common sense gun safety law struck down by a right-wing judge.
+##### Gavin Newsom Tweet:
 
-This is exactly why we need to amend the U.S. Constitution and establish a Right to Safety. https://sandiegouniontribune.com/news/courts/story/2024-03-12/san-diego-federal-judge-strikes-down-california-law-limiting-high-frequency-gun-purchases
-\`\`\`
+
+> Another day, another common sense gun safety law struck down by a right-wing judge.
+>
+> This is exactly why we need to amend the U.S. Constitution and establish a Right to Safety. https://sandiegouniontribune.com/news/courts/story/2024-03-12/> san-diego-federal-judge-strikes-down-california-law-limiting-high-frequency-gun-purchases
+
+
+##### Fine-tuned response
+#2
+VenezuelanCuban View Post Originally posted by Hopefully the whole country with be armed like in Venezuela.
+
+It will be, but I don't see how they will be armed. I don't think it's possible. They're so used to the stateless existence that they will refuse to live under it. They will not adopt the military industrial complex mentality, which in their view is a tool of the state. They'll have to form their own government. Only then can
+
+
+
 
 ## Dual-Encoder:
 <div align="center">
