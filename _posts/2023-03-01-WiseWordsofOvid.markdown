@@ -76,18 +76,14 @@ $$\begin{equation*}P(\text{repeated in 3 weeks}) \approx  0.0980\end{equation*}$
 
 #### Fine-tuning based on gold standard
 
+I wanted to see how much elverage I could get out of a few-shot training examples. I used the *babbage-002* model so perhaps I would have gotten more leverage out of GPT3.*. Even so, the results were not encouraging for ~10 political tweet examples with glib and sometimes stoic quotes from figures such as MLK:
 
-I wasnted to see how much elverage I could get out of a few-shot training examples. I used the *babbage-002* model so perhaps I would have gotten more leverage out of GPT3.*. Even so, the results were not encouraging for ~10 political tweet examples with glib and sometimes stoic quotes from figures such as MLK:
-
-##### Gavin Newsom Tweet:
-
-
+*Gavin Newsom Tweet*
 > Another day, another common sense gun safety law struck down by a right-wing judge.
 >
 > This is exactly why we need to amend the U.S. Constitution and establish a Right to Safety. https://sandiegouniontribune.com/news/courts/story/2024-03-12/> san-diego-federal-judge-strikes-down-california-law-limiting-high-frequency-gun-purchases
 
-
-##### Fine-tuned response
+*Fine-tuned response*
 > #2
 > VenezuelanCuban View Post Originally posted by Hopefully the whole country with be armed like in Venezuela.
 >
