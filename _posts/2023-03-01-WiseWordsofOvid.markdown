@@ -14,7 +14,6 @@ classes: wide
 
 # WiseWordsofOvid
 
-## TBD
 * Prompt-based "wisdom" responses based on sentiment using [cardiffnlp/twitter-roberta-base-sentiment](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment?text=Whoa.+CNN+is+now+reporting+that+several+Republican+voters+have+said+that+they+voted+for+Tom+Suozzi+today+because+Republicans+sabotaged+the+border+security+deal.+This+is+huge+%26+amazing.+Voters+see+right+through+Republican+nonsense+%26+they+are+making+them+find+out+big+time.). 
 E.g.:
 <mark> Here is why I think we’re seeing this: Time & time again, the media focuses on polls & draws conclusions about the state of the race without focusing on 1.) all Democrats have done & 2.) the real threat of Trump/MAGA extremism. But VOTERS ARE NOT DUMB! Wake up, media. /END</mark> ==>
@@ -22,16 +21,15 @@ E.g.:
 * Table of Contents
 {:toc}
 
-## Generating/Extracting Quotes:
-### Data
-Most of the works are found easily online written in poetic form which is not as straight-forward to parse as regular documents. Found a vast improvement in text extraction from Ovid works using 300 dimension vs 200 dimension embeddings. This is consistent with many of the recommendation for creating RAGs.
-
-### Prompts
 ### Problem Definition
 Generally, to reply to a different X tweets with a quote that strikes a neutral tone. Depending on humerous/ironc/sarcastic tone if comment is overtly negative.
 
-### Tasks Involved in Problem Definition
-#### Ovid Quote Retrieval Task
+### Generating/Extracting Quotes:
+#### Data
+Most of the works are found easily online written in poetic form which is not as straight-forward to parse as regular documents. Found a vast improvement in text extraction from Ovid works using 300 dimension vs 200 dimension embeddings. This is consistent with many of the recommendation for creating RAGs.
+
+#### Tasks Involved in Problem Definition
+##### Ovid Quote Retrieval Task
 * Quote retreival from different poet works of Ovid for main tweet content.
     * Quote generation using different LLMs
         * The expected challenge of hallucinations arises here particurly when the LLM was not allowed to choose which person it was quoting
@@ -76,7 +74,7 @@ $$\begin{equation*}P(\text{repeated in 3 weeks}) \approx  0.0980\end{equation*}$
 
 #### Fine-tuning based on gold standard
 
-I wanted to see how much elverage I could get out of a few-shot training examples. I used the *babbage-002* model so perhaps I would have gotten more leverage out of GPT3.*. Even so, the results were not encouraging for ~10 political tweet examples with glib and sometimes stoic quotes from figures such as MLK:
+I wanted to see how much elverage I could get out of a few-shot training examples. I used the *babbage-002* model so perhaps I would have gotten more leverage out of GPT3.*. Even so, the results were not encouraging for ~10 political tweet examples with glib and sometimes stoic quotes from figures such as MLK. It begs the question on how much effort is put into making an LLM work.
 
 *Gavin Newsom Tweet*
 > Another day, another common sense gun safety law struck down by a right-wing judge.
@@ -88,7 +86,6 @@ I wanted to see how much elverage I could get out of a few-shot training example
 > VenezuelanCuban View Post Originally posted by Hopefully the whole country with be armed like in Venezuela.
 >
 >It will be, but I don't see how they will be armed. I don't think it's possible. They're so used to the stateless existence that they will refuse to live under it. They will not adopt the military industrial complex mentality, which in their view is a tool of the state. They'll have to form their own government. Only then can
-
 
 
 
