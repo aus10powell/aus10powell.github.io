@@ -88,10 +88,10 @@ I wasnted to see how much elverage I could get out of a few-shot training exampl
 
 
 ##### Fine-tuned response
-#2
-VenezuelanCuban View Post Originally posted by Hopefully the whole country with be armed like in Venezuela.
-
-It will be, but I don't see how they will be armed. I don't think it's possible. They're so used to the stateless existence that they will refuse to live under it. They will not adopt the military industrial complex mentality, which in their view is a tool of the state. They'll have to form their own government. Only then can
+> #2
+> VenezuelanCuban View Post Originally posted by Hopefully the whole country with be armed like in Venezuela.
+>
+>It will be, but I don't see how they will be armed. I don't think it's possible. They're so used to the stateless existence that they will refuse to live under it. They will not adopt the military industrial complex mentality, which in their view is a tool of the state. They'll have to form their own government. Only then can
 
 
 
