@@ -36,7 +36,7 @@ Generally, to reply to a different X tweets with a quote that strikes a neutral 
     * Quote generation using different LLMs
         * The expected challenge of hallucinations arises here particurly when the LLM was not allowed to choose which person it was quoting
         * RAG: E.g. "What did Ovid have to say about different political parties"
-    * Sentence-similarity
+    * Sentence-similarity (see [Is Cosine-Similarity of Embeddings Really About Similarity?](https://arxiv.org/pdf/2403.05440.pdf)) which was most useful in weeding out totally useless chunks of text.
 * Responses:
     * RAG-based:
         * Metrics:
@@ -44,7 +44,7 @@ Generally, to reply to a different X tweets with a quote that strikes a neutral 
             * **Groundedness:** Separating the response into statements and verifying each against the retrieved context.
             * **Answer Relevance:** Checking if the response aptly addresses the original question.
     * Political: For political determined the type of response (LLM can generate the actual text), sentiment can be used but also clustering may be useful [Clustering Sentence Embeddings to Identify Intents in Short Text](https://towardsdatascience.com/clustering-sentence-embeddings-to-identify-intents-in-short-text-48d22d3bf02e)
-    * **Take-away:** RAG-based methods were better at making factual statements, e.g. "Who is Arachne?" -> "Arachne is the protagonist of a tale in Greek mythology known primarily from the version told by the Roman poet Ovid, which is the earliest extant source for the story."
+    * **Take-away:** RAG-based methods were better at making factual statements, e.g. "Who is Arachne?" -> "Arachne is the protagonist of a tale in Greek mythology known primarily from the version told by the Roman poet Ovid, which is the earliest extant source for the story.". Subjective 
 
 #### Tweets needed: Tweet Probability of Repeated Occurrence over Time
 Baseline for tweets retrieved needs to seed initial content with replacement.
@@ -74,6 +74,16 @@ $$\begin{equation*}P(\text{repeated in 3 weeks}) \approx  0.0980\end{equation*}$
     * *Input:*  *We all come from somewhere, but we’re all Americans.*
     * *Output:* We all come from different places and backgrounds, but at the end of the day, we're all Americans. -Unknown
 
+#### Fine-tuning based on gold standard
+
+
+I wasnted to see how much elverage I could get out of a few-shot training examples. I used the *babbage-002* model so perhaps I would have gotten more leverage out of GPT3.*. Even so, the results were not encouraging for ~10 political tweet examples with glib and sometimes stoic quotes from figures such as MLK:
+
+\`\`\`
+Another day, another common sense gun safety law struck down by a right-wing judge.
+
+This is exactly why we need to amend the U.S. Constitution and establish a Right to Safety. https://sandiegouniontribune.com/news/courts/story/2024-03-12/san-diego-federal-judge-strikes-down-california-law-limiting-high-frequency-gun-purchases
+\`\`\`
 
 ## Dual-Encoder:
 <div align="center">
