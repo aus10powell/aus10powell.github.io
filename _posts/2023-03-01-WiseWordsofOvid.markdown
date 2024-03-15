@@ -22,7 +22,7 @@ E.g.:
 {:toc}
 
 ### Problem Definition
-Generally, to reply to a different X tweets with a quote that strikes a neutral tone. Depending on humerous/ironc/sarcastic tone if comment is overtly negative.
+Generally, to reply to a different X tweets (often political or opinionated in nature) with a quote that strikes a neutral tone. Depending on humerous/ironc/sarcastic tone if comment is overtly negative.
 
 ### Generating/Extracting Quotes:
 #### Data
@@ -34,7 +34,11 @@ Most of the works are found easily online written in poetic form which is not as
     * Quote generation using different LLMs
         * The expected challenge of hallucinations arises here particurly when the LLM was not allowed to choose which person it was quoting
         * RAG: E.g. "What did Ovid have to say about different political parties"
-    * Sentence-similarity (see [Is Cosine-Similarity of Embeddings Really About Similarity?](https://arxiv.org/pdf/2403.05440.pdf)) which was most useful in weeding out totally useless chunks of text.
+    * Sentence-similarity (see [Is Cosine-Similarity of Embeddings Really About Similarity?](https://arxiv.org/pdf/2403.05440.pdf)) which was most useful in weeding out totally useless chunks of text. However, as far as generating memorable quotes similar in concept even it was so much:
+        * **Input sentence:** Plurality should never be proposed unless needed. (William Occam)
+        * **Output sentence 1:** Everything should be made as simple as possible, but not simpler. (Albert Einstein) | 0.217 similarity using MLX LLM 
+        * **Output sentence 2:** Simplicity is the ultimate sophistication. ( Leonardo da Vinci) | 0.175 similarity using MLX LLM
+
 * Responses:
     * RAG-based:
         * Metrics:
