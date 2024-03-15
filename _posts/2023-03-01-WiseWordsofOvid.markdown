@@ -36,8 +36,8 @@ Most of the works are found easily online written in poetic form which is not as
         * RAG: E.g. "What did Ovid have to say about different political parties"
     * Sentence-similarity (see [Is Cosine-Similarity of Embeddings Really About Similarity?](https://arxiv.org/pdf/2403.05440.pdf)) which was most useful in weeding out totally useless chunks of text. However, as far as generating memorable quotes similar in concept even it was not so much:
         * **Input sentence:** Plurality should never be proposed unless needed. (William Occam)
-        **Output sentence 1:** Everything should be made as simple as possible, but not simpler. (Albert Einstein) | 0.217 similarity using MLX LLM 
-        **Output sentence 2:** Simplicity is the ultimate sophistication. ( Leonardo da Vinci) | 0.175 similarity using MLX LLM
+        * **Output sentence 1:** Everything should be made as simple as possible, but not simpler. (Albert Einstein) | 0.217 similarity using MLX LLM 
+        * **Output sentence 2:** Simplicity is the ultimate sophistication. ( Leonardo da Vinci) | 0.175 similarity using MLX LLM
 
 * Responses:
     * RAG-based:
@@ -118,3 +118,6 @@ I wanted to see how much elverage I could get out of a few-shot training example
 ### Model Training:
 - Training/experimentation with natural language models on diverse datasets to enhance performance.
 - Fine-tuning GPT-3.5 Turbo on domain-specific tasks, optimizing for accuracy and relevance.
+
+## Relevant Reading
+* TWEETEVAL is a standardized test bed for seven tweet classification tasks. These are: sentiment analysis, emotion recognition, offensive language detection, hate speech detection, stance prediction, emoji prediction, and irony detection. [TWEETEVAL: Unified Benchmark and Comparative Evaluation for Tweet Classification](https://arxiv.org/pdf/2010.12421.pdf)
