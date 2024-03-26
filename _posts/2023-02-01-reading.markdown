@@ -76,6 +76,7 @@ words_per_minute: 300
 * [Improving Deep Learning For Airbnb Search](https://arxiv.org/pdf/2002.05515.pdf): Airbnb's transition to deep learning for search ranking significantly impacted its roadmap, leading to a shift in strategy. While the initial optimism about incorporating machine learning ideas from literature surveys faded due to application-specific challenges, the focus shifted towards a process-driven approach, emphasizing the importance of iterative strategies over individual techniques for enhancing deep learning models in industrial settings.
 
 ## ML Ops
+* [https://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf](Rules of Machine Learning: Best Practices for ML Engineering (M. Zinkevich))
 * [Continuous Adaptation for Machine (Learning)](https://blog.tensorflow.org/2021/12/continuous-adaptation-for-machine.html)
 * [Model training as a CI/CD system: Part I](https://cloud.google.com/blog/topics/developers-practitioners/model-training-cicd-system-part-i)
 * [Model training as a CI/CD system: Part II](https://cloud.google.com/blog/topics/developers-practitioners/model-training-cicd-system-part-ii)

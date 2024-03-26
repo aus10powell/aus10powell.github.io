@@ -78,7 +78,7 @@ $$\begin{equation*}P(\text{repeated in 3 weeks}) \approx  0.0980\end{equation*}$
 
 #### Fine-tuning based on gold standard
 
-I wanted to see how much elverage I could get out of a few-shot training examples. I used the *babbage-002* model so perhaps I would have gotten more leverage out of GPT3.*. Even so, the results were not encouraging for ~10 political tweet examples with glib and sometimes stoic quotes from figures such as MLK. It begs the question on how much effort is put into making an LLM work.
+I wanted to see how much leverage I could get out of a few-shot training examples. I used the *babbage-002* model so perhaps I would have gotten more leverage out of GPT3.*. Even so, the results were not encouraging for ~10 political tweet examples with glib and sometimes stoic quotes from figures such as MLK. It begs the question on how much effort is put into making an LLM work. 
 
 *Gavin Newsom Tweet*
 > Another day, another common sense gun safety law struck down by a right-wing judge.
