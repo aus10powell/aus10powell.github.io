@@ -66,15 +66,19 @@ upping bank of tweets (N = 200 tweets) @ days = 21:
 
 $$\begin{equation*}P(\text{repeated in 3 weeks}) \approx  0.0980\end{equation*}$$
 
-##### Interesting Quote Hallucination:
+##### Interesting Quote "Hallucinations":
 * Fictitious author
-    * *Prompt:* Respond to every input with a quote from your peers and the first and last name of who said it.
-    * *Input:* "all of this has happened before, all of this will happen again" (Sam Altman)
-    * *Output:* The only way to deal with the void is to continue to try to fill it. - John Smith
+    * **Prompt:** Respond to every input with a quote from your peers and the first and last name of who said it.
+    * **Input:** "all of this has happened before, all of this will happen again" (Sam Altman)
+    * **Output:** "The only way to deal with the void is to continue to try to fill it." - John Smith
+* Fictitious quote from author:
+    * **Prompt:** *Respond to every input with a quote from your peers and the first and last name of who said it.*
+    * **Input:** *Everyone talking re: over-education of youth. But that's not the problem. Real issue is believing certain work is beneath you. We've all answered phones. <u>Jensen Huang</u> (NW $81B) cleaned toilets. I was broke prep cook in a Jewish deli. Gotta start somewhere*
+    * **Output:** "Real issue is believing certain work is beneath you." - <u>Jensen Huang</u>
 * Postured quote: From no one in particular and not particularly memerable.
-    * *Prompt:*  *Generate a response to a self-promotional tweet expressing a strong stance against politics.*
-    * *Input:*  *We all come from somewhere, but we’re all Americans.*
-    * *Output:* We all come from different places and backgrounds, but at the end of the day, we're all Americans. -Unknown
+    * **Prompt:**  *Generate a response to a self-promotional tweet expressing a strong stance against politics.*
+    * **Input:**  *We all come from somewhere, but we’re all Americans.*
+    * **Output:** "We all come from different places and backgrounds, but at the end of the day, we're all Americans." -Unknown
 
 #### Fine-tuning based on gold standard
 
