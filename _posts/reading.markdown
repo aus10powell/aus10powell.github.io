@@ -80,6 +80,7 @@ words_per_minute: 300
 * [Continuous Adaptation for Machine (Learning)](https://blog.tensorflow.org/2021/12/continuous-adaptation-for-machine.html)
 * [Model training as a CI/CD system: Part I](https://cloud.google.com/blog/topics/developers-practitioners/model-training-cicd-system-part-i)
 * [Model training as a CI/CD system: Part II](https://cloud.google.com/blog/topics/developers-practitioners/model-training-cicd-system-part-ii)
+* [APIs for Model Serving](https://madewithml.com/courses/mlops/api/)
 * [Github Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) This is a great place to start especially since your project likely already has a Github repository. It covers all the basics of CI/CD. It discusses the components of a workflow and how to create one. Workflows can be triggered by events such as pushes to the repository. Each workflow run is executed on a runner, which can be a virtual machine or a self-hosted server. Jobs within a workflow can run in parallel or sequentially.
 
     * The process of building a CI/CD system specifically for model training.
