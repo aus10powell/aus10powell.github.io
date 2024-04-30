@@ -56,6 +56,15 @@ The primary metric used to assess performance in training the object detection i
 #### Overview
 This section provides a comparison of the algorithm's performance across different years (2016, 2017, and 2018) at one specific site. The performance metrics considered include `videos_missed`, `mape`, `total_percent_error`, `misscounts`, `total_herring`, `rmse`, `mae`, and `f1`.
 
+#### Metrics: Detecting and Tracking
+To track and count fish objects effectively, there is obviously a need to detect/classify the fish which affects the performance tracking the fish from frame to frame. 
+
+##### Detecting
+
+$$\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{\text{True Counts}_i - \text{Predicted Counts}_i}{\text{True Counts}_i} \right| \times 100$$
+
+This is a good overall metric that generally captures how well, for a series of video segments, your algorithm counts the objects. For my use-case, because the video is initially starts recording for movement (can be triggered by seaweed as well as fish), each video capturing the fish is ~30sec. For MAPE, this means that if only 1 fish was in the video and it was not counted which will be penalized more heavily than a video with 2 fish where only 1 was counted. This can be important since a lot of fish will swim in parallel which can add to the difficulty in detection.
+
 #### Performance Metrics
 Here's a breakdown of the performance metrics for each year:
 
@@ -64,7 +73,6 @@ Here's a breakdown of the performance metrics for each year:
 | 2016 | 4	| 0.196667	| 0.333333	| 7| 	21| 	1.9| 	0.7| 	0.333333| 
 | 2017 | 3	| 0.09375	|0.12	|3|	25|	0.1875|	0.1875|	0.856459|
 | 2018 | 11 |0.166667| 0.12 | 9| 75 |0.543478 | 0.326087 | 0.611905 |
-
 							
 #### Discussion
 The performance variance over the years can be attributed to several factors, including variations in video quality, lighting conditions, and the presence of other objects that can reduce confidence in herring frame to frame. These factors pose challenges for accurate fish detection and tracking, leading to differences in the algorithm's effectiveness across different years. The primary factor in better performance seems to be the light quality that helps define the fish. However, despite these challenges, the algorithm has demonstrated consistent improvement in performance over time, as evidenced by the evolving metrics.
@@ -122,16 +130,6 @@ To make sure our counting game is on point, I set aside a holdout set of videos 
 
 #### Bayesian Optimization with wandb.sweeps:
 I gained enough confidence to narrow down my parameter search space. With the help of [Wandb.Sweeps'](https://docs.wandb.ai/guides/sweeps) Bayesian optimization capabilities, I let the algorithm do its magic overnight. It efficiently explored the parameter space and brought me some impressive results. It's like having a super-smart assistant working while I catch some zzz's.
-
-
-### Metrics: Detecting and Tracking
-To track and count fish objects effectively, there is obviously a need to detect/classify the fish which affects the performance tracking the fish from frame to frame. 
-
-#### Detecting
-
-$$\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{\text{True Counts}_i - \text{Predicted Counts}_i}{\text{True Counts}_i} \right| \times 100$$
-
-This is a good overall metric that generally captures how well, for a series of video segments, your algorithm counts the objects. For my use-case, because the video is initially starts recording for movement (can be triggered by seaweed as well as fish), each video capturing the fish is ~30sec. For MAPE, this means that if only 1 fish was in the video and it was not counted which will be penalized more heavily than a video with 2 fish where only 1 was counted. This can be important since a lot of fish will swim in parallel which can add to the difficulty in detection.
 
 #### Tracking
 
