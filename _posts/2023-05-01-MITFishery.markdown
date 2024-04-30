@@ -51,6 +51,25 @@ The initial challenge involved designing an accurate object detection algorithm 
 
 The primary metric used to assess performance in training the object detection is map50-95 (mean average precision at IoU (Intersection over Union) thresholds of 0.5 to 0.95) which I baselined the project with at 0.31 and now at 0.72 has become sufficent for tracking in videos to receive a 0.28 MAPE (Mean Absolute Percentage Error). This doesn't reflect the full picture of how well the algorithm performs in tracking an object from one point to another. There is more discussion on this later.
 
+#### Performance Comparison for Different Years
+
+#### Overview
+This section provides a comparison of the algorithm's performance across different years (2016, 2017, and 2018) at one specific site. The performance metrics considered include `videos_missed`, `mape`, `total_percent_error`, `misscounts`, `total_herring`, `rmse`, `mae`, and `f1`.
+
+#### Performance Metrics
+Here's a breakdown of the performance metrics for each year:
+
+| Year | Videos Missed | MAPE | Total Percent Error | Misscounts | Total Herring | RMSE | MAE | F1 |
+|------|---------------|------|---------------------|------------|---------------|------|-----|----|
+| 2016 | 4	| 0.196667	| 0.333333	| 7| 	21| 	1.9| 	0.7| 	0.333333| 
+| 2017 | 3	| 0.09375	|0.12	|3|	25|	0.1875|	0.1875|	0.856459|
+| 2018 | 11 |0.166667| 0.12 | 9| 75 |0.543478 | 0.326087 | 0.611905 |
+
+							
+#### Discussion
+The performance variance over the years can be attributed to several factors, including variations in video quality, lighting conditions, and the presence of other objects that can reduce confidence in herring frame to frame. These factors pose challenges for accurate fish detection and tracking, leading to differences in the algorithm's effectiveness across different years. The primary factor in better performance seems to be the light quality that helps define the fish. However, despite these challenges, the algorithm has demonstrated consistent improvement in performance over time, as evidenced by the evolving metrics.
+
+
 
 ### Data Preparation
 **Data Quality Challenges** Due to the extreme varition in camera quality and image quality the following types of image augmentation have become extremely usefuly in the quality of model:
