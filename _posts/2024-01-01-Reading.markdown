@@ -59,6 +59,8 @@ words_per_minute: 300
 
 * [Memory and MIPS (Max Inner Product Search)](https://chat.openai.com/share/46ff149e-a4c7-4dd7-a800-fc4a642ea389) Generally speaking, this deals with the concepts of having large corpus of documents that are represented in a high-dimensional space. After being given a new document, you want to find the document in your existing collection that is most similar to it. This is the maximum inner product search. The chat with GPT involves a discussion of this idea in relation to memory.
 
+* [MealRec+: A Meal Recommendation Dataset with Meal-Course Affiliation for Personalization and Healthiness](https://arxiv.org/pdf/2404.05386): The task of meal recommendation involves intricate connections among users, courses, and meals, particularly through meal-course affiliation, yet existing datasets lack this crucial affiliation. To address this gap, the MealRec+ dataset is introduced, leveraging simulation methods to derive meal-course affiliation and user-meal interactions, and demonstrating that cooperative learning of these interactions improves the effectiveness of meal recommendations, with efforts also made to enhance the healthiness of recommendations.
+
 ## Vision
 * [YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors](https://arxiv.org/abs/2207.02696)
 * [ByteTrack: Multi-Object Tracking by Associating Every Detection Box](https://arxiv.org/abs/2110.06864) To reduce missing detections and keep the persistence of trajectories, authors keep detection boxes and associate across every of them.
