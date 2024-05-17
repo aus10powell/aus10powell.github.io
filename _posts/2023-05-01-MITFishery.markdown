@@ -80,7 +80,11 @@ The performance variance over the years can be attributed to several factors, in
 
 
 ### Data Preparation
-**Data Quality Challenges** Due to the extreme varition in camera quality and image quality the following types of image augmentation have become extremely usefuly in the quality of model:
+
+#### Video Considerations
+The ideal sample rate depends on how fast objects move. For slower videos, a lower rate might suffice. But to capture every detail of speedy objects, you'll need to annotate more frames, ensuring you have enough data to calculate their velocity accurately.
+
+#### Due to the extreme varition in camera quality and image quality the following types of image augmentation have become extremely usefuly in the quality of model:
 
 ##### Example Image Augmentation
 ![Click to view video](/assets/images/mitfishery/example_augmentation.png)
