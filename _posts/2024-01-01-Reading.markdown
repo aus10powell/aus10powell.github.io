@@ -68,6 +68,7 @@ words_per_minute: 300
 * [Object Detection for Dummies Part 3: R-CNN Family](https://lilianweng.github.io/posts/2017-12-31-object-recognition-part-3/) Good discussion on loss of object recognition.
 * [A good overview of object Detection and Image Segmentation](https://www.oreilly.com/library/view/practical-machine-learning/9781098102357/ch04.html)
 * [Noise or Signal: The role of Backgrounds in Image Classification](https://gradientscience.org/background/) Trying to determine how many backgrounds of no fish in image is appropriate. Full paper [HERE](https://arxiv.org/abs/2006.09994)
+* [OpenAI Clip](https://arxiv.org/abs/2103.00020): Traditionally, computer vision models need labeled data to recognize new objects, limiting their adaptability. Training models to describe images with text captions allows them to understand and tackle new tasks without additional task-specific data, making them highly versatile.
 
 ## ML (General)
 * [DeepHit: A Deep Learning Approach to Survival Analysis with Competing Risks
