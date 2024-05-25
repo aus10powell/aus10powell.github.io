@@ -16,7 +16,12 @@ words_per_minute: 300
 * Table of Contents
 {:toc}
 
-## Audio
+## Signal Processing
+
+### General
+* [End-to-End Signal Processing and Deep Learning (using Embedded GPUs)](https://deepwavedigital.com/wp-content/uploads/2019/11/GTCDC2019_Deepwave_Public_Release_FINAL.pdf): End-to-End Signal Processing and Deep Learning, particularly using Embedded GPUs, are specialized areas of focus. These technologies enable the development of full-stack solutions for deep learning and GPU-enabled signal processing systems, including edge compute hardware and custom applications. The integration of hardware and software facilitates efficient performance in tasks such as radio embedded systems with FPGA, CPU, and GPU, GPU-based signal processing algorithms, and pruned neural networks for inference on edge RF systems.
+
+### Audio
 * [Self-supervised learning for infant cry analysis](https://arxiv.org/abs/2305.01578")
     * Self-supervised learning can be used to learn useful representations of infant cries from unlabeled data.
     * The self-supervised approach was able to achieve comparable performance to a supervised learning approach that was trained on a small amount of labeled data.
