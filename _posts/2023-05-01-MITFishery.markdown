@@ -126,6 +126,12 @@ The ideal sample rate depends on how fast objects move. For slower videos, a low
 * Set the confidence of your YOLO inference at the confidence that maximizes your F1 score. E.g. Max 98% @ Confidence = 0.32. Although maximizing for recall is good, the F1 score is more directly correlated with tracking a fish across the screen.
 * Try and hit ~1000 instances of an object class that is to be tracked
 
+#### What does a label "balanced" look like in object detection?
+In this context, "balanced" doesn't refer to the visual appearance of a label itself. Instead, it describes the distribution of labels within a dataset used to train an object detection model. A balanced dataset ensures that all object categories have roughly the same number of examples. This is crucial for optimal model performance, as an unbalanced dataset can lead the model to prioritize the frequently occurring categories and struggle to detect less frequent ones. Ideally, a "balanced" label distribution would have a similar number of labels for each object class, creating a level playing field for the model to learn from all categories effectively.
+
+![reasonable balance ><](/assets/images/mitfishery/2d_distribution.png)
+
+
 #### Dataset Selection and Training:
 "garbage in, garbage out." So, I spent a good amount of time curating a diverse dataset with annotated fish images and videos. Lighting conditions, backgrounds, and different fish species etc. By training the model on a curated dataset, I witnessed significant improvements in detection performance. 
 
