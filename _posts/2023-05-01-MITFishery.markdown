@@ -21,6 +21,11 @@ I am currently working on an ongoing project to detect and count fish in Massach
 * Table of Contents
 {:toc}
 
+## QA Bot: Ask questions about the repository:
+<a href="https://huggingface.co/chat/conversation/66b2a6ee5141de599b9cb1c1">
+    <img src="/assets/images/mitfishery/ChatbotImage.png" alt="QA Chatbot: Ask questions about this repository" width="350">
+</a>
+
 ## Public Demo of dashboard
 <div style="display: flex; justify-content: center;">
   <iframe
