@@ -36,6 +36,8 @@ and a vast majority of open-ended inquiries.
 
 * [Machine Unlearning in 2024](https://ai.stanford.edu/~kzliu/blog/unlearning): A focuse on removing specific information from trained machine learning (ML) models without retraining them from scratch. The goal being editing away undesirable data, such as private information, outdated knowledge, copyrighted material, harmful content, and misinformation.
 
+* [Adaptive Retrieval-Augmented Generation for Conversational Systems](https://arxiv.org/pdf/2407.21712): This research addresses the question of whether Retrieval Augmented Generation (RAG) is always necessary in conversational AI systems. The study introduces RAGate, a gating model that predicts when external knowledge augmentation is needed for improved responses, based on conversation context and human judgments. 
+
 ## Vision
 * [YoloV10: Real-Time End-to-End Object Detection](https://arxiv.org/abs/2405.14458) Among other improvements in efficiency, the highlight may be tackeling the speed issues caused by NMS.
 * [Faiss: A library for efficient similarity search](https://engineering.fb.com/2017/03/29/data-infrastructure/faiss-a-library-for-efficient-similarity-search/):  Facebook AI Similarity Search (Faiss), a library that allows us to quickly search for multimedia documents that are similar to each other
