@@ -125,3 +125,6 @@ I wanted to see how much leverage I could get out of a few-shot training example
 
 ## Relevant Reading
 * TWEETEVAL is a standardized test bed for seven tweet classification tasks. These are: sentiment analysis, emotion recognition, offensive language detection, hate speech detection, stance prediction, emoji prediction, and irony detection. [TWEETEVAL: Unified Benchmark and Comparative Evaluation for Tweet Classification](https://arxiv.org/pdf/2010.12421.pdf)
+
+## Future Work
+Using a recommendation system that understands context, relevance, and even your mood. Instead of just retreiving quotes, it ranks and refines them, ensuring the wisdom you get is tailored and on point.
