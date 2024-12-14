@@ -1,0 +1,24 @@
+---
+layout: single
+title:  "2024 Technical Reading"
+date:   2024-01-01
+comments: true
+# image: /assets/images/poizon_plants/poizon_plants_app.jpg
+categories: 2024 Papers 
+description: "Technical articles, research papers, etc. read in 2024"
+keywords: research, ml, data-science, papers, nlp, audio, ai
+show_date: true
+words_per_minute: 300
+---
+
+**2024 Reading List**
+
+* Table of Contents
+{:toc}
+
+### NLP
+
+### Agents
+
+
+* [AGENTiGraph: An Interactive Knowledge Graph Platform for LLM-based Chatbots Utilizing Private Data](https://arxiv.org/pdf/2410.11531): LLMs are powerful but can struggle with factual consistency and require complex queries. Traditional KG tools are difficult to use and require technical expertise. AGENTiGraph bridges the gap between LLMs and KGs. It uses a multi-agent system where each agent has a specific role, such as interpreting user intent or translating queries into graph operations. This allows for more natural language interaction with KGs and improved accuracy in tasks like question answering.
