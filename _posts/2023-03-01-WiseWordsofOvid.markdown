@@ -8,6 +8,11 @@ description: "A bot generating memorable quotes and replies based on works of Ov
 keywords: text generation, sentiment analysis, Twitter,X , NLP, LLM, Transformers, HuggingFace, RESTful API
 show_date: true
 classes: wide
+words_per_minute: 300
+toc: true
+toc_label: "Contents"
+toc_icon: "book" # Optional
+toc_sticky: true # Makes ToC scroll with page
 ---
 
 **A wise bot retrieving quotes from antiquity**
