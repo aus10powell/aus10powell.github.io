@@ -9,12 +9,13 @@ description: "Technical articles, research papers, etc. read in 2023"
 keywords: research, ml, data-science, papers, nlp, audio, ai
 show_date: true
 words_per_minute: 300
+toc: true
+toc_label: "Contents"
+toc_icon: "book" # Optional
+toc_sticky: true # Makes ToC scroll with page
 ---
 
 **2023 Reading List**
-
-* Table of Contents
-{:toc}
 
 ## Signal Processing
 
