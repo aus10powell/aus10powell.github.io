@@ -12,6 +12,10 @@ toc: true
 toc_label: "Contents"
 toc_icon: "book" # Optional
 toc_sticky: true # Makes ToC scroll with page
+toc: true
+toc_label: "Contents"
+toc_icon: "book" # Optional
+toc_sticky: true # Makes ToC scroll with page
 ---
 
 **A wise bot retrieving quotes from antiquity**
