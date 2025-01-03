@@ -7,7 +7,6 @@ categories: NLP LLM
 description: "A bot generating memorable quotes and replies based on works of Ovid"
 keywords: text generation, sentiment analysis, Twitter,X , NLP, LLM, Transformers, HuggingFace, RESTful API
 show_date: true
-classes: wide
 words_per_minute: 300
 toc: true
 toc_label: "Contents"
