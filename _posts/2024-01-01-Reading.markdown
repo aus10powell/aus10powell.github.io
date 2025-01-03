@@ -22,17 +22,18 @@ toc_sticky: true # Makes ToC scroll with page
 
 ### Large-Language Models
 
-- [Memory and MIPS (Max Inner Product Search)](https://chat.openai.com/share/46ff149e-a4c7-4dd7-a800-fc4a642ea389) 
-    > Generally speaking, this deals with the concepts of having large corpus of documents that are represented in a high-dimensional space. After being given a new document, you want to find the document in your existing collection that is most similar to it. This is the maximum inner product search. The chat with GPT involves a discussion of this idea in relation to memory.
-- [Transforming wearable data into health insights using large language model agents](https://arxiv.org/pdf/2406.06464)
-    > An AI system harnessing cutting-edge technology to revolutionize how wearable health data translates into actionable advice for individuals, tackling over 84% of numerical questions
-  and a vast majority of open-ended inquiries.
+#### [Memory and MIPS (Max Inner Product Search)](https://chat.openai.com/share/46ff149e-a4c7-4dd7-a800-fc4a642ea389) 
+> Generally speaking, this deals with the concepts of having large corpus of documents that are represented in a high-dimensional space. After being given a new document, you want to find the document in your existing collection that is most similar to it. This is the maximum inner product search. The chat with GPT involves a discussion of this idea in relation to memory.
 
-- [MealRec+: A Meal Recommendation Dataset with Meal-Course Affiliation for Personalization and Healthiness](https://arxiv.org/pdf/2404.05386)
-    > The task of meal recommendation involves intricate connections among users, courses, and meals, particularly through meal-course affiliation, yet existing datasets lack this crucial affiliation. To address this gap, the MealRec+ dataset is introduced, leveraging simulation methods to derive meal-course affiliation and user-meal interactions, and demonstrating that cooperative learning of these interactions improves the effectiveness of meal recommendations, with efforts also made to enhance the healthiness of recommendations.
+#### [Transforming wearable data into health insights using large language model agents](https://arxiv.org/pdf/2406.06464)
+> An AI system harnessing cutting-edge technology to revolutionize how wearable health data translates into actionable advice for individuals, tackling over 84% of numerical questions
+and a vast majority of open-ended inquiries.
 
-- [llmNER: (Zero|Few)-Shot Named Entity Recognition, Exploiting the Power of Large Language Models](https://arxiv.org/abs/2406.04528)
-    > llmNER is a Python library designed for zero-shot and few-shot named entity recognition (NER) tasks using Large Language Models (LLMs). It simplifies prompt composition, model querying, and result parsing, facilitating efficient prompt engineering for NER applications. The library demonstrates versatility through validation on two NER tasks, aiming to streamline in-context learning research by enhancing prompt and parsing procedures.
+#### [MealRec+: A Meal Recommendation Dataset with Meal-Course Affiliation for Personalization and Healthiness](https://arxiv.org/pdf/2404.05386)
+> The task of meal recommendation involves intricate connections among users, courses, and meals, particularly through meal-course affiliation, yet existing datasets lack this crucial affiliation. To address this gap, the MealRec+ dataset is introduced, leveraging simulation methods to derive meal-course affiliation and user-meal interactions, and demonstrating that cooperative learning of these interactions improves the effectiveness of meal recommendations, with efforts also made to enhance the healthiness of recommendations.
+
+#### [llmNER: (Zero|Few)-Shot Named Entity Recognition, Exploiting the Power of Large Language Models](https://arxiv.org/abs/2406.04528)
+> llmNER is a Python library designed for zero-shot and few-shot named entity recognition (NER) tasks using Large Language Models (LLMs). It simplifies prompt composition, model querying, and result parsing, facilitating efficient prompt engineering for NER applications. The library demonstrates versatility through validation on two NER tasks, aiming to streamline in-context learning research by enhancing prompt and parsing procedures.
 
 - [Machine Unlearning in 2024](https://ai.stanford.edu/~kzliu/blog/unlearning)
     > A focuse on removing specific information from trained machine learning (ML) models without retraining them from scratch. The goal being editing away undesirable data, such as private information, outdated knowledge, copyrighted material, harmful content, and misinformation.

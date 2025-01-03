@@ -24,7 +24,7 @@ toc_sticky: true # Makes ToC scroll with page
 #### [The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits](https://arxiv.org/abs/2402.17764)
 > BitNet b1.58 is a new way to make AI language models use less memory and power by reducing each parameter to just three values: -1, 0, or 1. The model works as well as regular 16-bit models when it reaches 3 billion parameters, but uses about 3.5 times less memory and runs almost 3 times faster. At larger sizes (70 billion parameters), it runs even better - about 4 times faster and uses much less memory than standard models. The model saves a lot of energy too - using 71 times less power for its main calculations compared to regular models. Tests show it performs well on language tasks and can handle long training sessions (2 trillion tokens) with good results.
 
-#### [Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast,Memory Efficient, and Long Context Finetuning and Inference](https://arxiv.org/pdf/2412.13663)
+##### [Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast,Memory Efficient, and Long Context Finetuning and Inference](https://arxiv.org/pdf/2412.13663)
 > ModernBERT is an improved version of the BERT model. It's designed for tasks like retrieval and classification. The model was trained on 2 trillion tokens and can handle sequences up to 8192 tokens long. It uses modern techniques like rotary positional embeddings and Gated Linear Units. This makes it faster and more memory-efficient. ModernBERT achieves top results in various evaluations, including classification tasks and retrieval in different domains, such as code. It's also optimized to run efficiently on common GPUs. 
 
 ### Agents (LLM-based)
