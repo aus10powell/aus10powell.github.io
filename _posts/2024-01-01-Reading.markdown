@@ -22,28 +22,39 @@ toc_sticky: true # Makes ToC scroll with page
 
 ### Large-Language Models
 
-- [Memory and MIPS (Max Inner Product Search)](https://chat.openai.com/share/46ff149e-a4c7-4dd7-a800-fc4a642ea389) Generally speaking, this deals with the concepts of having large corpus of documents that are represented in a high-dimensional space. After being given a new document, you want to find the document in your existing collection that is most similar to it. This is the maximum inner product search. The chat with GPT involves a discussion of this idea in relation to memory.
-- [Transforming wearable data into health insights using large language model agents](https://arxiv.org/pdf/2406.06464): An AI system harnessing cutting-edge technology to revolutionize how wearable health data translates into actionable advice for individuals, tackling over 84% of numerical questions
+- [Memory and MIPS (Max Inner Product Search)](https://chat.openai.com/share/46ff149e-a4c7-4dd7-a800-fc4a642ea389) 
+    > Generally speaking, this deals with the concepts of having large corpus of documents that are represented in a high-dimensional space. After being given a new document, you want to find the document in your existing collection that is most similar to it. This is the maximum inner product search. The chat with GPT involves a discussion of this idea in relation to memory.
+- [Transforming wearable data into health insights using large language model agents](https://arxiv.org/pdf/2406.06464)
+    > An AI system harnessing cutting-edge technology to revolutionize how wearable health data translates into actionable advice for individuals, tackling over 84% of numerical questions
   and a vast majority of open-ended inquiries.
 
-- [MealRec+: A Meal Recommendation Dataset with Meal-Course Affiliation for Personalization and Healthiness](https://arxiv.org/pdf/2404.05386): The task of meal recommendation involves intricate connections among users, courses, and meals, particularly through meal-course affiliation, yet existing datasets lack this crucial affiliation. To address this gap, the MealRec+ dataset is introduced, leveraging simulation methods to derive meal-course affiliation and user-meal interactions, and demonstrating that cooperative learning of these interactions improves the effectiveness of meal recommendations, with efforts also made to enhance the healthiness of recommendations.
+- [MealRec+: A Meal Recommendation Dataset with Meal-Course Affiliation for Personalization and Healthiness](https://arxiv.org/pdf/2404.05386)
+    > The task of meal recommendation involves intricate connections among users, courses, and meals, particularly through meal-course affiliation, yet existing datasets lack this crucial affiliation. To address this gap, the MealRec+ dataset is introduced, leveraging simulation methods to derive meal-course affiliation and user-meal interactions, and demonstrating that cooperative learning of these interactions improves the effectiveness of meal recommendations, with efforts also made to enhance the healthiness of recommendations.
 
-- [llmNER: (Zero|Few)-Shot Named Entity Recognition, Exploiting the Power of Large Language Models](https://arxiv.org/abs/2406.04528):llmNER is a Python library designed for zero-shot and few-shot named entity recognition (NER) tasks using Large Language Models (LLMs). It simplifies prompt composition, model querying, and result parsing, facilitating efficient prompt engineering for NER applications. The library demonstrates versatility through validation on two NER tasks, aiming to streamline in-context learning research by enhancing prompt and parsing procedures.
+- [llmNER: (Zero|Few)-Shot Named Entity Recognition, Exploiting the Power of Large Language Models](https://arxiv.org/abs/2406.04528)
+    > llmNER is a Python library designed for zero-shot and few-shot named entity recognition (NER) tasks using Large Language Models (LLMs). It simplifies prompt composition, model querying, and result parsing, facilitating efficient prompt engineering for NER applications. The library demonstrates versatility through validation on two NER tasks, aiming to streamline in-context learning research by enhancing prompt and parsing procedures.
 
-- [Machine Unlearning in 2024](https://ai.stanford.edu/~kzliu/blog/unlearning): A focuse on removing specific information from trained machine learning (ML) models without retraining them from scratch. The goal being editing away undesirable data, such as private information, outdated knowledge, copyrighted material, harmful content, and misinformation.
+- [Machine Unlearning in 2024](https://ai.stanford.edu/~kzliu/blog/unlearning)
+    > A focuse on removing specific information from trained machine learning (ML) models without retraining them from scratch. The goal being editing away undesirable data, such as private information, outdated knowledge, copyrighted material, harmful content, and misinformation.
 
-- [Adaptive Retrieval-Augmented Generation for Conversational Systems](https://arxiv.org/pdf/2407.21712): This research addresses the question of whether Retrieval Augmented Generation (RAG) is always necessary in conversational AI systems. The study introduces RAGate, a gating model that predicts when external knowledge augmentation is needed for improved responses, based on conversation context and human judgments.
+- [Adaptive Retrieval-Augmented Generation for Conversational Systems](https://arxiv.org/pdf/2407.21712)
+    > This research addresses the question of whether Retrieval Augmented Generation (RAG) is always necessary in conversational AI systems. The study introduces RAGate, a gating model that predicts when external knowledge augmentation is needed for improved responses, based on conversation context and human judgments.
 
-- [Medical LLMS: A practical guide](https://github.com/AI-in-Health/MedLLMsPracticalGuide): An github website for curating papers and resources around healthcare and LLMs.
+- [Medical LLMS: A practical guide](https://github.com/AI-in-Health/MedLLMsPracticalGuide)
+    > An github website for curating papers and resources around healthcare and LLMs.
 
-- [From Beginner to Expert: Modeling Medical Knowledge into General LLMs](https://arxiv.org/abs/2312.01040): demonstrates how a smaller-scale language model (10B parameters) can be effectively adapted for medical applications through a 3-stage optimization process: medical knowledge injection, domain instruction tuning, and specific task adaptation. The team developed large-scale medical datasets for each stage and introduced a novel Verification-of-Choice approach for multi-choice questions, significantly enhancing the model's reasoning abilities. Remarkably, the resulting AntGLM-Med-10B model outperforms many larger language models, including those specifically trained on medical knowledge, showing that strategic fine-tuning and task-specific innovations can compensate for smaller model size in specialized domains.
+- [From Beginner to Expert: Modeling Medical Knowledge into General LLMs](https://arxiv.org/abs/2312.01040)
+    > Demonstrates how a smaller-scale language model (10B parameters) can be effectively adapted for medical applications through a 3-stage optimization process: medical knowledge injection, domain instruction tuning, and specific task adaptation. The team developed large-scale medical datasets for each stage and introduced a novel Verification-of-Choice approach for multi-choice questions, significantly enhancing the model's reasoning abilities. Remarkably, the resulting AntGLM-Med-10B model outperforms many larger language models, including those specifically trained on medical knowledge, showing that strategic fine-tuning and task-specific innovations can compensate for smaller model size in specialized domains.
 
-- [LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2106.09685): LoRA is a method of using the Low-rank weights from LLMs to reduce the amount of training needing to be done while perserving most of the original performance. The gain in training time according to paper can be over a factor of 4
+- [LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2106.09685)
+    > LoRA is a method of using the Low-rank weights from LLMs to reduce the amount of training needing to be done while perserving most of the original performance. The gain in training time according to paper can be over a factor of 4
 
 ## Computer Vision
 
-- [YoloV10: Real-Time End-to-End Object Detection](https://arxiv.org/abs/2405.14458) Among other improvements in efficiency, the highlight may be tackeling the speed issues caused by NMS.
-- [Faiss: A library for efficient similarity search](https://engineering.fb.com/2017/03/29/data-infrastructure/faiss-a-library-for-efficient-similarity-search/): Facebook AI Similarity Search (Faiss), a library that allows us to quickly search for multimedia documents that are similar to each other.
+- [YoloV10: Real-Time End-to-End Object Detection](https://arxiv.org/abs/2405.14458)
+    > Among other improvements in efficiency, the highlight may be tackeling the speed issues caused by NMS.
+- [Faiss: A library for efficient similarity search](https://engineering.fb.com/2017/03/29/data-infrastructure/faiss-a-library-for-efficient-similarity-search/)
+    > Facebook AI Similarity Search (Faiss), a library that allows us to quickly search for multimedia documents that are similar to each other.
 - [DISCount: Counting in Large Image Collections with Detector-Based Importance Sampling](https://arxiv.org/abs/2306.03151)
     > A more efficient and accurate method for counting objects in large image collections by combining automated detection with strategic human involvement.
 
