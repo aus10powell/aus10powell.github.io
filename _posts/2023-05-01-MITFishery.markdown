@@ -7,6 +7,10 @@ categories: Computer-Vision
 description: "A computer vision-based system to count fish under various conditions entering Massachusetts Fisheries."
 keywords: computer vision, mlops, conservation
 show_date: true
+toc: true
+toc_label: "Contents"
+toc_icon: "book" # Optional
+toc_sticky: true # Makes ToC scroll with page
 ---
 
 **A grant-funded computer vision-based system to count fish under various conditions entering Massachusetts Fisheries.**
