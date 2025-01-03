@@ -1,19 +1,24 @@
 ---
 layout: single
-title:  "Twitter Account Sentiment and Text Generation"
-date:   2023-02-16
+title: "Twitter Account Sentiment and Text Generation"
+date: 2023-02-16
 comments: true
 categories: NLP API
 description: "A text generation and sentiment analysis of 6 Twitter Accounts"
 keywords: text generation, sentiment analysis, Twitter, NLP, Transformers, HuggingFace, RESTful API
 show_date: true
 classes: wide
+toc: true
+toc_label: "Contents"
+toc_icon: "book" # Optional
+toc_sticky: true # Makes ToC scroll with page
 ---
 
 **A text generation and sentiment analysis of 6 Twitter Accounts**
 
 # TwitterAPI
-The TwitterAPI project aims to perform text generation and sentiment analysis on six different Twitter accounts. The project utilizes NLP techniques, Transformers, and the HuggingFace library to generate tweets in the style of the selected accounts and analyze the sentiment of their tweets. Additionally, the project provides a metric for the health of the account audience and identifies anomalous tweets within the last few months. The project is deployed using FastAPI, Docker, and Gunicorn, with models hosted on HuggingFace Spaces. The code and models are stored in a GitHub repository and synced using GitHub Actions. 
+
+The TwitterAPI project aims to perform text generation and sentiment analysis on six different Twitter accounts. The project utilizes NLP techniques, Transformers, and the HuggingFace library to generate tweets in the style of the selected accounts and analyze the sentiment of their tweets. Additionally, the project provides a metric for the health of the account audience and identifies anomalous tweets within the last few months. The project is deployed using FastAPI, Docker, and Gunicorn, with models hosted on HuggingFace Spaces. The code and models are stored in a GitHub repository and synced using GitHub Actions.
 
 <div align="center">
  <img src="/assets/images/twitter_accounts/TwitterAPIScreenshot1.png"
@@ -22,16 +27,11 @@ The TwitterAPI project aims to perform text generation and sentiment analysis on
 <figcaption>Screenshot of App</figcaption>
 </div>
 
-
-
-## Table of Contents
-* Table of Contents
-{:toc}
-
 ## Goal:
-* Generate a Tweet in the style of one from the following Twitter Accounts ("alikarimi_ak8", "elonmusk","BarackObama","taylorlorenz","cathiedwood","ylecun"). NOTE: alikarimi_ak8 tweets often in Persian however generated tweets are in English. 
-* Provide Sentiment Analysis for the 6 accounts NOTE: Based on saved historical data not live data due to the uncertain nature of scraping tweets with Elon Musk acquisition. 
-* "Account Health" Metric: 
+
+- Generate a Tweet in the style of one from the following Twitter Accounts ("alikarimi_ak8", "elonmusk","BarackObama","taylorlorenz","cathiedwood","ylecun"). NOTE: alikarimi_ak8 tweets often in Persian however generated tweets are in English.
+- Provide Sentiment Analysis for the 6 accounts NOTE: Based on saved historical data not live data due to the uncertain nature of scraping tweets with Elon Musk acquisition.
+- "Account Health" Metric:
 <div align="center">
  <img src="/assets/images/twitter_accounts/obamahealthmetric.png"
      alt="askDocs example"
@@ -39,12 +39,13 @@ The TwitterAPI project aims to perform text generation and sentiment analysis on
 <figcaption>Distribution of Obama Twitter Account metric</figcaption>
 </div>
 
-* Provide a metric for the account audience health
-* Anomalous tweets within the last few months:
+- Provide a metric for the account audience health
+- Anomalous tweets within the last few months:
 
+## Twitter Accounts
 
-## Twitter Accounts 
-*Twitter App (warning: may be blank and take a minute to update while free servers spin up) and if scraping library is being block there may be internal error*
+_Twitter App (warning: may be blank and take a minute to update while free servers spin up) and if scraping library is being block there may be internal error_
+
 <div style="text-center;">
     <iframe src="https://aus10powell-twitteraccounts.hf.space"
             frameborder="100"
@@ -54,21 +55,21 @@ The TwitterAPI project aims to perform text generation and sentiment analysis on
 </div>
 
 ### Deployment
+
 **Tech Stack**
 
-* **Web Stack:**
-  * FastAPI
-  * Docker (To simply build base potentially on larger deployment)
-  * Gunicorn is used to spawn the FastAPI on four child worker processes using the Asynchronous Uvicorn Worker Class. Each Uvicorn worker class runs the FastAPI app on a randomly chosen process id. The Gunicorn runs on a process id that can be configured to run on a specified port and handles the request delegation. All four instances of the FastAPI will use the same database created in the Azure Database for PostgreSQL Server. The connection to the database is established and disconnected in the startup and shutdown events of the FastAPI, respectively. The App Service deployment configuration automatically pulls and deploys any changes made to the GitHub repository it is configured with.
-  * Huggingface Spaces (Free, larger-than-standard free compute and memory. Enough to save models on space without using API)
-  * *Docker* container deployment on *HuggingFace Spaces*
-* **ML/DevOps:**
-  * Github Actions (to sync with Huggingface Spaces)
-* **Models:**
-  * Persion to English: For tweets from [mt5-base-parsinlu-opus-translation_fa_en](https://huggingface.co/persiannlp/mt5-base-parsinlu-opus-translation_fa_en)
-  * Sentiment Model Used: [twitter-roberta-base-sentiment](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment)
-  * Generative Model Used: [OpenAI GPT2](https://huggingface.co/transformers/v4.4.2/model_doc/gpt2.html). 
-
+- **Web Stack:**
+  - FastAPI
+  - Docker (To simply build base potentially on larger deployment)
+  - Gunicorn is used to spawn the FastAPI on four child worker processes using the Asynchronous Uvicorn Worker Class. Each Uvicorn worker class runs the FastAPI app on a randomly chosen process id. The Gunicorn runs on a process id that can be configured to run on a specified port and handles the request delegation. All four instances of the FastAPI will use the same database created in the Azure Database for PostgreSQL Server. The connection to the database is established and disconnected in the startup and shutdown events of the FastAPI, respectively. The App Service deployment configuration automatically pulls and deploys any changes made to the GitHub repository it is configured with.
+  - Huggingface Spaces (Free, larger-than-standard free compute and memory. Enough to save models on space without using API)
+  - _Docker_ container deployment on _HuggingFace Spaces_
+- **ML/DevOps:**
+  - Github Actions (to sync with Huggingface Spaces)
+- **Models:**
+  - Persion to English: For tweets from [mt5-base-parsinlu-opus-translation_fa_en](https://huggingface.co/persiannlp/mt5-base-parsinlu-opus-translation_fa_en)
+  - Sentiment Model Used: [twitter-roberta-base-sentiment](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment)
+  - Generative Model Used: [OpenAI GPT2](https://huggingface.co/transformers/v4.4.2/model_doc/gpt2.html).
 
 <!-- # Notes:
 * 04/26/2023:
@@ -86,7 +87,7 @@ The TwitterAPI project aims to perform text generation and sentiment analysis on
     * Create sentiment dataset for all accounts using huggingface scraper from historical data until now and display in Altair.
     * Summarization:
       * Reformate old code and eliminate unnecessary code
-      * Decide on next steps as far as necessary 
+      * Decide on next steps as far as necessary
   * COMPLETED:
     * Created a model for each account
     * Enabled translation for the Persion account
@@ -95,7 +96,7 @@ The TwitterAPI project aims to perform text generation and sentiment analysis on
     * Successfully uploaded hugginface model to hugginface model hub in order to enable api from webpage to the hosted site at huggingface avoiding storage of models on webpage.
 * 05/06/23
   * COMPLETED:
-    * Successfully tested a hosted app as a RESTful API endpoint for all the trained GPT2 models. Main positive take-away from this is that the file requirements 
+    * Successfully tested a hosted app as a RESTful API endpoint for all the trained GPT2 models. Main positive take-away from this is that the file requirements
     * Learned that HuggingFace Spaces doesn't allow function call to pass through URLs with their free space...or at least it is difficult to. Using a POST request is better.
   * TODO:
     * Investigate as to whether there is a app structure that can be flexible in deployment to either Azure or Huggingface spaces
@@ -117,7 +118,7 @@ The TwitterAPI project aims to perform text generation and sentiment analysis on
     * Extra features:
       * Sentiment: Display a sentiment score on the generated response
       * Display a summary of the generated response. NOTE: this would fit in well with the tweet analysis over time.
-      *  
+      *
 * 05/12/23
   * COMPLETED:
     * Somewhat justified display on Markdown page
@@ -146,8 +147,8 @@ The TwitterAPI project aims to perform text generation and sentiment analysis on
 
 * 06/02/23
   * COMPLETED:
-    * Initial distributions for evaluating a good "account health" metric. 
-    * 
+    * Initial distributions for evaluating a good "account health" metric.
+    *
 * 06/03/23
   * COMPLETED:
     * moved spacy embeddings load to app start
