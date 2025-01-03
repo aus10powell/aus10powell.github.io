@@ -17,13 +17,6 @@ toc_sticky: true # Makes ToC scroll with page
 
 **2024 Reading List**
 
-## Signal Processing
-
-### General
-
-]
-
-### Audio
 
 ## NLP
 
@@ -47,20 +40,15 @@ toc_sticky: true # Makes ToC scroll with page
 
 - [LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2106.09685): LoRA is a method of using the Low-rank weights from LLMs to reduce the amount of training needing to be done while perserving most of the original performance. The gain in training time according to paper can be over a factor of 4
 
-## Vision
+## Computer Vision
 
 - [YoloV10: Real-Time End-to-End Object Detection](https://arxiv.org/abs/2405.14458) Among other improvements in efficiency, the highlight may be tackeling the speed issues caused by NMS.
 - [Faiss: A library for efficient similarity search](https://engineering.fb.com/2017/03/29/data-infrastructure/faiss-a-library-for-efficient-similarity-search/): Facebook AI Similarity Search (Faiss), a library that allows us to quickly search for multimedia documents that are similar to each other.
-- [DISCount: Counting in Large Image Collections with Detector-Based Importance Sampling](https://arxiv.org/abs/2306.03151): A more efficient and accurate method for counting objects in large image collections by combining automated detection with strategic human involvement.
+- [DISCount: Counting in Large Image Collections with Detector-Based Importance Sampling](https://arxiv.org/abs/2306.03151)
+    > A more efficient and accurate method for counting objects in large image collections by combining automated detection with strategic human involvement.
 
-## ML (General)
-
-### Recommendation and Search
+## Recommendation Systems
 
 - [Page-level Optimization of e-Commerce Item Recommendations](https://arxiv.org/abs/2108.05891)
 
 - [Recommending what video to watch next: a multitask ranking system](https://dl.acm.org/doi/10.1145/3298689.3346997)
-
-## ML Ops
-
-## Statistical
