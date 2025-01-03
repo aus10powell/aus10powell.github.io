@@ -8,6 +8,10 @@ description: "A bot generating memorable quotes and replies based on works of Ov
 keywords: text generation, sentiment analysis, Twitter,X , NLP, LLM, Transformers, HuggingFace, RESTful API
 show_date: true
 classes: wide
+toc: true
+toc_label: "Contents"
+toc_icon: "book" # Optional
+toc_sticky: true # Makes ToC scroll with page
 ---
 
 **A wise bot retrieving quotes from antiquity**
@@ -17,9 +21,7 @@ classes: wide
 * Prompt-based "wisdom" responses based on sentiment using [cardiffnlp/twitter-roberta-base-sentiment](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment?text=Whoa.+CNN+is+now+reporting+that+several+Republican+voters+have+said+that+they+voted+for+Tom+Suozzi+today+because+Republicans+sabotaged+the+border+security+deal.+This+is+huge+%26+amazing.+Voters+see+right+through+Republican+nonsense+%26+they+are+making+them+find+out+big+time.). 
 E.g.:
 <mark> Here is why I think we’re seeing this: Time & time again, the media focuses on polls & draws conclusions about the state of the race without focusing on 1.) all Democrats have done & 2.) the real threat of Trump/MAGA extremism. But VOTERS ARE NOT DUMB! Wake up, media. /END</mark> ==>
-<!-- ## Table of Contents
-* Table of Contents
-{:toc}
+
 
 ### Problem Definition
 Generally, to reply to a different X tweets (often political or opinionated in nature) with a quote that strikes a neutral tone. Depending on humerous/ironc/sarcastic tone if comment is overtly negative.
