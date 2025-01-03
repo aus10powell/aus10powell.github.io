@@ -21,9 +21,6 @@ I am currently working on an ongoing project to detect and count fish in Massach
 
 [![Click to view video](/assets/images/mitfishery/annotated_counter.png)](https://youtu.be/3UxDNxzXF5U)
 
-## Table of Contents
-* Table of Contents
-{:toc}
 
 ## QA Bot: Ask questions about the repository:
 <a href="https://huggingface.co/chat/conversation/66b2a6ee5141de599b9cb1c1">
