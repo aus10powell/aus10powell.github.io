@@ -11,14 +11,11 @@ show_date: true
 words_per_minute: 300
 toc: true
 toc_label: "Contents"
-toc_icon: "book"  # Optional
-toc_sticky: true  # Makes ToC scroll with page
+toc_icon: "book" # Optional
+toc_sticky: true # Makes ToC scroll with page
 ---
 
 **2025 Reading List**
-
-- Table of Contents
-  {:toc}
 
 ## NLP
 
@@ -29,4 +26,3 @@ toc_sticky: true  # Makes ToC scroll with page
 ### Agents (LLM-based)
 
 - [AGENTiGraph: An Interactive Knowledge Graph Platform for LLM-based Chatbots Utilizing Private Data](https://arxiv.org/pdf/2410.11531): LLMs are powerful but can struggle with factual consistency and require complex queries. Traditional KG tools are difficult to use and require technical expertise. AGENTiGraph bridges the gap between LLMs and KGs. It uses a multi-agent system where each agent has a specific role, such as interpreting user intent or translating queries into graph operations. This allows for more natural language interaction with KGs and improved accuracy in tasks like question answering.
-
