@@ -16,6 +16,12 @@ toc_sticky: true # Makes ToC scroll with page
 
 **A wise bot retrieving quotes from antiquity**
 
+<blockquote>
+"The mind which is conscious of right, rectitude, undeviating integrity, despises, laughs at, treats with contempt, the lies of rumor."
+<footer>— Ovid (Fasti)</footer>
+</blockquote>
+
+
 ## Problem Definition and Goal
 
 ### Challenge
