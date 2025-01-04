@@ -16,9 +16,9 @@ toc_sticky: true # Makes ToC scroll with page
 
 **A wise bot retrieving quotes from antiquity**
 
-# WiseWordsofOvid
+## Problem Definition and Goal
 
-## Problem Definition
+### Challenge
 Generally, to reply to a different X tweets (often political or opinionated in nature) with a quote that strikes a neutral tone. Depending on humerous/ironc/sarcastic tone if comment is overtly negative.
 
 * Prompt-based "wisdom" responses based on sentiment using [cardiffnlp/twitter-roberta-base-sentiment](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment?text=Whoa.+CNN+is+now+reporting+that+several+Republican+voters+have+said+that+they+voted+for+Tom+Suozzi+today+because+Republicans+sabotaged+the+border+security+deal.+This+is+huge+%26+amazing.+Voters+see+right+through+Republican+nonsense+%26+they+are+making+them+find+out+big+time.). 
@@ -26,11 +26,19 @@ E.g.:
 
 > "Here is why I think we’re seeing this: Time & time again, the media focuses on polls & draws conclusions about the state of the race without focusing on 1.) all Democrats have done & 2.) the real threat of Trump/MAGA extremism. But VOTERS ARE NOT DUMB! Wake up, media." 
 
-
+### Goal
+- Replying to tweets with relevant quotes.
+- Using sentiment analysis to determine tone (e.g., humorous, neutral).
 
 ### Generating/Extracting Quotes:
-#### Data
+#### Data and Challenges
 Most of the works are found easily online written in poetic form which is not as straight-forward to parse as regular documents. Found a vast improvement in text extraction from Ovid works using 300 dimension vs 200 dimension embeddings. This is consistent with many of the recommendation for creating RAGs.
+
+* **Data:** Extracting quotes from Ovid's poetic works.
+* **Key Challenges:**
+    * Parsing poetic text.
+    * Avoiding hallucinations in LLM-generated quotes.
+
 
 #### Tasks Involved in Problem Definition
 ##### Ovid Quote Retrieval Task
@@ -102,16 +110,26 @@ I wanted to see how much leverage I could get out of a few-shot training example
 
 
 ## Dual-Encoder:
+A Dual-Encoder model can help with effective quote retrieval tailored to tweet contexts. This architecture excels in retrieval tasks by computing and comparing embeddings for two input types—in this case, tweet content and a collection of quotes from Ovid’s works.
+
+Semantic Understanding: Dual-Encoders map inputs like tweets and quotes into high-dimensional embeddings that effectively capture their semantic meaning. This ensures the retrieved quote aligns with the tweet's tone, sentiment, and context.
+
+Scalability: Once encoded into embeddings, quotes can be efficiently searched using similarity measures such as cosine similarity. This approach is ideal for handling large datasets of poetic quotes, enabling real-time response generation.
+
+Tailored Responses with Flexibility: Fine-tuning Dual-Encoder models allows for nuanced and highly relevant responses. 
+
+
 <div align="center">
  <img src="/assets/images/wisewordsofovid/dual_encoder_architectures.png"
      alt="askDocs example"
      style="width:350px;"/>
 <figcaption>Different architectures of Dual-Encoders (https://aclanthology.org/2022.emnlp-main.640.pdf)</figcaption>
-</div> -->
+</div>
 
 
+## Technology Stack
 
-## Infrastructure:
+### Infrastructure:
 
 - Digital Ocean Droplets utilized for hosting, ensuring efficient and scalable deployment.
 - Github Actions employed for Continuous Integration/Continuous Deployment (CI/CD) and workflow automation, streamlining the development pipeline.
@@ -131,4 +149,4 @@ I wanted to see how much leverage I could get out of a few-shot training example
 * TWEETEVAL is a standardized test bed for seven tweet classification tasks. These are: sentiment analysis, emotion recognition, offensive language detection, hate speech detection, stance prediction, emoji prediction, and irony detection. [TWEETEVAL: Unified Benchmark and Comparative Evaluation for Tweet Classification](https://arxiv.org/pdf/2010.12421.pdf)
 
 ## Future Work
-Using a recommendation system that understands context, relevance, and even your mood. Instead of just retreiving quotes, it ranks and refines them, ensuring the wisdom you get is tailored and on point.
+The current focus is on retrieval, but Dual-Encoders could evolve into a hybrid system that combines retrieval and generation. Using a recommendation system that understands context, relevance, and even mood, it could not only rank and refine retrieved quotes but also adapt or paraphrase them using a generative model. This approach ensures the insights provided are tailored, dynamic, and highly relevant.
