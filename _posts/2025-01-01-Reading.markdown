@@ -51,6 +51,16 @@ The idea is to create an ecosystem with different components working together:
 
 * Assistants: Interact with users and manage Sims and Agents to complete tasks.
 
+#### [Agents](https://huyenchip.com//2025/01/07/agents.html)
+
+```
+* AI agents perceive and act on their environment, with their capabilities defined by available tools and the environment itself.
+* Tools are essential for agents to perceive (read) and act (write), augmenting knowledge, extending capabilities (like math or code execution), and enabling real-world actions.
+* Planning is crucial for complex tasks, requiring plan generation, validation (by heuristics or AI), and execution, ideally decoupled to prevent wasted resources.
+* Foundation models can be used for planning, especially when provided with information about action outcomes, and function calling enables tool use within model APIs.
+* Effective agents require careful consideration of planning granularity, reflection/error correction, tool selection, and robust evaluation to address potential failures in planning, tool usage, or efficiency.
+```
+
 ## Machine Learning
 
 #### [Reinforcement Learning: An Overview](https://arxiv.org/pdf/2412.05265)
