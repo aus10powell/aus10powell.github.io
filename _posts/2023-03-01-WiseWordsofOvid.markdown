@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Wise Words of Ovid"
-date:   2024-02-01
+date:   2025-02-01
 comments: true
 categories: NLP LLM
 description: "A bot generating memorable quotes and replies based on works of Ovid"

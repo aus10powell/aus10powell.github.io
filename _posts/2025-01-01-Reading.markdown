@@ -51,7 +51,7 @@ The idea is to create an ecosystem with different components working together:
 
 * Assistants: Interact with users and manage Sims and Agents to complete tasks.
 
-#### [Agents](https://huyenchip.com//2025/01/07/agents.html)
+#### [Agents (Chip Hyuen)](https://huyenchip.com//2025/01/07/agents.html)
 
 ```
 * AI agents perceive and act on their environment, with their capabilities defined by available tools and the environment itself.
