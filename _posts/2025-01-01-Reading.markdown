@@ -22,7 +22,7 @@ toc_sticky: true # Makes ToC scroll with page
 ### LLMs
 
 ### [Foundations of Large Language Models](https://arxiv.org/abs/2501.09223)
-> Broad overview of the following topics: Model architectuers and training, activation functions, learning techniques, data handling and preocessing, optimization and efficiency, concepts in learning, applciations and methods, techniquies and strategies
+> Broad overview of the following topics: Model architectuers and training, activation functions, learning techniques, data handling and preocessing, optimization and efficiency, concepts in learning, applciations and methods, techniquies and strategies.
 
 ### [Scaling Laws for Precision](https://arxiv.org/abs/2411.04330)
 > Training in lower precision reduces the model's "effective parameter count," allowing us to predict the additional loss incurred from training in low precision and post-train quantization. Authors find that lower precision training can be more compute-efficient, but it can also lead to worse performance. They also find that there is a trade-off between the amount of data a model is trained on and the precision at which it is trained. For example, a model that is trained on a lot of data may perform worse if it is quantized to a lower precision after training.
@@ -33,6 +33,9 @@ In conclusion, this paper shows that the precision of a language model can have 
 
 #### [Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast,Memory Efficient, and Long Context Finetuning and Inference](https://arxiv.org/pdf/2412.13663)
 > ModernBERT is an improved version of the BERT model. It's designed for tasks like retrieval and classification. The model was trained on 2 trillion tokens and can handle sequences up to 8192 tokens long. It uses modern techniques like rotary positional embeddings and Gated Linear Units. This makes it faster and more memory-efficient. ModernBERT achieves top results in various evaluations, including classification tasks and retrieval in different domains, such as code. It's also optimized to run efficiently on common GPUs. 
+
+#### [STAR: A Simple Training-free Approach for Recommendations using Large Language Models](https://arxiv.org/pdf/2410.16458)
+> STAR is a new framework using large language models for recommendations without fine-tuning, featuring a two-stage process: retrieval (using semantic similarity and collaborative information) and ranking. Testing on Amazon Review datasets showed STAR outperformed supervised models on Beauty and Toys categories, and performed nearly as well on Sports items. This suggests LLMs can be effective for recommendation systems without the cost and complexity of fine-tuning.
 
 ### Agents (LLM-based)
 
