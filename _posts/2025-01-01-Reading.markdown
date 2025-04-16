@@ -73,6 +73,9 @@ The idea is to create an ecosystem with different components working together:
 
 ## Machine Learning
 
+#### [Improving Pinterest Search Relevance Using Large Language Models](https://medium.com/pinterest-engineering/improving-pinterest-search-relevance-using-large-language-models-4cd938d4e892)
+> Pinterest improved their search relevance using a two-stage approach: (1) A cross-encoder LLM teacher model trained on human-annotated data to predict 5-scale relevance scores, and (2) A lightweight student model trained via knowledge distillation for production serving. The system leverages rich Pin text features including titles, descriptions, synthetic image captions, and user engagement data. The LLM-based approach improved search feed relevance by 2.18% (nDCG@20) and increased fulfillment rates by over 1.5% globally. Key innovations include using multilingual LLMs to generalize across languages, enriched text representations, and large-scale semi-supervised learning through distillation.
+
 #### [Reinforcement Learning: An Overview](https://arxiv.org/pdf/2412.05265)
 This is a pretty hefty paper and can take several hours to read through once but is a good refresher and/or overview. It provides a comprehensive overview of reinforcement learning (RL) and sequential decision making from end of 2024 (December). Based off of a textbook from Kevin Murphy. The paper covers value-based RL, policy-gradient methods, and model-based approaches. It also briefly discusses the integration of RL with large language models (LLMs). This work updates and expands upon chapters 34 and 35 of Murphy's earlier textbook. 
 
