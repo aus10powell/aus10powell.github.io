@@ -85,3 +85,6 @@ The idea is to create an ecosystem with different components working together:
 #### [Reinforcement Learning: An Overview](https://arxiv.org/pdf/2412.05265)
 This is a pretty hefty paper and can take several hours to read through once but is a good refresher and/or overview. It provides a comprehensive overview of reinforcement learning (RL) and sequential decision making from end of 2024 (December). Based off of a textbook from Kevin Murphy. The paper covers value-based RL, policy-gradient methods, and model-based approaches. It also briefly discusses the integration of RL with large language models (LLMs). This work updates and expands upon chapters 34 and 35 of Murphy's earlier textbook. 
 
+#### [HealthBench: A Benchmark for Evaluating Language Models in Healthcare](https://openai.com/index/healthbench/)
+> HealthBench is a new benchmark for evaluating language models in healthcare applications. It focuses on assessing models' capabilities in medical knowledge, clinical reasoning, and patient communication. The benchmark includes tasks like medical question answering, clinical case analysis, and patient education. This is particularly important as healthcare applications require high accuracy and reliability, and the benchmark helps identify areas where models need improvement to be safely deployed in healthcare settings.
+
