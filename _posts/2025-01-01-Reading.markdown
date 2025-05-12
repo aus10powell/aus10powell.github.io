@@ -74,6 +74,9 @@ The idea is to create an ecosystem with different components working together:
 #### [A Survey on LLM-powered Agents for Recommender Systems](https://arxiv.org/abs/2502.10050)
 > This survey reviews LLM-powered agents in recommender systems, categorizing them into three paradigms: recommender-oriented (enhancing core mechanisms), interaction-oriented (improving user dialogue), and simulation-oriented (modeling complex interactions). It analyzes agent architecture (profile, memory, planning, action) and discusses datasets, evaluation, challenges, and future research directions.
 
+#### [LLM-powered Agents for Recommender Systems: A Comprehensive Survey](https://arxiv.org/pdf/2308.14296)
+> This comprehensive survey examines the integration of LLM-powered agents in recommender systems, focusing on their architecture, capabilities, and applications. The paper discusses how these agents can enhance recommendation quality through better understanding of user preferences, improved interaction patterns, and more sophisticated reasoning capabilities. It also addresses key challenges in deployment, including computational efficiency, privacy concerns, and evaluation methodologies.
+
 #### [MRKL Systems: A modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning](https://arxiv.org/abs/2205.00445)
 > Proposes MRKL (Modular Reasoning, Knowledge and Language), a neuro-symbolic architecture to overcome limitations of large language models (LMs). It integrates multiple neural models with discrete knowledge and reasoning modules, aiming to handle complex tasks involving knowledge, reasoning, and language processing more effectively than standalone LMs. The paper outlines the architecture, implementation challenges, and AI21 Labs' implementation, Jurassic-X.
 
