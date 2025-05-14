@@ -63,13 +63,7 @@ The idea is to create an ecosystem with different components working together:
 
 #### [Agents (Chip Hyuen)](https://huyenchip.com//2025/01/07/agents.html)
 
-```
-* AI agents perceive and act on their environment, with their capabilities defined by available tools and the environment itself.
-* Tools are essential for agents to perceive (read) and act (write), augmenting knowledge, extending capabilities (like math or code execution), and enabling real-world actions.
-* Planning is crucial for complex tasks, requiring plan generation, validation (by heuristics or AI), and execution, ideally decoupled to prevent wasted resources.
-* Foundation models can be used for planning, especially when provided with information about action outcomes, and function calling enables tool use within model APIs.
-* Effective agents require careful consideration of planning granularity, reflection/error correction, tool selection, and robust evaluation to address potential failures in planning, tool usage, or efficiency.
-```
+> AI agents perceive and act on their environment, with their capabilities defined by available tools and the environment itself. Tools are essential for agents to perceive (read) and act (write), augmenting knowledge, extending capabilities (like math or code execution), and enabling real-world actions. Planning is crucial for complex tasks, requiring plan generation, validation (by heuristics or AI), and execution, ideally decoupled to prevent wasted resources. Foundation models can be used for planning, especially when provided with information about action outcomes, and function calling enables tool use within model APIs. Effective agents require careful consideration of planning granularity, reflection/error correction, tool selection, and robust evaluation to address potential failures in planning, tool usage, or efficiency.
 
 #### [A Survey on LLM-powered Agents for Recommender Systems](https://arxiv.org/abs/2502.10050)
 > This survey reviews LLM-powered agents in recommender systems, categorizing them into three paradigms: recommender-oriented (enhancing core mechanisms), interaction-oriented (improving user dialogue), and simulation-oriented (modeling complex interactions). It analyzes agent architecture (profile, memory, planning, action) and discusses datasets, evaluation, challenges, and future research directions.
