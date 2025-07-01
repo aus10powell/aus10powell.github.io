@@ -74,6 +74,9 @@ The idea is to create an ecosystem with different components working together:
 #### [MRKL Systems: A modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning](https://arxiv.org/abs/2205.00445)
 > Proposes MRKL (Modular Reasoning, Knowledge and Language), a neuro-symbolic architecture to overcome limitations of large language models (LMs). It integrates multiple neural models with discrete knowledge and reasoning modules, aiming to handle complex tasks involving knowledge, reasoning, and language processing more effectively than standalone LMs. The paper outlines the architecture, implementation challenges, and AI21 Labs' implementation, Jurassic-X.
 
+#### [Design Patterns for Securing LLM Agents against Prompt Injections](https://arxiv.org/abs/2506.08837)
+> As AI agents powered by Large Language Models (LLMs) become increasingly versatile and capable of addressing a broad spectrum of tasks, ensuring their security has become a critical challenge. This paper proposes a set of principled design patterns for building AI agents with provable resistance to prompt injection attacks, which exploit the agent's reliance on natural language inputs. The authors systematically analyze these patterns, discuss their trade-offs in terms of utility and security, and illustrate their real-world applicability through case studies. This is particularly important when agents are granted tool access or handle sensitive information.
+
 ## Machine Learning
 
 #### [Improving Pinterest Search Relevance Using Large Language Models](https://medium.com/pinterest-engineering/improving-pinterest-search-relevance-using-large-language-models-4cd938d4e892)
