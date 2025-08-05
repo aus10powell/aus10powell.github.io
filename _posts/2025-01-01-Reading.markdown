@@ -21,6 +21,9 @@ toc_sticky: true # Makes ToC scroll with page
 
 ### LLMs
 
+#### [There Are Only 6 RAG Evals](https://jxnl.co/writing/2025/05/19/there-are-only-6-rag-evals/)
+> This article argues that RAG (Retrieval-Augmented Generation) evaluation can be simplified to six core metrics based on the relationships between the question (Q), context (C), and answer (A). The author organizes these into three tiers: Tier 1 focuses on retrieval precision and recall; Tier 2 covers primary relationships like context relevance (C|Q), faithfulness (A|C), and answer relevance (A|Q); and Tier 3 includes advanced metrics such as context support (C|A), question answerability (Q|C), and self-containment (Q|A). The framework aims to provide a systematic and exhaustive way to diagnose and improve RAG systems.
+
 ### [Foundations of Large Language Models](https://arxiv.org/abs/2501.09223)
 > Broad overview of the following topics: Model architectuers and training, activation functions, learning techniques, data handling and preocessing, optimization and efficiency, concepts in learning, applciations and methods, techniquies and strategies.
 
