@@ -20,7 +20,7 @@ title                    : "aus10powell.io"
 title_separator          : "-"
 subtitle                 : "Personal Site & Blog"
 name                     : "Austin Powell"
-description              : "aus10powell.github.github.io"
+description              : "Notes, projects and technical reading on data, machine learning and software engineering."
 url                      : "https://aus10powell.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "aus10powell/aus10powell"
@@ -30,7 +30,7 @@ masthead_title           : " " # overrides the website title displayed in the ma
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : "staticman"# false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  provider               : false # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -148,7 +148,6 @@ footer:
 include: 
   - .htaccess
   - _pages
-  - _posts
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -160,8 +159,8 @@ exclude:
   - assets/js/plugins
   - assets/js/_main.js
   - assets/js/vendor
+  - banner.js
   - Capfile
-  - CHANGELOG
   - config
   - Gemfile
   - Gruntfile.js
@@ -171,11 +170,8 @@ exclude:
   - node_modules
   - package.json
   - package-lock.json
-  - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
 keep_files:
   - .git
   - .svn
