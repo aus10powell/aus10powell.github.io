@@ -18,8 +18,13 @@ toc_sticky: true # Makes ToC scroll with page
 
 ## NLP
 
-### LLMs
-
 ### Agents (LLM-based)
 
-## Machine Learning
+#### [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/abs/2504.19413)
+> Mem0 is a memory-centric architecture for multi-session dialogue that dynamically extracts, consolidates, and retrieves salient facts from conversations rather than replaying the full history. A graph-based variant, Mem0<sup>g</sup>, additionally models relationships between conversational elements. On the LOCOMO benchmark it beats memory-augmented systems, RAG at several chunk sizes and k-values, full-context, and both open-source and proprietary memory services across single-hop, temporal, multi-hop, and open-domain questions: 26% relative improvement in LLM-as-a-Judge score over OpenAI's memory, with the graph variant adding roughly 2% more. The efficiency story matters as much as the accuracy one — versus full-context, Mem0 cuts p95 latency by 91% and token cost by over 90%.
+
+#### [RecMem: Recurrence-based Memory Consolidation for Efficient and Effective Long-Running LLM Agents](https://arxiv.org/abs/2605.16045)
+> Existing memory systems (Mem0, Zep, A-Mem) consolidate eagerly, invoking an LLM on every incoming interaction, which makes memory construction the dominant cost in streaming deployments. RecMem rethinks *when* to consolidate: incoming turns land in a cheap "subconscious" layer encoded with a lightweight embedding model, and the LLM is only called to build episodic and semantic memory once sustained recurrence of semantically similar interactions is observed (a similarity threshold plus a recurrence count). A semantic refinement step then recovers fine-grained facts that episodic summarization abstracts away. The result is up to 87% lower memory construction token cost than three SOTA systems while exceeding their accuracy, with the largest gains on temporal reasoning. Ablations show subconscious memory is the load-bearing piece (81.1 → 51.9 on LoCoMo without it).
+
+#### [Episodic-Semantic Memory Architecture for Long-Horizon Scientific Agents](https://arxiv.org/abs/2605.17625)
+> A dual-process memory architecture aimed at scientific workflows, where context saturates quickly and hypotheses, parameters, and negative results evolve (and contradict each other) over weeks. It separates a constant 10-message episodic window from long-term consolidated knowledge that grows at about 3 tokens/message. Evaluated over 15,000 messages and 1,440 queries across six LLMs from three families: full-context models fail outright at 10,000 messages, while this system holds 70–85% accuracy at 1–2s latency using 62% fewer tokens. Two findings worth noting — the trade-off is architectural rather than model-specific (dual-process wins on numeric/temporal queries, RAG wins on historical retrieval, suggesting they're complementary), and there is a "sim-to-real" gap where synthetic tests show constant memory but realistic workflows grow linearly, making consolidation quality the scalability bottleneck.
